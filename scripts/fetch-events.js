@@ -8,6 +8,7 @@ const SOURCE = 'https://r.jina.ai/http://www.mod.go.jp/j/press/events/';
 const SEA_SOURCE = 'https://r.jina.ai/http://www.mod.go.jp/msdf/event/index.html';
 const SEA_OFFICIAL = 'https://www.mod.go.jp/msdf/event/index.html';
 const ALLOWED = new Set(['神奈川', '東京', '埼玉', '千葉', '茨城', '静岡', '山梨', '栃木']);
+const ALL_REGIONS = ['北海道','青森','岩手','宮城','秋田','山形','福島','茨城','栃木','群馬','埼玉','千葉','東京','神奈川','新潟','富山','石川','福井','山梨','長野','岐阜','静岡','愛知','三重','滋賀','京都','大阪','兵庫','奈良','和歌山','鳥取','島根','岡山','広島','山口','徳島','香川','愛媛','高知','福岡','佐賀','長崎','熊本','大分','宮崎','鹿児島','沖縄'];
 const AIR_SOURCE = 'https://www.mod.go.jp/asdf/event/list.html';
 const LAND_BAND_SOURCE = 'https://r.jina.ai/http://www.mod.go.jp/gsdf/eae/1d/event/1band.html';
 const LAND_BAND_OFFICIAL = 'https://www.mod.go.jp/gsdf/eae/1d/event/1band.html';
@@ -265,7 +266,7 @@ function parseSea(markdown) {
     const [, titleRaw, officialUrl, imageRaw, dateRaw, placeRaw] = match;
     const title = clean(titleRaw);
     const location = clean(placeRaw).replace(/※.*$/, '').trim();
-    const region = [...ALLOWED].find(name => new RegExp(`${name}(?:県|都)?`).test(placeRaw));
+    const region = ALL_REGIONS.find(name => new RegExp(`${name}(?:県|都|府)?`).test(placeRaw));
     if (!region) continue;
     const profile = access(region, location);
     const details = clean(`${dateRaw} ${placeRaw}`);
@@ -277,7 +278,7 @@ function parseSea(markdown) {
         applicationNote:(details.match(/(?:応募締切|申込締切)[^。※]*/) || [])[0] || '',
         ageRestriction:/年齢制限|\d+歳[～〜-]\d+歳/.test(details), price:'原則無料（公式情報を確認）',
         accessRank:profile.rank, accessNote:profile.note, officialUrl, imageUrl, imageIsIllustration:false,
-        mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`,
+        mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`, scope:ALLOWED.has(region)?'首都圏':'全国',
         source:'海上自衛隊 イベント情報'
       });
     }
