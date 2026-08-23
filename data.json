@@ -1,12 +1,13 @@
 {
-  "updatedAt": "2026-08-23T17:55:00.368Z",
+  "updatedAt": "2026-08-23T18:00:22.864Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "policeSources": [
     "https://www.police.pref.chiba.jp/kohoka/orders_bandAct_04.html",
+    "https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html",
     "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/event/calendar/"
   ],
-  "count": 32,
+  "count": 33,
   "events": [
     {
       "id": "2026-08-24-神奈川-海上自衛隊-第2術科学校見学会（施設見学･体験喫食等）",
@@ -47,6 +48,26 @@
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E8%81%96%E5%BE%B3%E5%A4%A7%E5%AD%A6%E5%B7%9D%E4%B8%A6%E9%A6%99%E9%A0%86%E8%A8%98%E5%BF%B5%E8%AC%9B%E5%A0%82",
       "source": "千葉県警察 音楽隊"
+    },
+    {
+      "id": "2026-08-27-神奈川-第367回マリーンコンサート",
+      "date": "2026-08-27",
+      "region": "神奈川",
+      "branch": "警察",
+      "title": "第367回マリーンコンサート",
+      "location": "クイーンズスクエア横浜 クイーンズサークル",
+      "category": "警察音楽隊",
+      "application": false,
+      "applicationNote": "",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html#maricon",
+      "imageUrl": "https://www.police.pref.kanagawa.jp/assets/entry/a8050_05.jpg",
+      "imageIsIllustration": false,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%AF%E3%82%A4%E3%83%BC%E3%83%B3%E3%82%BA%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%E6%A8%AA%E6%B5%9C%20%E3%82%AF%E3%82%A4%E3%83%BC%E3%83%B3%E3%82%BA%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB",
+      "source": "神奈川県警察 音楽隊"
     },
     {
       "id": "2026-08-29-東京-夏休み特別イベント",
