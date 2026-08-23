@@ -34,9 +34,16 @@ Fixes: changed the display face to the heaviest available Japanese Gothic stack 
 
 Post-fix evidence: `qa/implementation.png` and `/tmp/jsdf-qa-comparison-redesign.png`. The final combined comparison shows matched headline emphasis, left-side contrast, photographic card hierarchy, deep navy overlays, and white action buttons. The absence of the three decorative hero buttons is an intentional user-requested simplification; branch filtering remains available immediately below the hero.
 
+### Iteration 4 — iPhone headline wrapping
+
+- P2: At 390px the first headline phrase wrapped, producing three visual lines.
+
+Fix: wrapped each intended line in a non-wrapping inline block and set the mobile display size to 31px with tighter tracking. Post-fix capture `/tmp/jsdf-implementation-mobile-final.png` measures 390px wide with no horizontal overflow and shows exactly two headline lines.
+
 ## Functional checks
 
 - Initial event render: 14 events.
+- Latest source-backed render: 15 events, including one current Maritime Self-Defense Force event from the JMSDF official event list.
 - Region, branch, access, and keyword controls render and remain usable.
 - Hero branch buttons update the branch filter.
 - Sea button correctly shows the current zero-result state rather than appearing inactive.

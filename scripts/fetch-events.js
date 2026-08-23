@@ -5,6 +5,8 @@ const path = require('node:path');
 
 const ROOT = path.resolve(__dirname, '..');
 const SOURCE = 'https://r.jina.ai/http://www.mod.go.jp/j/press/events/';
+const SEA_SOURCE = 'https://r.jina.ai/http://www.mod.go.jp/msdf/event/index.html';
+const SEA_OFFICIAL = 'https://www.mod.go.jp/msdf/event/index.html';
 const ALLOWED = new Set(['神奈川', '東京', '埼玉', '千葉', '茨城', '静岡', '山梨', '栃木']);
 const AIR_SOURCE = 'https://www.mod.go.jp/asdf/event/list.html';
 // 空自一覧は画面上の日付が取得用テキストから省かれるため、開催年の日付だけ補助登録。
@@ -57,7 +59,7 @@ function category(title) {
 function access(region, location) {
   const s = `${region} ${location}`;
   if (/オンライン/.test(s)) return { rank: '◎', note: 'オンライン参加' };
-  if (/入間基地|府中基地|広報センター|りっくんランド/.test(s)) return { rank: '◎', note: '駅から徒歩圏または公共交通が便利' };
+  if (/入間基地|府中基地|広報センター|りっくんランド|横須賀|田浦|市ヶ谷/.test(s)) return { rank: '◎', note: '駅から徒歩圏または公共交通が便利' };
   if (/百里基地|東富士|演習場|富士学校/.test(s)) return { rank: '△', note: '臨時交通・バス情報を要確認' };
   if (/茨城|静岡|栃木|山梨/.test(s)) return { rank: '○', note: '鉄道＋路線バス等を要確認' };
   return { rank: '○', note: '公共交通で日帰り圏' };
@@ -111,10 +113,49 @@ function parse(markdown) {
   return events;
 }
 
+function parseSea(markdown) {
+  const events = [];
+  const pattern = /[^\n]*### \[([^\]]+)\]\(([^)]+)\)\s*\n\n!\[[^\]]*\]\(([^)]+)\)\s*\n\n\| 開催日 \| ([^|]+) \|\n\| --- \|\n\| 開催場所 \| ([^|]+) \|/g;
+  for (const match of markdown.matchAll(pattern)) {
+    const [, titleRaw, officialUrl, imageRaw, dateRaw, placeRaw] = match;
+    const title = clean(titleRaw);
+    const location = clean(placeRaw).replace(/※.*$/, '').trim();
+    const region = [...ALLOWED].find(name => new RegExp(`${name}(?:県|都)?`).test(placeRaw));
+    if (!region) continue;
+    const profile = access(region, location);
+    const details = clean(`${dateRaw} ${placeRaw}`);
+    const imageUrl = imageRaw.replace(/^http:\/\//, 'https://');
+    for (const date of dates(dateRaw)) {
+      events.push({
+        id: `${date}-${region}-${title}`.replace(/\s/g, '-'), date, region, branch:'海自', title, location,
+        category:category(title), application:/事前申込|応募|抽選/.test(details),
+        applicationNote:(details.match(/(?:応募締切|申込締切)[^。※]*/) || [])[0] || '',
+        ageRestriction:/年齢制限|\d+歳[～〜-]\d+歳/.test(details), price:'原則無料（公式情報を確認）',
+        accessRank:profile.rank, accessNote:profile.note, officialUrl, imageUrl, imageIsIllustration:false,
+        mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`,
+        source:'海上自衛隊 イベント情報'
+      });
+    }
+  }
+  return events;
+}
+
 async function main() {
   const response = await fetch(SOURCE, { headers: { 'User-Agent': 'jsdf-events/1.0' } });
   if (!response.ok) throw new Error(`取得失敗: ${response.status}`);
   const markdown = await response.text();
+  let seaEvents = [];
+  try {
+    const seaResponse = await fetch(SEA_SOURCE, { headers: { 'User-Agent': 'jsdf-events/1.0' } });
+    if (!seaResponse.ok) throw new Error(`海自取得失敗: ${seaResponse.status}`);
+    seaEvents = parseSea(await seaResponse.text());
+  } catch (error) {
+    console.warn(error.message);
+    try {
+      const previous = JSON.parse(await fs.readFile(path.join(ROOT, 'data.json'), 'utf8'));
+      seaEvents = previous.events.filter(event => event.branch === '海自');
+    } catch {}
+  }
   const now = new Date();
   now.setHours(0, 0, 0, 0);
   const supplemental = AIR_SUPPLEMENTS.map(([date, region, title, location]) => {
@@ -126,12 +167,12 @@ async function main() {
       mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`,
       source:'航空自衛隊 イベント一覧' };
   });
-  const combined = [...parse(markdown), ...supplemental];
+  const combined = [...parse(markdown), ...seaEvents, ...supplemental];
   const unique = [...new Map(combined.map(e => [`${e.date}|${e.title.replace(/[（(].*$/,'')}`, e])).values()];
   const events = unique
     .filter(e => new Date(`${e.date}T00:00:00+09:00`) >= now)
     .sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title));
-  const data = { updatedAt: new Date().toISOString(), sourceUrl: 'https://www.mod.go.jp/j/press/events/', count: events.length, events };
+  const data = { updatedAt: new Date().toISOString(), sourceUrl: 'https://www.mod.go.jp/j/press/events/', seaSourceUrl: SEA_OFFICIAL, count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
   console.log(`${events.length}件を書き出しました`);
 }
