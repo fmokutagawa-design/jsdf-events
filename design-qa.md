@@ -40,6 +40,15 @@ Post-fix evidence: `qa/implementation.png` and `/tmp/jsdf-qa-comparison-redesign
 
 Fix: wrapped each intended line in a non-wrapping inline block and set the mobile display size to 31px with tighter tracking. Post-fix capture `/tmp/jsdf-implementation-mobile-final.png` measures 390px wide with no horizontal overflow and shows exactly two headline lines.
 
+### Iteration 5 — uncropped images and enlargement
+
+- P2: Event imagery used `object-fit: cover`, cropping posters and portrait-oriented official artwork.
+- The selected mock did not specify an image enlargement state; this is a user-requested functional extension.
+
+Fix: event images now use `object-fit: contain` against the existing navy card field. The image area is a keyboard-accessible button with a visible enlargement hint. A native modal dialog displays the full image within 94vw/88vh and supports its close button, backdrop click, and Escape.
+
+Post-fix evidence: `/tmp/jsdf-implementation-mobile-final.png` shows the uncropped card image; `/tmp/jsdf-lightbox-mobile.png` shows the complete official portrait poster at 390px viewport width.
+
 ## Functional checks
 
 - Initial event render: 14 events.
@@ -50,6 +59,7 @@ Fix: wrapped each intended line in a non-wrapping inline block and set the mobil
 - After removal of the hero shortcuts, the branch select correctly shows the current sea zero-result state.
 - No browser console or runtime errors during the final mobile check.
 - Image failures fall back to a branch-specific local image.
+- Image dialog opened with the correct official image URL and closed successfully before the branch-filter test.
 
 ## Final result
 
