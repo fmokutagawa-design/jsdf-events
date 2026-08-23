@@ -18,6 +18,7 @@ const CHIBA_POLICE_OFFICIAL = 'https://www.police.pref.chiba.jp/kohoka/orders_ba
 const KANAGAWA_POLICE_SOURCE = 'https://r.jina.ai/https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html';
 const KANAGAWA_POLICE_OFFICIAL = 'https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html';
 const TOKYO_POLICE_BASE = 'https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/event/calendar/';
+const TOKYO_POLICE_MUSIC_BASE = 'https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/music_band/calendar/';
 const LAND_BAND_SUPPLEMENTS = [
   ['2026-10-03','千葉','巡回演奏会in成田','成田国際文化会館 大ホール（千葉県成田市）'],
   ['2026-12-20','東京','第42回ふれあいコンサート','板橋区文化会館 大ホール（東京都板橋区）'],
@@ -183,7 +184,7 @@ function parseKanagawaPolice(markdown) {
   return out;
 }
 
-function parseTokyoPoliceCalendar(markdown, year, month) {
+function parseTokyoPoliceCalendar(markdown, year, month, kind = 'event') {
   const out = [];
   for (const row of markdown.split('\n').filter(line => line.startsWith('|'))) {
     for (const cell of row.split('|')) {
@@ -191,11 +192,16 @@ function parseTokyoPoliceCalendar(markdown, year, month) {
       if (!day) continue;
       for (const link of cell.matchAll(/\[([^\]]+)\]\((https:\/\/www\.keishicho\.metro\.tokyo\.lg\.jp\/[^)]+)\)/g)) {
         const title = clean(link[1]);
-        if (!/フェス|つどい|コンサート|音楽|展示|パト|白バイ|ふれあい|祭/.test(title)) continue;
+        if (/^Image\s*\d*:/i.test(title) || /\/images\//.test(link[2])) continue;
+        if (/採用|説明会/.test(title)) continue;
         const date = `${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+        const eventCategory = kind === 'music' || /音楽|コンサート/.test(title) ? '警察音楽隊'
+          : /二輪車|ライダー|バイクスクール/.test(title) ? '警察・交通教室'
+          : /セミナー|講習/.test(title) ? '警察・講習'
+          : /白バイ|パト/.test(title) ? '警察車両' : '警察イベント';
         out.push(makeEvent({ date, region:'東京', branch:'警察', title, location:'東京都（詳細は公式サイトで確認）', officialUrl:link[2],
           imageUrl:'./assets/event-police.svg', source:'警視庁 イベントカレンダー', details:title,
-          forceCategory:/音楽|コンサート/.test(title) ? '警察音楽隊' : /白バイ|パト/.test(title) ? '警察車両' : '警察イベント' }));
+          forceCategory:eventCategory }));
       }
     }
   }
@@ -291,6 +297,9 @@ async function main() {
   const tokyoPolicePages = await Promise.all(calendarMonths.map(([y,m]) => fetchOptional(
     `https://r.jina.ai/${TOKYO_POLICE_BASE}calendar${y}${String(m).padStart(2,'0')}.html`, '警視庁カレンダー')));
   const tokyoPoliceEvents = tokyoPolicePages.flatMap((text, i) => parseTokyoPoliceCalendar(text, ...calendarMonths[i]));
+  const tokyoPoliceMusicPages = await Promise.all(calendarMonths.map(([y,m]) => fetchOptional(
+    `https://r.jina.ai/${TOKYO_POLICE_MUSIC_BASE}calendar${y}${String(m).padStart(2,'0')}.html`, '警視庁音楽隊カレンダー')));
+  const tokyoPoliceMusicEvents = tokyoPoliceMusicPages.flatMap((text, i) => parseTokyoPoliceCalendar(text, ...calendarMonths[i], 'music'));
   let seaEvents = [];
   try {
     const seaResponse = await fetch(SEA_SOURCE, { headers: { 'User-Agent': 'jsdf-events/1.0' } });
@@ -322,10 +331,10 @@ async function main() {
   const musicFestivalEvents = parseMusicFestival(musicFestivalText);
   const chibaPoliceEvents = parseChibaPolice(chibaPoliceText);
   const kanagawaPoliceEvents = parseKanagawaPolice(kanagawaPoliceText);
-  console.log(`追加取得: 第1音楽隊${landBandEvents.length}件 / 音楽まつり${musicFestivalEvents.length}件 / 千葉県警${chibaPoliceEvents.length}件 / 神奈川県警${kanagawaPoliceEvents.length}件 / 警視庁${tokyoPoliceEvents.length}件`);
+  console.log(`追加取得: 第1音楽隊${landBandEvents.length}件 / 音楽まつり${musicFestivalEvents.length}件 / 千葉県警${chibaPoliceEvents.length}件 / 神奈川県警${kanagawaPoliceEvents.length}件 / 警視庁${tokyoPoliceEvents.length + tokyoPoliceMusicEvents.length}件`);
   const portEvents = PORT_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
   const combined = [...parse(markdown), ...seaEvents, ...supplemental, ...landBandEvents, ...portEvents,
-    ...musicFestivalEvents, ...chibaPoliceEvents, ...kanagawaPoliceEvents, ...tokyoPoliceEvents];
+    ...musicFestivalEvents, ...chibaPoliceEvents, ...kanagawaPoliceEvents, ...tokyoPoliceEvents, ...tokyoPoliceMusicEvents];
   const unique = [...new Map(combined.map(e => [`${e.date}|${e.title.replace(/[（(].*$/,'')}`, e])).values()];
   const events = unique
     .filter(e => new Date(`${e.date}T00:00:00+09:00`) >= now)
