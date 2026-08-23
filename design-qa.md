@@ -55,6 +55,12 @@ Post-fix evidence: `/tmp/jsdf-implementation-mobile-final.png` shows the uncropp
 
 Fix: reduced the mobile hero to 400px, vertically centered its copy, tightened the inner padding, and adjusted the background focal position to keep the ship behind the headline. Desktop dimensions are unchanged.
 
+### Iteration 7 — mobile image visibility
+
+- P2: The mobile-only vertical overlay darkened the full photograph, especially the ship and visitors on the right.
+
+Fix: replaced it with the desktop concept's left-to-right treatment—dark behind the copy, fading to fully transparent at the right edge. Strengthened text shadow locally instead of dimming the photograph. The right-side ship and people now retain their original brightness and detail.
+
 ## Functional checks
 
 - Initial event render: 14 events.
