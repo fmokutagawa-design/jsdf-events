@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="警察イベントのイメージ">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#061829"/><stop offset="1" stop-color="#174e78"/></linearGradient><radialGradient id="red"><stop stop-color="#ffedf0"/><stop offset=".2" stop-color="#ff5467"/><stop offset="1" stop-color="#851425"/></radialGradient></defs>
+  <rect width="1200" height="800" fill="url(#bg)"/><path d="M0 610Q300 500 610 620T1200 570V800H0Z" fill="#07111c" opacity=".8"/>
+  <g transform="translate(175 265)"><path d="M95 205h655l-82-124c-20-31-48-45-89-45H295c-42 0-72 15-96 48Z" fill="#f4f7fa"/><path d="M235 67h344c24 0 38 8 50 27l51 77H171Z" fill="#8cc6e5" opacity=".8"/><rect x="40" y="190" width="770" height="165" rx="34" fill="#f7f9fb"/><path d="M40 225h770v71H40Z" fill="#175d8a"/><circle cx="201" cy="354" r="70" fill="#111a22"/><circle cx="201" cy="354" r="31" fill="#aeb8bf"/><circle cx="648" cy="354" r="70" fill="#111a22"/><circle cx="648" cy="354" r="31" fill="#aeb8bf"/><rect x="365" y="0" width="128" height="40" rx="12" fill="url(#red)"/><rect x="492" y="0" width="128" height="40" rx="12" fill="#67bdf1"/></g>
+  <text x="600" y="118" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="54" font-weight="800" letter-spacing="8">POLICE EVENT</text>
+</svg>
