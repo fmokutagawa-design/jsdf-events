@@ -150,7 +150,8 @@ function parseChibaPolice(markdown) {
     const location = clean((block.match(/場所\s*([^\n]+)/) || [])[1] || '千葉県内');
     const date = japaneseDate(dateText, 2026);
     if (!title || !date) continue;
-    const eventImage = (block.match(/!\[[^\]]*\]\((https?:\/\/[^)]+\.(?:jpg|jpeg|png))\)/i) || [])[1];
+    // PDFアイコン等の極小PNGをイベント写真と誤認しない。公式ページ内のJPEGだけを写真候補にする。
+    const eventImage = (block.match(/!\[[^\]]*\]\((https?:\/\/[^)]+\.(?:jpg|jpeg))\)/i) || [])[1];
     out.push(makeEvent({ date, region:'千葉', branch:'警察', title, location, officialUrl:CHIBA_POLICE_OFFICIAL,
       imageUrl:eventImage || 'https://www.police.pref.chiba.jp/content/common/000071050.jpg', source:'千葉県警察 音楽隊', details:block,
       forceCategory:/コンサート|音楽隊|まつり/.test(title) ? '警察音楽隊' : '警察イベント' }));
