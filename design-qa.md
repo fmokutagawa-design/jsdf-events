@@ -49,6 +49,12 @@ Fix: event images now use `object-fit: contain` against the existing navy card f
 
 Post-fix evidence: `/tmp/jsdf-implementation-mobile-final.png` shows the uncropped card image; `/tmp/jsdf-lightbox-mobile.png` shows the complete official portrait poster at 390px viewport width.
 
+### Iteration 6 — mobile hero height
+
+- P2: The iPhone hero remained 520px tall after the desktop-led redesign, leaving excessive sky above the headline and delaying the event filters.
+
+Fix: reduced the mobile hero to 400px, vertically centered its copy, tightened the inner padding, and adjusted the background focal position to keep the ship behind the headline. Desktop dimensions are unchanged.
+
 ## Functional checks
 
 - Initial event render: 14 events.
