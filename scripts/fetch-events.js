@@ -63,6 +63,12 @@ function access(region, location) {
   return { rank: '○', note: '公共交通で日帰り圏' };
 }
 
+function fallbackImage(branch, title = '') {
+  if (branch === '空自' || /航空|飛行|エアフェスタ|ブルーインパルス/.test(title)) return './assets/event-air.jpg';
+  if (branch === '海自' || /艦|港|船/.test(title)) return './assets/event-sea.jpg';
+  return './assets/event-land.jpg';
+}
+
 function parse(markdown) {
   const events = [];
   for (const line of markdown.split('\n')) {
@@ -74,6 +80,8 @@ function parse(markdown) {
     const title = clean(eventRaw);
     const location = clean(placeRaw);
     const officialUrl = links(eventRaw)[0] || links(contactRaw)[0] || SOURCE;
+    const rawBranch = clean(branchRaw);
+    const imageUrl = /\.(?:png|jpe?g|webp)(?:\?.*)?$/i.test(officialUrl) ? officialUrl : fallbackImage(rawBranch, title);
     const eventDates = dates(dateRaw);
     const appText = clean(eventRaw);
     const profile = access(region, location);
@@ -82,7 +90,7 @@ function parse(markdown) {
         id: `${date}-${region}-${title}`.replace(/\s/g, '-'),
         date,
         region,
-        branch: clean(branchRaw),
+        branch: rawBranch === '地本' ? '地方協力本部' : rawBranch,
         title,
         location,
         category: category(title),
@@ -93,6 +101,8 @@ function parse(markdown) {
         accessRank: profile.rank,
         accessNote: profile.note,
         officialUrl,
+        imageUrl,
+        imageIsIllustration: imageUrl.startsWith('./assets/'),
         mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`,
         source: '防衛省 イベント・交流活動'
       });
@@ -112,7 +122,8 @@ async function main() {
     return { id:`${date}-${region}-${title}`, date, region, branch:'空自', title, location,
       category:category(title), application:false, applicationNote:'', ageRestriction:false,
       price:'原則無料（公式情報を確認）', accessRank:profile.rank, accessNote:profile.note,
-      officialUrl:AIR_SOURCE, mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`,
+      officialUrl:AIR_SOURCE, imageUrl:'./assets/event-air.jpg', imageIsIllustration:true,
+      mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`,
       source:'航空自衛隊 イベント一覧' };
   });
   const combined = [...parse(markdown), ...supplemental];
