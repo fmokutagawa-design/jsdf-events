@@ -173,9 +173,25 @@ function decodeHtml(text = '') {
     .replace(/&amp;/gi, '&').replace(/&gt;/gi, '>').replace(/&lt;/gi, '<').replace(/&quot;/gi, '"').replace(/\s+/g, ' ').trim();
 }
 function parseTokyoBayRouteVessels(html = '', source) {
-  const tbody = html.match(/<tbody>([\s\S]*?)<\/tbody>/i)?.[1] || '';
   const year = Number(html.match(/最終更新日時:[\s\S]*?(20\d{2})年/i)?.[1]) || new Date().getFullYear();
   const rows = [];
+  if (source.key === 'uraga') {
+    for (const table of html.matchAll(/<table[^>]*class="generalTB"[^>]*>([\s\S]*?)<\/table>/gi)) {
+      const direction = /南航船/.test(table[1]) ? '南航' : '北航';
+      const tbody = table[1].match(/<tbody>([\s\S]*?)<\/tbody>/i)?.[1] || '';
+      for (const tr of tbody.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)) {
+        const cells = [...tr[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map(m => decodeHtml(m[1]));
+        if (cells.length < 10 || !/^\d{2}\/\d{2}\s+\d{2}:\d{2}$/.test(cells[0])) continue;
+        const [stamp,name,vesselClass,tonnage,length,sizeType,country,destination,nakanose,pilot] = cells;
+        const vessel = { id:`jcg-${source.key}-${stamp}-${name}-${direction}`.replace(/\s+/g, '-'), name:name || '船名未登録', callSign:'', country,
+          vesselClass:vesselClass || '船種未公表', status:direction, berth:destination, arrival:`${year}/${stamp}`, departure:'', agent:'',
+          length, tonnage, draft:'', pilot, sizeType, nakanose, port:source.name, area:source.area, sourceGroup:'海上保安庁 東京湾海上交通センター', sourceUrl:source.url };
+        rows.push({ ...vessel, category:classifyPortVessel(vessel) });
+      }
+    }
+    return rows;
+  }
+  const tbody = html.match(/<tbody>([\s\S]*?)<\/tbody>/i)?.[1] || '';
   for (const tr of tbody.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)) {
     const cells = [...tr[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map(m => decodeHtml(m[1]));
     if (cells.length < 10 || !/^\d{2}\/\d{2}\s+\d{2}:\d{2}$/.test(cells[0])) continue;
