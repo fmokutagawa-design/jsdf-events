@@ -23,6 +23,15 @@ const FOREIGN_VESSEL_SOURCES = [
   'https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/',
   'https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/'
 ];
+const BASE_OPEN_SOURCES = [
+  'https://www.mod.go.jp/msdf/yokosuka/news-list/',
+  'https://www.mod.go.jp/msdf/kure/announcement/',
+  'https://www.mod.go.jp/msdf/sasebo/2_pr_event/2_pr_event.html',
+  'https://www.mod.go.jp/msdf/maizuru/news/',
+  'https://www.mod.go.jp/msdf/oominato/',
+  'https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/',
+  'https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/'
+];
 const ALLOWED = new Set(['神奈川', '東京', '埼玉', '千葉', '茨城', '静岡', '山梨', '栃木']);
 const ALL_REGIONS = ['北海道','青森','岩手','宮城','秋田','山形','福島','茨城','栃木','群馬','埼玉','千葉','東京','神奈川','新潟','富山','石川','福井','山梨','長野','岐阜','静岡','愛知','三重','滋賀','京都','大阪','兵庫','奈良','和歌山','鳥取','島根','岡山','広島','山口','徳島','香川','愛媛','高知','福岡','佐賀','長崎','熊本','大分','宮崎','鹿児島','沖縄'];
 const AIR_SOURCE = 'https://www.mod.go.jp/asdf/event/list.html';
@@ -128,6 +137,14 @@ function inferSourceType(event) {
   if (event.branch === '海自') return '海自公式';
   if (event.branch === '警察') return '警察公式';
   return '自衛隊公式';
+}
+
+function inferOpenType(event) {
+  const text = `${event.title} ${event.category}`;
+  if (/フリート\s*(?:ウィーク|フェスタ)|国際観艦式/i.test(text)) return 'フリートイベント';
+  if (/基地(?:一般)?開放|基地祭|一般開放|地方総監部一般公開|スプリングフェスタ|フレンドシップデー/i.test(text)) return '基地一般開放';
+  if (/艦艇|護衛艦|掃海|潜水艦|ミサイル艇|船舶一般公開|軍港/.test(text)) return '艦艇・港湾公開';
+  return '';
 }
 
 function makeEvent({ date, region, branch, title, location, officialUrl, imageUrl, source, sourceType, details = '', forceCategory }) {
@@ -397,11 +414,11 @@ async function main() {
   const unique = [...new Map(combined.map(e => [`${e.date}|${e.title.replace(/[（(].*$/,'')}`, e])).values()];
   const events = unique
     .filter(e => new Date(`${e.date}T00:00:00+09:00`) >= now)
-    .map(e => ({ ...e, sourceType:inferSourceType(e) }))
+    .map(e => ({ ...e, sourceType:inferSourceType(e), openType:inferOpenType(e) }))
     .sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title));
   const data = { updatedAt: new Date().toISOString(), sourceUrl: 'https://www.mod.go.jp/j/press/events/', seaSourceUrl: SEA_OFFICIAL,
     seaSources:[SEA_OFFICIAL, SEA_KURE_OFFICIAL, SEA_TATEYAMA_OFFICIAL],
-    portSources:PORT_OFFICIAL_SOURCES, foreignVesselSources:FOREIGN_VESSEL_SOURCES,
+    portSources:PORT_OFFICIAL_SOURCES, foreignVesselSources:FOREIGN_VESSEL_SOURCES, baseOpenSources:BASE_OPEN_SOURCES,
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE], count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
   console.log(`${events.length}件を書き出しました`);
