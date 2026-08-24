@@ -110,6 +110,13 @@ const SHIP_WATCH_SOURCES = [
   { name:'オーストラリア国防省 Navy News', url:'https://www.defence.gov.au/news-events' },
   { name:'フランス海軍 Actualites', url:'https://www.defense.gouv.fr/marine/actualites' }
 ];
+const SHIP_WATCH_PORTS = [
+  { name:'横須賀港', area:'神奈川', coverage:'海自・米海軍・自治体発表を巡回', sourceUrl:'https://www.mod.go.jp/msdf/yokosuka/news-list/', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E9%A0%88%E8%B3%80%E6%B8%AF' },
+  { name:'横浜港（大さん橋・新港・山下・大黒・瑞穂）', area:'神奈川', coverage:'公式入出港予定・在港船・岸壁情報を巡回', sourceUrl:'https://www.port.city.yokohama.lg.jp/APP/Pves0030InPlanGet?hid_gamenid=Jyoho03&hid_sessionid=&hid_userid=', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%B5%9C%E6%B8%AF%20%E5%A4%A7%E3%81%95%E3%82%93%E6%A9%8B' },
+  { name:'東京港（晴海・竹芝・青海）', area:'東京', coverage:'東京都港湾局・港湾イベント発表を巡回', sourceUrl:'https://www.kouwan.metro.tokyo.lg.jp/kanko/', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E6%99%B4%E6%B5%B7%E5%9F%A0%E9%A0%AD' },
+  { name:'千葉港・船橋港', area:'千葉', coverage:'千葉県港湾課・自治体発表を巡回', sourceUrl:'https://www.pref.chiba.lg.jp/kouwan/', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E5%8D%83%E8%91%89%E6%B8%AF' },
+  { name:'木更津港', area:'千葉', coverage:'千葉県港湾課・木更津港発表を巡回', sourceUrl:'https://www.pref.chiba.lg.jp/kouwan/chibanokouwan/kisarazu.html', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E6%9C%A8%E6%9B%B4%E6%B4%A5%E6%B8%AF' }
+];
 function buildShipWatches(now) {
   const today = now.toISOString().slice(0, 10);
   const rank = item => item.date >= today ? 0 : (item.endDate || item.date) >= today ? 1 : 2;
@@ -704,7 +711,7 @@ async function main() {
   if (process.argv.includes('--ship-watch-only')) {
     const now = new Date(); now.setHours(0, 0, 0, 0);
     const shipWatches = buildShipWatches(now);
-    const data = { ...previousData, updatedAt:new Date().toISOString(), shipWatchSources:SHIP_WATCH_SOURCES,
+    const data = { ...previousData, updatedAt:new Date().toISOString(), shipWatchSources:SHIP_WATCH_SOURCES, shipWatchPorts:SHIP_WATCH_PORTS,
       shipWatchPolicy:'公式発表された行動予定・寄港・一般公開と直近45日程度の外国艦活動のみ掲載。現在位置、目撃情報、未確認情報は扱わない。',
       shipWatchCount:shipWatches.length, shipWatches };
     await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
@@ -824,7 +831,7 @@ async function main() {
     musicDirectorySource:MUSIC_DIRECTORY_OFFICIAL,
     musicSources:[LAND_BAND_OFFICIAL, CENTRAL_BAND_OFFICIAL, EASTERN_BAND_OFFICIAL, TOKYO_BAND_OFFICIAL, AIR_CENTRAL_BAND_OFFICIAL, MUSIC_FESTIVAL_OFFICIAL],
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE, TOKYO_POLICE_BAND_OFFICIAL],
-    coastGuardSources:[COAST_GUARD_OFFICIAL], shipWatchSources:SHIP_WATCH_SOURCES,
+    coastGuardSources:[COAST_GUARD_OFFICIAL], shipWatchSources:SHIP_WATCH_SOURCES, shipWatchPorts:SHIP_WATCH_PORTS,
     shipWatchPolicy:'公式発表された行動予定・寄港・一般公開と直近45日程度の外国艦活動のみ掲載。現在位置、目撃情報、未確認情報は扱わない。',
     shipWatchCount:shipWatches.length, shipWatches, count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');

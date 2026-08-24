@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T21:28:50.504Z",
+  "updatedAt": "2026-08-24T21:36:12.936Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -1893,6 +1893,43 @@
       "source": "航空自衛隊 イベント一覧",
       "sourceType": "自衛隊公式",
       "openType": ""
+    }
+  ],
+  "shipWatchPorts": [
+    {
+      "name": "横須賀港",
+      "area": "神奈川",
+      "coverage": "海自・米海軍・自治体発表を巡回",
+      "sourceUrl": "https://www.mod.go.jp/msdf/yokosuka/news-list/",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E9%A0%88%E8%B3%80%E6%B8%AF"
+    },
+    {
+      "name": "横浜港（大さん橋・新港・山下・大黒・瑞穂）",
+      "area": "神奈川",
+      "coverage": "公式入出港予定・在港船・岸壁情報を巡回",
+      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0030InPlanGet?hid_gamenid=Jyoho03&hid_sessionid=&hid_userid=",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%B5%9C%E6%B8%AF%20%E5%A4%A7%E3%81%95%E3%82%93%E6%A9%8B"
+    },
+    {
+      "name": "東京港（晴海・竹芝・青海）",
+      "area": "東京",
+      "coverage": "東京都港湾局・港湾イベント発表を巡回",
+      "sourceUrl": "https://www.kouwan.metro.tokyo.lg.jp/kanko/",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%99%B4%E6%B5%B7%E5%9F%A0%E9%A0%AD"
+    },
+    {
+      "name": "千葉港・船橋港",
+      "area": "千葉",
+      "coverage": "千葉県港湾課・自治体発表を巡回",
+      "sourceUrl": "https://www.pref.chiba.lg.jp/kouwan/",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8D%83%E8%91%89%E6%B8%AF"
+    },
+    {
+      "name": "木更津港",
+      "area": "千葉",
+      "coverage": "千葉県港湾課・木更津港発表を巡回",
+      "sourceUrl": "https://www.pref.chiba.lg.jp/kouwan/chibanokouwan/kisarazu.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9C%A8%E6%9B%B4%E6%B4%A5%E6%B8%AF"
     }
   ]
 }
