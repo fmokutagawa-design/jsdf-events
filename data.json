@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T14:10:50.952Z",
+  "updatedAt": "2026-08-24T14:17:10.994Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -234,12 +234,13 @@
   "policeSources": [
     "https://www.police.pref.chiba.jp/kohoka/orders_bandAct_04.html",
     "https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html",
-    "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/event/calendar/"
+    "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/event/calendar/",
+    "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/shokai/katsudo/ongaku/index.html"
   ],
   "coastGuardSources": [
     "https://www.kaiho.mlit.go.jp/doc/event/jyouhou.html"
   ],
-  "count": 62,
+  "count": 63,
   "events": [
     {
       "id": "2026-08-24-東京-海上自衛隊-第2術科学校見学会（施設見学･体験喫食等）",
@@ -1527,6 +1528,28 @@
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%B0%8F%E7%94%B0%E5%8E%9F%E4%B8%89%E3%81%AE%E4%B8%B8%E3%83%9B%E3%83%BC%E3%83%AB%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB",
       "source": "神奈川県警察 音楽隊",
+      "sourceType": "警察公式",
+      "openType": ""
+    },
+    {
+      "id": "2026-12-09-東京-グランドコンサート-2026",
+      "date": "2026-12-09",
+      "region": "東京",
+      "branch": "警察",
+      "title": "グランドコンサート 2026｜19:00開演",
+      "location": "東京国際フォーラム ホールC",
+      "category": "警察音楽隊",
+      "application": true,
+      "applicationNote": "応募期間:2026年9月7日〜9月20日",
+      "ageRestriction": true,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/shokai/katsudo/ongaku/grand.html",
+      "imageUrl": "./assets/event-police.svg",
+      "imageIsIllustration": true,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E5%9B%BD%E9%9A%9B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A9%E3%83%A0%20%E3%83%9B%E3%83%BC%E3%83%ABC",
+      "source": "警視庁 音楽隊特設ページ",
       "sourceType": "警察公式",
       "openType": ""
     },

@@ -99,6 +99,9 @@ const COAST_GUARD_SOURCE = 'https://r.jina.ai/https://www.kaiho.mlit.go.jp/doc/e
 const COAST_GUARD_OFFICIAL = 'https://www.kaiho.mlit.go.jp/doc/event/jyouhou.html';
 const TOKYO_POLICE_BASE = 'https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/event/calendar/';
 const TOKYO_POLICE_MUSIC_BASE = 'https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/music_band/calendar/';
+const TOKYO_POLICE_BAND_OFFICIAL = 'https://www.keishicho.metro.tokyo.lg.jp/about_mpd/shokai/katsudo/ongaku/index.html';
+const TOKYO_POLICE_GRAND_OFFICIAL = 'https://www.keishicho.metro.tokyo.lg.jp/about_mpd/shokai/katsudo/ongaku/grand.html';
+const TOKYO_POLICE_GRAND_SOURCE = `https://r.jina.ai/${TOKYO_POLICE_GRAND_OFFICIAL}?checked=${new Date().toISOString().slice(0, 10)}`;
 const LAND_BAND_SUPPLEMENTS = [
   ['2026-10-03','千葉','巡回演奏会in成田','成田国際文化会館 大ホール（千葉県成田市）'],
   ['2026-12-20','東京','第42回ふれあいコンサート','板橋区文化会館 大ホール（東京都板橋区）'],
@@ -469,6 +472,16 @@ function parseTokyoPoliceCalendar(markdown, year, month, kind = 'event') {
   return out;
 }
 
+function parseTokyoPoliceGrand(markdown) {
+  const text = markdown.normalize('NFKC');
+  const title = clean((text.match(/^#\s+(グランドコンサート[^\n]*)/m) || [])[1] || 'グランドコンサート 2026');
+  const date = japaneseDate((text.match(/## 日時[\s\S]{0,80}?(令和\d+年\d{1,2}月\d{1,2}日)/) || [])[1] || '');
+  const location = clean((text.match(/## 場所[\s\S]{0,100}?###\s+([^\n]+)/) || [])[1] || '東京国際フォーラム ホールC');
+  if (!date || !title) return [];
+  return [makeEvent({ date, region:'東京', branch:'警察', title, location, officialUrl:TOKYO_POLICE_GRAND_OFFICIAL,
+    source:'警視庁 音楽隊特設ページ', details:text, forceCategory:'警察音楽隊' })];
+}
+
 async function fetchOptional(url, label) {
   try {
     const response = await fetch(url, { headers: { 'User-Agent': 'jsdf-events/1.0' }, signal:AbortSignal.timeout(20000) });
@@ -675,6 +688,8 @@ async function main() {
   const tokyoPoliceMusicPages = await Promise.all(calendarMonths.map(([y,m]) => fetchOptional(
     `https://r.jina.ai/${TOKYO_POLICE_MUSIC_BASE}calendar${y}${String(m).padStart(2,'0')}.html`, '警視庁音楽隊カレンダー')));
   const tokyoPoliceMusicEvents = tokyoPoliceMusicPages.flatMap((text, i) => parseTokyoPoliceCalendar(text, ...calendarMonths[i], 'music'));
+  const tokyoPoliceGrandText = await fetchOptional(TOKYO_POLICE_GRAND_SOURCE, '警視庁音楽隊特設ページ');
+  const tokyoPoliceGrandEvents = parseTokyoPoliceGrand(tokyoPoliceGrandText);
   let seaEvents = [];
   try {
     const seaResponse = await fetch(SEA_SOURCE, { headers: { 'User-Agent': 'jsdf-events/1.0' } });
@@ -726,12 +741,12 @@ async function main() {
   const portEvents = PORT_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
   const officialTicketEvents = OFFICIAL_TICKET_EVENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
   const regionalEvents = REGIONAL_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
-  const optionalSuccesses = [landBandText, centralBandText, easternBandText, tokyoBandText, tokyoBandHomeText, airCentralBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, coastGuardText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText,
+  const optionalSuccesses = [landBandText, centralBandText, easternBandText, tokyoBandText, tokyoBandHomeText, airCentralBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, coastGuardText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText, tokyoPoliceGrandText,
     ...tokyoPolicePages, ...tokyoPoliceMusicPages].filter(Boolean).length;
   const degraded = optionalSuccesses < 6;
   if (degraded) console.warn(`取得先障害を検出: 前回の正常データを保持します（成功${optionalSuccesses}系統）`);
   const combined = [...(degraded ? previousData.events : []), ...parse(markdown), ...seaEvents, ...seaRegionalEvents, ...unitEvents, ...cocoyokoBaseEvents, ...supplemental, ...landBandEvents, ...centralBandEvents, ...directoryBandEvents, ...portEvents, ...officialTicketEvents, ...regionalEvents,
-    ...musicFestivalEvents, ...chibaPoliceEvents, ...kanagawaPoliceEvents, ...coastGuardEvents, ...tokyoPoliceEvents, ...tokyoPoliceMusicEvents];
+    ...musicFestivalEvents, ...chibaPoliceEvents, ...kanagawaPoliceEvents, ...coastGuardEvents, ...tokyoPoliceEvents, ...tokyoPoliceMusicEvents, ...tokyoPoliceGrandEvents];
   const unique = [...new Map(combined.map(e => [`${e.date}|${e.title.replace(/[（(].*$/,'')}`, e])).values()];
   const events = unique
     .filter(e => !isCancelled(e))
@@ -748,7 +763,7 @@ async function main() {
     seaUnitSources:unitSourceStatus,
     musicDirectorySource:MUSIC_DIRECTORY_OFFICIAL,
     musicSources:[LAND_BAND_OFFICIAL, CENTRAL_BAND_OFFICIAL, EASTERN_BAND_OFFICIAL, TOKYO_BAND_OFFICIAL, AIR_CENTRAL_BAND_OFFICIAL, MUSIC_FESTIVAL_OFFICIAL],
-    policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE],
+    policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE, TOKYO_POLICE_BAND_OFFICIAL],
     coastGuardSources:[COAST_GUARD_OFFICIAL], count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
   console.log(`${events.length}件を書き出しました`);
