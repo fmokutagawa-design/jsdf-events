@@ -78,6 +78,13 @@ const LAND_BAND_SOURCE = 'https://r.jina.ai/http://www.mod.go.jp/gsdf/eae/1d/eve
 const LAND_BAND_OFFICIAL = 'https://www.mod.go.jp/gsdf/eae/1d/event/1band.html';
 const CENTRAL_BAND_OFFICIAL = 'https://www.mod.go.jp/gsdf/central/concert/';
 const CENTRAL_BAND_SOURCE = `https://r.jina.ai/${CENTRAL_BAND_OFFICIAL}?checked=${new Date().toISOString().slice(0, 10)}`;
+const MUSIC_DIRECTORY_OFFICIAL = 'https://ajda.jp/publics/index/64/';
+const EASTERN_BAND_OFFICIAL = 'https://www.mod.go.jp/gsdf/ea/eaband/ensoukai.html';
+const EASTERN_BAND_SOURCE = `https://r.jina.ai/${EASTERN_BAND_OFFICIAL}?checked=${new Date().toISOString().slice(0, 10)}`;
+const TOKYO_BAND_OFFICIAL = 'https://www.mod.go.jp/msdf/application/tokyoband/index.html';
+const TOKYO_BAND_SOURCE = `https://r.jina.ai/${TOKYO_BAND_OFFICIAL}?checked=${new Date().toISOString().slice(0, 10)}`;
+const AIR_CENTRAL_BAND_OFFICIAL = 'https://www.mod.go.jp/asdf/acb/concertinfo/index.html';
+const AIR_CENTRAL_BAND_SOURCE = `https://r.jina.ai/${AIR_CENTRAL_BAND_OFFICIAL}?checked=${new Date().toISOString().slice(0, 10)}`;
 const MUSIC_FESTIVAL_SOURCE = 'https://r.jina.ai/http://www.mod.go.jp/gsdf/event/marching_festival/festival2026/';
 const MUSIC_FESTIVAL_OFFICIAL = 'https://www.mod.go.jp/gsdf/event/marching_festival/festival2026/';
 const CHIBA_POLICE_SOURCE = 'https://r.jina.ai/https://www.police.pref.chiba.jp/kohoka/orders_bandAct_04.html';
@@ -307,6 +314,40 @@ function parseCentralBand(markdown) {
     out.push(makeEvent({ date, region, branch:'陸自', title, location,
       officialUrl:detailLink || CENTRAL_BAND_OFFICIAL, imageUrl,
       source:'陸上自衛隊 中央音楽隊', details:block, forceCategory:'音楽隊' }));
+  }
+  return out;
+}
+
+function parseEasternBand(markdown) {
+  const text = markdown.normalize('NFKC');
+  const date = japaneseDate((text.match(/日時[:：]\s*([^\n]+)/) || [])[1] || text);
+  const title = clean((text.match(/\*\*([^*]*第\d+回[^*]*演奏会)\*\*/) || [])[1] || '');
+  const location = clean((text.match(/会場[:：]\s*([^\n（]+)/) || [])[1] || '東京芸術劇場 コンサートホール');
+  const imageUrl = (text.match(/!\[[^\]]*\]\((https?:\/\/[^)]+\.(?:png|jpe?g))\)/i) || [])[1];
+  return date && title ? [makeEvent({ date, region:'東京', branch:'陸自', title, location, officialUrl:EASTERN_BAND_OFFICIAL,
+    imageUrl, source:'陸上自衛隊 東部方面音楽隊', details:text, forceCategory:'音楽隊' })] : [];
+}
+
+function parseTokyoBand(markdown) {
+  const text = markdown.normalize('NFKC');
+  const title = clean((text.match(/海上自衛隊東京音楽隊\s+第\d+回定例演奏会/) || [])[0] || '');
+  const date = japaneseDate((text.match(/演奏会日時[\s\S]{0,120}?(20\d{2}年\d{1,2}月\d{1,2}日)/) || [])[1] || '');
+  const location = clean((text.match(/### 会場[\s\S]{0,100}?\n\s*([^\n]+)/) || [])[1] || '文京シビックホール 大ホール');
+  const imageUrl = (text.match(/!\[[^\]]*\]\((https?:\/\/[^)]+\/brassband\.jpg)\)/i) || [])[1];
+  return date && title ? [makeEvent({ date, region:'東京', branch:'海自', title, location, officialUrl:TOKYO_BAND_OFFICIAL,
+    imageUrl, source:'海上自衛隊 東京音楽隊', details:text, forceCategory:'音楽隊' })] : [];
+}
+
+function parseAirCentralBand(markdown) {
+  const out = [];
+  for (const row of markdown.normalize('NFKC').split('\n').filter(line => /^\|/.test(line))) {
+    const cells = row.split('|').slice(1, -1).map(clean);
+    const date = japaneseDate(cells[0] || '');
+    const link = (cells[2] || '').match(/\[([^\]]+)\]\(([^)]+)\)/);
+    if (!date || !link) continue;
+    const location = clean(cells[1] || '東京都内');
+    out.push(makeEvent({ date, region:/東京/.test(location) ? '東京' : 'その他', branch:'空自', title:link[1], location,
+      officialUrl:link[2], source:'航空自衛隊 航空中央音楽隊', details:row, forceCategory:'音楽隊' }));
   }
   return out;
 }
@@ -578,8 +619,10 @@ async function main() {
   const response = await fetch(SOURCE, { headers: { 'User-Agent': 'jsdf-events/1.0' } });
   if (!response.ok) throw new Error(`取得失敗: ${response.status}`);
   const markdown = await response.text();
-  const [landBandText, centralBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, coastGuardText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText] = await Promise.all([
-    fetchOptional(LAND_BAND_SOURCE, '第1音楽隊'), fetchOptional(CENTRAL_BAND_SOURCE, '中央音楽隊'), fetchOptional(MUSIC_FESTIVAL_SOURCE, '自衛隊音楽まつり'),
+  const [landBandText, centralBandText, easternBandText, tokyoBandText, airCentralBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, coastGuardText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText] = await Promise.all([
+    fetchOptional(LAND_BAND_SOURCE, '第1音楽隊'), fetchOptional(CENTRAL_BAND_SOURCE, '中央音楽隊'),
+    fetchOptional(EASTERN_BAND_SOURCE, '東部方面音楽隊'), fetchOptional(TOKYO_BAND_SOURCE, '東京音楽隊'), fetchOptional(AIR_CENTRAL_BAND_SOURCE, '航空中央音楽隊'),
+    fetchOptional(MUSIC_FESTIVAL_SOURCE, '自衛隊音楽まつり'),
     fetchOptional(CHIBA_POLICE_SOURCE, '千葉県警音楽隊'), fetchOptional(KANAGAWA_POLICE_SOURCE, '神奈川県警音楽隊'),
     fetchOptional(COAST_GUARD_SOURCE, '海上保安庁イベント一覧'),
     fetchOptional(SEA_KURE_SOURCE, '海自呉地方隊'), fetchOptional(SEA_TATEYAMA_SOURCE, '海自館山航空基地'),
@@ -637,6 +680,7 @@ async function main() {
     imageUrl:'http://www.mod.go.jp/gsdf/eae/1d/event/img/large.jpg', source:'陸上自衛隊 第1音楽隊', forceCategory:'音楽隊'
   }));
   const centralBandEvents = parseCentralBand(centralBandText);
+  const directoryBandEvents = [...parseEasternBand(easternBandText), ...parseTokyoBand(tokyoBandText), ...parseAirCentralBand(airCentralBandText)];
   const musicFestivalEvents = parseMusicFestival(musicFestivalText);
   const chibaPoliceEvents = parseChibaPolice(chibaPoliceText);
   const kanagawaPoliceDetailUrls = kanagawaPoliceDetailLinks(kanagawaPoliceText);
@@ -654,11 +698,11 @@ async function main() {
   const portEvents = PORT_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
   const officialTicketEvents = OFFICIAL_TICKET_EVENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
   const regionalEvents = REGIONAL_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
-  const optionalSuccesses = [landBandText, centralBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, coastGuardText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText,
+  const optionalSuccesses = [landBandText, centralBandText, easternBandText, tokyoBandText, airCentralBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, coastGuardText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText,
     ...tokyoPolicePages, ...tokyoPoliceMusicPages].filter(Boolean).length;
   const degraded = optionalSuccesses < 6;
   if (degraded) console.warn(`取得先障害を検出: 前回の正常データを保持します（成功${optionalSuccesses}系統）`);
-  const combined = [...(degraded ? previousData.events : []), ...parse(markdown), ...seaEvents, ...seaRegionalEvents, ...unitEvents, ...cocoyokoBaseEvents, ...supplemental, ...landBandEvents, ...centralBandEvents, ...portEvents, ...officialTicketEvents, ...regionalEvents,
+  const combined = [...(degraded ? previousData.events : []), ...parse(markdown), ...seaEvents, ...seaRegionalEvents, ...unitEvents, ...cocoyokoBaseEvents, ...supplemental, ...landBandEvents, ...centralBandEvents, ...directoryBandEvents, ...portEvents, ...officialTicketEvents, ...regionalEvents,
     ...musicFestivalEvents, ...chibaPoliceEvents, ...kanagawaPoliceEvents, ...coastGuardEvents, ...tokyoPoliceEvents, ...tokyoPoliceMusicEvents];
   const unique = [...new Map(combined.map(e => [`${e.date}|${e.title.replace(/[（(].*$/,'')}`, e])).values()];
   const events = unique
@@ -674,7 +718,8 @@ async function main() {
     kanagawaPrioritySources:KANAGAWA_PRIORITY_SOURCES,
     coveragePolicy:{ fireDepartment:'消防音楽隊、特殊車両、消防艇・ヘリ、大規模出初式・消防フェア、または自衛隊・警察・海保との合同イベントのみ', excludes:'AED講習、防災講座、避難所訓練、消防団員向け訓練、町内会・関係者限定イベント' },
     seaUnitSources:unitSourceStatus,
-    musicSources:[LAND_BAND_OFFICIAL, CENTRAL_BAND_OFFICIAL, MUSIC_FESTIVAL_OFFICIAL],
+    musicDirectorySource:MUSIC_DIRECTORY_OFFICIAL,
+    musicSources:[LAND_BAND_OFFICIAL, CENTRAL_BAND_OFFICIAL, EASTERN_BAND_OFFICIAL, TOKYO_BAND_OFFICIAL, AIR_CENTRAL_BAND_OFFICIAL, MUSIC_FESTIVAL_OFFICIAL],
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE],
     coastGuardSources:[COAST_GUARD_OFFICIAL], count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
