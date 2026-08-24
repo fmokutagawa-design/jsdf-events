@@ -74,6 +74,12 @@ const BASE_OPEN_SOURCES = [
 // 一般参加イベントとは別に、公式発表された艦船の行動・寄港予定を保持する。
 // 公開見学が確認できない寄港はイベント件数に含めず、その旨を明記する。
 const SHIP_WATCH_ITEMS = [
+  { date:'2026-08-01', endDate:'2026-08-08', keepUntil:'2026-09-22', region:'神奈川', vessel:'インドネシア海軍「イ・グスティ・ングラ・ライ」', vesselType:'フリゲート艦', location:'横須賀・相模湾', watchCategory:'外国艦・最近の活動', status:'横須賀寄港・共同訓練（終了）', publicAccess:false,
+    summary:'横須賀寄港後、8月8日に相模湾で護衛艦「おおなみ」と日インドネシア共同訓練を実施。一般公開ではありません。', officialUrl:'https://www.mod.go.jp/msdf/release/202608/20260810.pdf', source:'海上幕僚監部' },
+  { date:'2026-08-01', endDate:'2026-08-17', keepUntil:'2026-10-01', region:'海外', vessel:'米「ジャック・H・ルーカス」ほか5か国6隻', vesselType:'駆逐艦・フリゲート艦・哨戒艦', location:'ハワイ周辺', watchCategory:'外国艦・最近の活動', status:'多国間演習参加（終了）', publicAccess:false, noMap:true,
+    summary:'米駆逐艦「ジャック・H・ルーカス」、伊「ジョヴァンニ・デレ・バンデ・ネーレ」、豪「シドニー」、韓「チョンジョ・デワン」、西「アルバロ・デ・バサン」、チリ「アルミランテ・コクレーン」が護衛艦「こんごう」と演習。', officialUrl:'https://www.mod.go.jp/msdf/release/202608/20260818.pdf', source:'海上幕僚監部' },
+  { date:'2026-07-24', keepUntil:'2026-09-07', region:'海外', vessel:'米空母「ジョージ・ワシントン」ほか3隻', vesselType:'空母・巡洋艦・駆逐艦', location:'南シナ海', watchCategory:'外国艦・最近の活動', status:'日米共同訓練（終了）', publicAccess:false, noMap:true,
+    summary:'空母「ジョージ・ワシントン」、巡洋艦「ロバート・スモールズ」、駆逐艦「シャウプ」「ベンフォールド」が護衛艦「ゆうだち」と共同訓練。', officialUrl:'https://www.mod.go.jp/msdf/release/202607/20260727.pdf', source:'海上幕僚監部' },
   { date:'2026-04-13', endDate:'2026-09-16', region:'海外', vessel:'護衛艦「いせ」「いかづち」・輸送艦「しもきた」', vesselType:'護衛艦・輸送艦', location:'インド太平洋地域', watchCategory:'海外派遣', status:'IPD26派遣中（9月16日まで）', publicAccess:false, noMap:true,
     summary:'令和8年度インド太平洋方面派遣の第1水上部隊。各国海軍との共同訓練などを実施する公式派遣です。一般公開予定ではありません。', officialUrl:'https://www.mod.go.jp/msdf/operation/cooperate/IPD26/', source:'海上自衛隊' },
   { date:'2026-04-13', endDate:'2026-09-16', region:'海外', vessel:'護衛艦「かが」「ふゆづき」・補給艦「ましゅう」', vesselType:'護衛艦・補給艦', location:'インド太平洋地域', watchCategory:'海外派遣', status:'IPD26派遣中（9月16日まで）', publicAccess:false, noMap:true,
@@ -98,8 +104,21 @@ const SHIP_WATCH_SOURCES = [
   { name:'海上自衛隊 横須賀地方隊', url:'https://www.mod.go.jp/msdf/yokosuka/news-list/' },
   { name:'横須賀市 報道発表', url:'https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/' },
   { name:'横須賀市観光情報 基地イベント', url:'https://www.cocoyoko.net/event/genre/base/' },
-  { name:'米海軍横須賀基地', url:'https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/' }
+  { name:'米海軍横須賀基地', url:'https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/' },
+  { name:'米海軍第7艦隊 News', url:'https://www.c7f.navy.mil/Media/News/' },
+  { name:'英国海軍 News', url:'https://www.royalnavy.mod.uk/news' },
+  { name:'オーストラリア国防省 Navy News', url:'https://www.defence.gov.au/news-events' },
+  { name:'フランス海軍 Actualites', url:'https://www.defense.gouv.fr/marine/actualites' }
 ];
+function buildShipWatches(now) {
+  const today = now.toISOString().slice(0, 10);
+  const rank = item => item.date >= today ? 0 : (item.endDate || item.date) >= today ? 1 : 2;
+  return SHIP_WATCH_ITEMS
+    .filter(item => new Date(`${item.keepUntil || item.endDate || item.date}T00:00:00+09:00`) >= now)
+    .map(item => ({ ...item, id:`${item.date}-${item.vessel}-${item.location}`, imageUrl:'./assets/event-sea.jpg',
+      mapUrl:item.noMap ? '' : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.location} 港`)}` }))
+    .sort((a,b) => rank(a) - rank(b) || (rank(a) === 2 ? b.date.localeCompare(a.date) : a.date.localeCompare(b.date)));
+}
 const ALLOWED = new Set(['神奈川', '東京', '埼玉', '千葉', '茨城', '静岡', '山梨', '栃木']);
 const ALL_REGIONS = ['北海道','青森','岩手','宮城','秋田','山形','福島','茨城','栃木','群馬','埼玉','千葉','東京','神奈川','新潟','富山','石川','福井','山梨','長野','岐阜','静岡','愛知','三重','滋賀','京都','大阪','兵庫','奈良','和歌山','鳥取','島根','岡山','広島','山口','徳島','香川','愛媛','高知','福岡','佐賀','長崎','熊本','大分','宮崎','鹿児島','沖縄'];
 const AIR_SOURCE = 'https://www.mod.go.jp/asdf/event/list.html';
@@ -682,6 +701,16 @@ function parseUnitEventCandidates(markdown, unit) {
 async function main() {
   let previousData = { events:[], seaUnitSources:[] };
   try { previousData = JSON.parse(await fs.readFile(path.join(ROOT, 'data.json'), 'utf8')); } catch {}
+  if (process.argv.includes('--ship-watch-only')) {
+    const now = new Date(); now.setHours(0, 0, 0, 0);
+    const shipWatches = buildShipWatches(now);
+    const data = { ...previousData, updatedAt:new Date().toISOString(), shipWatchSources:SHIP_WATCH_SOURCES,
+      shipWatchPolicy:'公式発表された行動予定・寄港・一般公開と直近45日程度の外国艦活動のみ掲載。現在位置、目撃情報、未確認情報は扱わない。',
+      shipWatchCount:shipWatches.length, shipWatches };
+    await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
+    console.log(`艦船ウォッチ${shipWatches.length}件を書き出しました（イベント${data.count}件は保持）`);
+    return;
+  }
   const response = await fetch(SOURCE, { headers: { 'User-Agent': 'jsdf-events/1.0' } });
   if (!response.ok) throw new Error(`取得失敗: ${response.status}`);
   const markdown = await response.text();
@@ -783,11 +812,7 @@ async function main() {
     .filter(e => new Date(`${e.date}T00:00:00+09:00`) >= now)
     .map(e => ({ ...e, sourceType:inferSourceType(e), openType:inferOpenType(e) }))
     .sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title));
-  const shipWatches = SHIP_WATCH_ITEMS
-    .filter(item => new Date(`${item.endDate || item.date}T00:00:00+09:00`) >= now)
-    .map(item => ({ ...item, id:`${item.date}-${item.vessel}-${item.location}`, imageUrl:'./assets/event-sea.jpg',
-      mapUrl:item.noMap ? '' : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.location} 港`)}` }))
-    .sort((a,b) => a.date.localeCompare(b.date));
+  const shipWatches = buildShipWatches(now);
   const data = { updatedAt: new Date().toISOString(), sourceUrl: 'https://www.mod.go.jp/j/press/events/', seaSourceUrl: SEA_OFFICIAL,
     seaSources:[SEA_OFFICIAL, SEA_KURE_OFFICIAL, SEA_TATEYAMA_OFFICIAL, SEA_HACHINOHE_OFFICIAL, SEA_FUKUOKA_OFFICIAL],
     portSources:PORT_OFFICIAL_SOURCES, foreignVesselSources:FOREIGN_VESSEL_SOURCES, baseOpenSources:BASE_OPEN_SOURCES,
@@ -800,7 +825,7 @@ async function main() {
     musicSources:[LAND_BAND_OFFICIAL, CENTRAL_BAND_OFFICIAL, EASTERN_BAND_OFFICIAL, TOKYO_BAND_OFFICIAL, AIR_CENTRAL_BAND_OFFICIAL, MUSIC_FESTIVAL_OFFICIAL],
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE, TOKYO_POLICE_BAND_OFFICIAL],
     coastGuardSources:[COAST_GUARD_OFFICIAL], shipWatchSources:SHIP_WATCH_SOURCES,
-    shipWatchPolicy:'公式発表された行動予定・寄港・一般公開のみ掲載。現在位置、目撃情報、未確認情報は扱わない。',
+    shipWatchPolicy:'公式発表された行動予定・寄港・一般公開と直近45日程度の外国艦活動のみ掲載。現在位置、目撃情報、未確認情報は扱わない。',
     shipWatchCount:shipWatches.length, shipWatches, count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
   console.log(`${events.length}件を書き出しました`);
