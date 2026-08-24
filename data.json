@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T13:48:23.333Z",
+  "updatedAt": "2026-08-24T13:52:58.806Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -230,7 +230,7 @@
   "coastGuardSources": [
     "https://www.kaiho.mlit.go.jp/doc/event/jyouhou.html"
   ],
-  "count": 55,
+  "count": 56,
   "events": [
     {
       "id": "2026-08-24-東京-海上自衛隊-第2術科学校見学会（施設見学･体験喫食等）",
@@ -876,6 +876,29 @@
       "sourceType": "海自公式",
       "scope": "全国",
       "openType": "基地一般開放"
+    },
+    {
+      "id": "2026-09-25-神奈川-海上自衛隊横須賀音楽隊-ふれあいコンサート2026",
+      "date": "2026-09-25",
+      "region": "神奈川",
+      "branch": "海自",
+      "title": "海上自衛隊横須賀音楽隊 ふれあいコンサート2026",
+      "location": "横須賀芸術劇場 よこすか芸術劇場 大劇場",
+      "category": "音楽隊",
+      "application": true,
+      "applicationNote": "申込締切 2026/8/28 15:00",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "◎",
+      "accessNote": "駅から徒歩圏または公共交通が便利",
+      "officialUrl": "https://teket.jp/13961/74895",
+      "imageUrl": "https://teket.jp/data/flyer/74895/AhArx5PqZT.jpg?t=1784702134",
+      "imageIsIllustration": false,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E9%A0%88%E8%B3%80%E8%8A%B8%E8%A1%93%E5%8A%87%E5%A0%B4%20%E3%82%88%E3%81%93%E3%81%99%E3%81%8B%E8%8A%B8%E8%A1%93%E5%8A%87%E5%A0%B4%20%E5%A4%A7%E5%8A%87%E5%A0%B4",
+      "source": "海上自衛隊 横須賀地方総監部（teket）",
+      "sourceType": "海自公式主催・外部申込",
+      "scope": "首都圏",
+      "openType": ""
     },
     {
       "id": "2026-09-26-東京-上野署-上野交通安全フェスティバル",

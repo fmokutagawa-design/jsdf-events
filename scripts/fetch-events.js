@@ -93,6 +93,14 @@ const LAND_BAND_SUPPLEMENTS = [
   ['2026-12-20','東京','第42回ふれあいコンサート','板橋区文化会館 大ホール（東京都板橋区）'],
   ['2027-03-07','東京','第51回定期演奏会','練馬文化センター 大ホール（東京都練馬区）']
 ];
+// 公式主催者が基地サイトではなく外部の無料電子チケットで告知する公演。
+// 主催者ページの「近日予定」に出ない公演もあるため、確認できた公演URLを保持する。
+const OFFICIAL_TICKET_EVENTS = [
+  { date:'2026-09-25', region:'神奈川', branch:'海自', title:'海上自衛隊横須賀音楽隊 ふれあいコンサート2026',
+    location:'横須賀芸術劇場 よこすか芸術劇場 大劇場', officialUrl:'https://teket.jp/13961/74895',
+    imageUrl:'https://teket.jp/data/flyer/74895/AhArx5PqZT.jpg?t=1784702134', source:'海上自衛隊 横須賀地方総監部（teket）',
+    sourceType:'海自公式主催・外部申込', details:'要申込／2026/9/25 開場17:30 開演18:30／無料・QRチケットが必要／申込締切 2026/8/28 15:00', category:'音楽隊' }
+];
 const PORT_SUPPLEMENTS = [
   { date:'2026-08-31', region:'神奈川', branch:'海自', title:'YOKOSUKA軍港めぐり 夏休みキャンペーン', location:'汐入桟橋（神奈川県横須賀市）', category:'港・艦船',
     officialUrl:'https://yokosuka-kanko.com/events/events-21079/', imageUrl:'./assets/event-sea.jpg', source:'横須賀市観光協会', sourceType:'自治体・港湾' },
@@ -620,12 +628,13 @@ async function main() {
   const cocoyokoBaseEvents = await parseCocoyokoBase(cocoyokoBaseText);
   console.log(`追加取得: 海自地方公式${seaRegionalEvents.length}件 / 第1音楽隊${landBandEvents.length}件 / 音楽まつり${musicFestivalEvents.length}件 / 千葉県警${chibaPoliceEvents.length}件 / 神奈川県警${kanagawaPoliceEvents.length}件 / 海保神奈川${coastGuardEvents.length}件 / 警視庁${tokyoPoliceEvents.length + tokyoPoliceMusicEvents.length}件`);
   const portEvents = PORT_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
+  const officialTicketEvents = OFFICIAL_TICKET_EVENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
   const regionalEvents = REGIONAL_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
   const optionalSuccesses = [landBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, coastGuardText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText,
     ...tokyoPolicePages, ...tokyoPoliceMusicPages].filter(Boolean).length;
   const degraded = optionalSuccesses < 6;
   if (degraded) console.warn(`取得先障害を検出: 前回の正常データを保持します（成功${optionalSuccesses}系統）`);
-  const combined = [...(degraded ? previousData.events : []), ...parse(markdown), ...seaEvents, ...seaRegionalEvents, ...unitEvents, ...cocoyokoBaseEvents, ...supplemental, ...landBandEvents, ...portEvents, ...regionalEvents,
+  const combined = [...(degraded ? previousData.events : []), ...parse(markdown), ...seaEvents, ...seaRegionalEvents, ...unitEvents, ...cocoyokoBaseEvents, ...supplemental, ...landBandEvents, ...portEvents, ...officialTicketEvents, ...regionalEvents,
     ...musicFestivalEvents, ...chibaPoliceEvents, ...kanagawaPoliceEvents, ...coastGuardEvents, ...tokyoPoliceEvents, ...tokyoPoliceMusicEvents];
   const unique = [...new Map(combined.map(e => [`${e.date}|${e.title.replace(/[（(].*$/,'')}`, e])).values()];
   const events = unique
