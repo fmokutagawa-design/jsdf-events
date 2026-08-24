@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T04:00:45.702Z",
+  "updatedAt": "2026-08-24T05:04:40.760Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -225,7 +225,10 @@
     "https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html",
     "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/event/calendar/"
   ],
-  "count": 54,
+  "coastGuardSources": [
+    "https://www.kaiho.mlit.go.jp/doc/event/jyouhou.html"
+  ],
+  "count": 56,
   "events": [
     {
       "id": "2026-08-24-東京-海上自衛隊-第2術科学校見学会（施設見学･体験喫食等）",
@@ -1184,6 +1187,28 @@
       "openType": ""
     },
     {
+      "id": "2026-10-16-東京-サイバーセキュリティ対策セミナー",
+      "date": "2026-10-16",
+      "region": "東京",
+      "branch": "警察",
+      "title": "サイバーセキュリティ対策セミナー",
+      "location": "東京都（詳細は公式サイトで確認）",
+      "category": "警察・講習",
+      "application": false,
+      "applicationNote": "",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/event/cs_seminar.html",
+      "imageUrl": "./assets/event-police.svg",
+      "imageIsIllustration": true,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式",
+      "openType": ""
+    },
+    {
       "id": "2026-10-25-静岡-エアフェスタ浜松2026",
       "date": "2026-10-25",
       "region": "静岡",
@@ -1225,6 +1250,28 @@
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%9B%B8%E6%A8%A1%E7%B7%8F%E5%90%88%E8%A3%9C%E7%B5%A6%E5%BB%A0%E4%B8%80%E9%83%A8%E8%BF%94%E9%82%84%E5%9C%B0%E3%81%BB%E3%81%8B%EF%BC%88%E7%9B%B8%E6%A8%A1%E5%8E%9F%E5%B8%82%EF%BC%89",
       "source": "相模原市",
       "sourceType": "自治体公式",
+      "openType": ""
+    },
+    {
+      "id": "2026-10-30-東京-サイバーセキュリティ対策セミナー",
+      "date": "2026-10-30",
+      "region": "東京",
+      "branch": "警察",
+      "title": "サイバーセキュリティ対策セミナー",
+      "location": "東京都（詳細は公式サイトで確認）",
+      "category": "警察・講習",
+      "application": false,
+      "applicationNote": "",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/event/cs_seminar.html",
+      "imageUrl": "./assets/event-police.svg",
+      "imageIsIllustration": true,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式",
       "openType": ""
     },
     {
