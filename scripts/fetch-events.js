@@ -99,7 +99,30 @@ const PORT_SUPPLEMENTS = [
 ];
 const REGIONAL_SUPPLEMENTS = [
   { date:'2026-09-01', region:'神奈川', branch:'その他', title:'ビッグレスキューかながわ2026', location:'神奈川県総合防災センター・消防学校（神奈川県厚木市下津古久280）', category:'防災・合同訓練',
-    officialUrl:'https://www.pref.kanagawa.jp/docs/j8g/bigrescue/bigrescue.html', imageUrl:'./assets/event-land.jpg', source:'神奈川県・厚木市', sourceType:'自治体公式', details:'救出救助訓練・展示体験／愛甲石田駅から無料シャトルバス' }
+    officialUrl:'https://www.pref.kanagawa.jp/docs/j8g/bigrescue/bigrescue.html', imageUrl:'./assets/event-land.jpg', source:'神奈川県・厚木市', sourceType:'自治体公式', details:'救出救助訓練・展示体験／愛甲石田駅から無料シャトルバス' },
+  { date:'2026-09-04', region:'神奈川', branch:'その他', title:'横浜防災フェア2026', location:'横浜市役所アトリウム（横浜市中区）', category:'防災・合同訓練',
+    officialUrl:'https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/bousaifair2026.html', imageUrl:'./assets/event-land.jpg', source:'横浜市', sourceType:'自治体公式', details:'11:00〜18:00／水難救助訓練・横浜市消防音楽隊・展示ブース' },
+  { date:'2026-09-05', region:'神奈川', branch:'その他', title:'横浜防災フェア2026', location:'横浜市役所アトリウム（横浜市中区）', category:'防災・合同訓練',
+    officialUrl:'https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/bousaifair2026.html', imageUrl:'./assets/event-land.jpg', source:'横浜市', sourceType:'自治体公式', details:'11:00〜18:00／水難救助訓練・横浜市消防音楽隊・展示ブース' },
+  { date:'2026-10-04', region:'神奈川', branch:'その他', title:'令和8年度 横浜市総合防災訓練', location:'荏田南中学校・牛ケ谷公園（横浜市都筑区）', category:'防災・合同訓練',
+    officialUrl:'https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/sougoukunren.html', imageUrl:'./assets/event-land.jpg', source:'横浜市', sourceType:'自治体公式', details:'9:00〜12:00／実動訓練・一般向け展示体験' },
+  { date:'2026-10-25', region:'神奈川', branch:'その他', title:'令和8年度 相模原市総合防災訓練', location:'相模総合補給廠一部返還地ほか（相模原市）', category:'防災・合同訓練',
+    officialUrl:'https://www.city.sagamihara.kanagawa.jp/kurashi/1026529/bousai/1008801/1008805.html', imageUrl:'./assets/event-land.jpg', source:'相模原市', sourceType:'自治体公式', details:'第47回九都県市合同防災訓練・詳細は公式発表待ち' }
+];
+const KANAGAWA_PRIORITY_SOURCES = [
+  { name:'神奈川県 防災・イベント', url:'https://www.pref.kanagawa.jp/docs/j8g/bigrescue/bigrescue.html' },
+  { name:'横浜市 総合防災訓練', url:'https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/sougoukunren.html' },
+  { name:'横浜市 防災フェア', url:'https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/bousaifair2026.html' },
+  { name:'横浜市 港湾', url:'https://www.city.yokohama.lg.jp/kanko-bunka/minato/' },
+  { name:'横浜市 消防イベント', url:'https://cgi.city.yokohama.lg.jp/common/event2/shobo/event_list.html' },
+  { name:'横須賀市観光協会 基地イベント', url:COCOYOKO_BASE_SOURCE },
+  { name:'横須賀市 報道発表', url:'https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/' },
+  { name:'海上自衛隊 横須賀地方隊', url:'https://www.mod.go.jp/msdf/yokosuka/news-list/' },
+  { name:'第三管区海上保安本部', url:'https://www.kaiho.mlit.go.jp/03kanku/information/cat/' },
+  { name:'海上保安庁 全国イベント', url:'https://www.kaiho.mlit.go.jp/doc/event/jyouhou.html' },
+  { name:'神奈川県警察 音楽隊', url:KANAGAWA_POLICE_OFFICIAL },
+  { name:'相模原市 総合防災訓練', url:'https://www.city.sagamihara.kanagawa.jp/kurashi/1026529/bousai/1008801/1008805.html' },
+  { name:'川崎市 防災', url:'https://www.city.kawasaki.jp/kurashi/category/15-2-10-0-0-0-0-0-0-0.html' }
 ];
 // 空自一覧は画面上の日付が取得用テキストから省かれるため、開催年の日付だけ補助登録。
 // 毎日の統合表取得と併用し、同じ催しは下の重複排除で一件にまとめる。
@@ -563,6 +586,7 @@ async function main() {
     portSources:PORT_OFFICIAL_SOURCES, foreignVesselSources:FOREIGN_VESSEL_SOURCES, baseOpenSources:BASE_OPEN_SOURCES,
     militaryPortCitySources:MILITARY_PORT_CITY_SOURCES,
     regionalSources:REGIONAL_SUPPLEMENTS.map(item => item.officialUrl),
+    kanagawaPrioritySources:KANAGAWA_PRIORITY_SOURCES,
     seaUnitSources:unitSourceStatus,
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE], count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
