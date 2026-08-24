@@ -71,6 +71,27 @@ const BASE_OPEN_SOURCES = [
   'https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/',
   'https://www.cocoyoko.net/event/genre/base/'
 ];
+// 一般参加イベントとは別に、公式発表された艦船の行動・寄港予定を保持する。
+// 公開見学が確認できない寄港はイベント件数に含めず、その旨を明記する。
+const SHIP_WATCH_ITEMS = [
+  { date:'2026-09-21', region:'神奈川', vessel:'砕氷艦「しらせ」', vesselType:'砕氷艦', location:'横須賀', watchCategory:'行動予定', status:'公式行動予定', publicAccess:false,
+    summary:'令和8年度総合訓練の出港予定。一般公開・見学の公式発表は確認されていません。', officialUrl:'https://www.mod.go.jp/msdf/release/202607/20260709.pdf', source:'海上幕僚監部' },
+  { date:'2026-09-25', endDate:'2026-09-28', region:'北海道', vessel:'砕氷艦「しらせ」', vesselType:'砕氷艦', location:'稚内', watchCategory:'寄港予定', status:'公式寄港予定', publicAccess:false,
+    summary:'令和8年度総合訓練で稚内に寄港予定。一般公開・見学は別途公式情報の確認が必要です。', officialUrl:'https://www.mod.go.jp/msdf/release/202607/20260709.pdf', source:'海上幕僚監部' },
+  { date:'2026-10-02', endDate:'2026-10-05', region:'福岡', vessel:'砕氷艦「しらせ」', vesselType:'砕氷艦', location:'門司', watchCategory:'寄港・一般公開', status:'一般公開あり（10月3日・4日）', publicAccess:true,
+    summary:'門司寄港中の10月3日・4日に一般公開予定。時間・入場方法は公式案内で要確認。', officialUrl:'https://www.mod.go.jp/msdf/release/202607/20260709.pdf', eventUrl:'https://www.mod.go.jp/pco/fukuoka/event/index.html', source:'海上幕僚監部・福岡地方協力本部' },
+  { date:'2026-10-05', endDate:'2026-10-06', region:'大分', vessel:'砕氷艦「しらせ」', vesselType:'砕氷艦', location:'佐伯沖', watchCategory:'訓練予定', status:'公式行動予定', publicAccess:false,
+    summary:'令和8年度総合訓練で佐伯沖に停泊予定。一般公開を目的とした寄港ではありません。', officialUrl:'https://www.mod.go.jp/msdf/release/202607/20260709.pdf', source:'海上幕僚監部' },
+  { date:'2026-10-08', region:'神奈川', vessel:'砕氷艦「しらせ」', vesselType:'砕氷艦', location:'横須賀', watchCategory:'行動予定', status:'公式帰港予定', publicAccess:false,
+    summary:'令和8年度総合訓練を終え、横須賀へ帰港予定。一般公開・見学の公式発表は確認されていません。', officialUrl:'https://www.mod.go.jp/msdf/release/202607/20260709.pdf', source:'海上幕僚監部' }
+];
+const SHIP_WATCH_SOURCES = [
+  { name:'海上自衛隊 プレスリリース', url:'https://www.mod.go.jp/msdf/release/' },
+  { name:'海上自衛隊 横須賀地方隊', url:'https://www.mod.go.jp/msdf/yokosuka/news-list/' },
+  { name:'横須賀市 報道発表', url:'https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/' },
+  { name:'横須賀市観光情報 基地イベント', url:'https://www.cocoyoko.net/event/genre/base/' },
+  { name:'米海軍横須賀基地', url:'https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/' }
+];
 const ALLOWED = new Set(['神奈川', '東京', '埼玉', '千葉', '茨城', '静岡', '山梨', '栃木']);
 const ALL_REGIONS = ['北海道','青森','岩手','宮城','秋田','山形','福島','茨城','栃木','群馬','埼玉','千葉','東京','神奈川','新潟','富山','石川','福井','山梨','長野','岐阜','静岡','愛知','三重','滋賀','京都','大阪','兵庫','奈良','和歌山','鳥取','島根','岡山','広島','山口','徳島','香川','愛媛','高知','福岡','佐賀','長崎','熊本','大分','宮崎','鹿児島','沖縄'];
 const AIR_SOURCE = 'https://www.mod.go.jp/asdf/event/list.html';
@@ -753,6 +774,11 @@ async function main() {
     .filter(e => new Date(`${e.date}T00:00:00+09:00`) >= now)
     .map(e => ({ ...e, sourceType:inferSourceType(e), openType:inferOpenType(e) }))
     .sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title));
+  const shipWatches = SHIP_WATCH_ITEMS
+    .filter(item => new Date(`${item.endDate || item.date}T00:00:00+09:00`) >= now)
+    .map(item => ({ ...item, id:`${item.date}-${item.vessel}-${item.location}`, imageUrl:'./assets/event-sea.jpg',
+      mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.location} 港`)}` }))
+    .sort((a,b) => a.date.localeCompare(b.date));
   const data = { updatedAt: new Date().toISOString(), sourceUrl: 'https://www.mod.go.jp/j/press/events/', seaSourceUrl: SEA_OFFICIAL,
     seaSources:[SEA_OFFICIAL, SEA_KURE_OFFICIAL, SEA_TATEYAMA_OFFICIAL, SEA_HACHINOHE_OFFICIAL, SEA_FUKUOKA_OFFICIAL],
     portSources:PORT_OFFICIAL_SOURCES, foreignVesselSources:FOREIGN_VESSEL_SOURCES, baseOpenSources:BASE_OPEN_SOURCES,
@@ -764,7 +790,9 @@ async function main() {
     musicDirectorySource:MUSIC_DIRECTORY_OFFICIAL,
     musicSources:[LAND_BAND_OFFICIAL, CENTRAL_BAND_OFFICIAL, EASTERN_BAND_OFFICIAL, TOKYO_BAND_OFFICIAL, AIR_CENTRAL_BAND_OFFICIAL, MUSIC_FESTIVAL_OFFICIAL],
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE, TOKYO_POLICE_BAND_OFFICIAL],
-    coastGuardSources:[COAST_GUARD_OFFICIAL], count: events.length, events };
+    coastGuardSources:[COAST_GUARD_OFFICIAL], shipWatchSources:SHIP_WATCH_SOURCES,
+    shipWatchPolicy:'公式発表された行動予定・寄港・一般公開のみ掲載。現在位置、目撃情報、未確認情報は扱わない。',
+    shipWatchCount:shipWatches.length, shipWatches, count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
   console.log(`${events.length}件を書き出しました`);
 }

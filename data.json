@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T14:17:10.994Z",
+  "updatedAt": "2026-08-24T21:09:12.744Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -240,31 +240,118 @@
   "coastGuardSources": [
     "https://www.kaiho.mlit.go.jp/doc/event/jyouhou.html"
   ],
+  "shipWatchSources": [
+    {
+      "name": "海上自衛隊 プレスリリース",
+      "url": "https://www.mod.go.jp/msdf/release/"
+    },
+    {
+      "name": "海上自衛隊 横須賀地方隊",
+      "url": "https://www.mod.go.jp/msdf/yokosuka/news-list/"
+    },
+    {
+      "name": "横須賀市 報道発表",
+      "url": "https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/"
+    },
+    {
+      "name": "横須賀市観光情報 基地イベント",
+      "url": "https://www.cocoyoko.net/event/genre/base/"
+    },
+    {
+      "name": "米海軍横須賀基地",
+      "url": "https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/"
+    }
+  ],
+  "shipWatchPolicy": "公式発表された行動予定・寄港・一般公開のみ掲載。現在位置、目撃情報、未確認情報は扱わない。",
+  "shipWatchCount": 5,
+  "shipWatches": [
+    {
+      "date": "2026-09-21",
+      "region": "神奈川",
+      "vessel": "砕氷艦「しらせ」",
+      "vesselType": "砕氷艦",
+      "location": "横須賀",
+      "watchCategory": "行動予定",
+      "status": "公式行動予定",
+      "publicAccess": false,
+      "summary": "令和8年度総合訓練の出港予定。一般公開・見学の公式発表は確認されていません。",
+      "officialUrl": "https://www.mod.go.jp/msdf/release/202607/20260709.pdf",
+      "source": "海上幕僚監部",
+      "id": "2026-09-21-砕氷艦「しらせ」-横須賀",
+      "imageUrl": "./assets/event-sea.jpg",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E9%A0%88%E8%B3%80%20%E6%B8%AF"
+    },
+    {
+      "date": "2026-09-25",
+      "endDate": "2026-09-28",
+      "region": "北海道",
+      "vessel": "砕氷艦「しらせ」",
+      "vesselType": "砕氷艦",
+      "location": "稚内",
+      "watchCategory": "寄港予定",
+      "status": "公式寄港予定",
+      "publicAccess": false,
+      "summary": "令和8年度総合訓練で稚内に寄港予定。一般公開・見学は別途公式情報の確認が必要です。",
+      "officialUrl": "https://www.mod.go.jp/msdf/release/202607/20260709.pdf",
+      "source": "海上幕僚監部",
+      "id": "2026-09-25-砕氷艦「しらせ」-稚内",
+      "imageUrl": "./assets/event-sea.jpg",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%A8%9A%E5%86%85%20%E6%B8%AF"
+    },
+    {
+      "date": "2026-10-02",
+      "endDate": "2026-10-05",
+      "region": "福岡",
+      "vessel": "砕氷艦「しらせ」",
+      "vesselType": "砕氷艦",
+      "location": "門司",
+      "watchCategory": "寄港・一般公開",
+      "status": "一般公開あり（10月3日・4日）",
+      "publicAccess": true,
+      "summary": "門司寄港中の10月3日・4日に一般公開予定。時間・入場方法は公式案内で要確認。",
+      "officialUrl": "https://www.mod.go.jp/msdf/release/202607/20260709.pdf",
+      "eventUrl": "https://www.mod.go.jp/pco/fukuoka/event/index.html",
+      "source": "海上幕僚監部・福岡地方協力本部",
+      "id": "2026-10-02-砕氷艦「しらせ」-門司",
+      "imageUrl": "./assets/event-sea.jpg",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E9%96%80%E5%8F%B8%20%E6%B8%AF"
+    },
+    {
+      "date": "2026-10-05",
+      "endDate": "2026-10-06",
+      "region": "大分",
+      "vessel": "砕氷艦「しらせ」",
+      "vesselType": "砕氷艦",
+      "location": "佐伯沖",
+      "watchCategory": "訓練予定",
+      "status": "公式行動予定",
+      "publicAccess": false,
+      "summary": "令和8年度総合訓練で佐伯沖に停泊予定。一般公開を目的とした寄港ではありません。",
+      "officialUrl": "https://www.mod.go.jp/msdf/release/202607/20260709.pdf",
+      "source": "海上幕僚監部",
+      "id": "2026-10-05-砕氷艦「しらせ」-佐伯沖",
+      "imageUrl": "./assets/event-sea.jpg",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E4%BD%90%E4%BC%AF%E6%B2%96%20%E6%B8%AF"
+    },
+    {
+      "date": "2026-10-08",
+      "region": "神奈川",
+      "vessel": "砕氷艦「しらせ」",
+      "vesselType": "砕氷艦",
+      "location": "横須賀",
+      "watchCategory": "行動予定",
+      "status": "公式帰港予定",
+      "publicAccess": false,
+      "summary": "令和8年度総合訓練を終え、横須賀へ帰港予定。一般公開・見学の公式発表は確認されていません。",
+      "officialUrl": "https://www.mod.go.jp/msdf/release/202607/20260709.pdf",
+      "source": "海上幕僚監部",
+      "id": "2026-10-08-砕氷艦「しらせ」-横須賀",
+      "imageUrl": "./assets/event-sea.jpg",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E9%A0%88%E8%B3%80%20%E6%B8%AF"
+    }
+  ],
   "count": 63,
   "events": [
-    {
-      "id": "2026-08-24-東京-海上自衛隊-第2術科学校見学会（施設見学･体験喫食等）",
-      "date": "2026-08-24",
-      "region": "東京",
-      "branch": "海自",
-      "title": "海上自衛隊 第2術科学校見学会（施設見学･体験喫食等）",
-      "location": "●集合場所 ・グランドヒル市ヶ谷 （東京都 新宿区 市谷本村町） ●見学場所 ・海上自衛隊 第2術科学校 （神奈川県 横須賀市 田浦港町無番地）",
-      "category": "見学・体験",
-      "application": true,
-      "applicationNote": "応募締切：2026年8月6日(木)まで ●集合場所 ・グランドヒル市ヶ谷 （東京都 新宿区 市谷本村町） ●見学場所 ・海上自衛隊 第2術科学校 （神奈川県 横須賀市 田浦港町無番地） ",
-      "ageRestriction": false,
-      "price": "原則無料（公式情報を確認）",
-      "accessRank": "◎",
-      "accessNote": "駅から徒歩圏または公共交通が便利",
-      "officialUrl": "https://www.mod.go.jp/pco/tokyo/adachi/index.html#0824",
-      "imageUrl": "https://www.mod.go.jp/msdf/event/img/msdf20260824adachi2jutsukatour_01.jpg",
-      "imageIsIllustration": false,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E2%97%8F%E9%9B%86%E5%90%88%E5%A0%B4%E6%89%80%20%E3%83%BB%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%92%E3%83%AB%E5%B8%82%E3%83%B6%E8%B0%B7%20%EF%BC%88%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E6%96%B0%E5%AE%BF%E5%8C%BA%20%E5%B8%82%E8%B0%B7%E6%9C%AC%E6%9D%91%E7%94%BA%EF%BC%89%20%E2%97%8F%E8%A6%8B%E5%AD%A6%E5%A0%B4%E6%89%80%20%E3%83%BB%E6%B5%B7%E4%B8%8A%E8%87%AA%E8%A1%9B%E9%9A%8A%20%E7%AC%AC2%E8%A1%93%E7%A7%91%E5%AD%A6%E6%A0%A1%20%EF%BC%88%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E6%A8%AA%E9%A0%88%E8%B3%80%E5%B8%82%20%E7%94%B0%E6%B5%A6%E6%B8%AF%E7%94%BA%E7%84%A1%E7%95%AA%E5%9C%B0%EF%BC%89",
-      "scope": "首都圏",
-      "source": "海上自衛隊 イベント情報",
-      "sourceType": "海自公式",
-      "openType": ""
-    },
     {
       "id": "2026-08-26-高知-海上自衛隊-護衛艦「あきづき」一般公開",
       "date": "2026-08-26",
@@ -530,6 +617,29 @@
       "imageUrl": "https://www.mod.go.jp/msdf/application/tokyoband/img/brassband.jpg",
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%87%E4%BA%AC%E3%82%B7%E3%83%93%E3%83%83%E3%82%AF%E3%83%9B%E3%83%BC%E3%83%AB",
+      "source": "海上自衛隊 東京音楽隊",
+      "sourceType": "海自公式",
+      "scope": "首都圏",
+      "openType": ""
+    },
+    {
+      "id": "2026-09-02-東京-第68回定例演奏会",
+      "date": "2026-09-02",
+      "region": "東京",
+      "branch": "海自",
+      "title": "第68回定例演奏会",
+      "location": "文京シビックホール 大ホール",
+      "category": "音楽隊",
+      "application": true,
+      "applicationNote": "応募期間:2026年6月26日(金)~7月21日(火)23:59",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.mod.go.jp/msdf/tokyoband/posts/concert8.html",
+      "imageUrl": "https://www.mod.go.jp/msdf/tokyoband/img/68teirei_thumb.jpg",
+      "imageIsIllustration": false,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%96%87%E4%BA%AC%E3%82%B7%E3%83%93%E3%83%83%E3%82%AF%E3%83%9B%E3%83%BC%E3%83%AB%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB",
       "source": "海上自衛隊 東京音楽隊",
       "sourceType": "海自公式",
       "scope": "首都圏",
@@ -1536,11 +1646,11 @@
       "date": "2026-12-09",
       "region": "東京",
       "branch": "警察",
-      "title": "グランドコンサート 2026｜19:00開演",
+      "title": "グランドコンサート 2026",
       "location": "東京国際フォーラム ホールC",
       "category": "警察音楽隊",
       "application": true,
-      "applicationNote": "応募期間:2026年9月7日〜9月20日",
+      "applicationNote": "事前申込",
       "ageRestriction": true,
       "price": "原則無料（公式情報を確認）",
       "accessRank": "○",
