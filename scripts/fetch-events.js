@@ -7,6 +7,10 @@ const ROOT = path.resolve(__dirname, '..');
 const SOURCE = 'https://r.jina.ai/http://www.mod.go.jp/j/press/events/';
 const SEA_SOURCE = 'https://r.jina.ai/http://www.mod.go.jp/msdf/event/index.html';
 const SEA_OFFICIAL = 'https://www.mod.go.jp/msdf/event/index.html';
+const SEA_KURE_SOURCE = 'https://r.jina.ai/https://www.mod.go.jp/msdf/kure/announcement/tour/index.html';
+const SEA_KURE_OFFICIAL = 'https://www.mod.go.jp/msdf/kure/announcement/tour/index.html';
+const SEA_TATEYAMA_SOURCE = 'https://r.jina.ai/https://www.mod.go.jp/msdf/tateyama/faw21/ivent.html';
+const SEA_TATEYAMA_OFFICIAL = 'https://www.mod.go.jp/msdf/tateyama/faw21/ivent.html';
 const ALLOWED = new Set(['神奈川', '東京', '埼玉', '千葉', '茨城', '静岡', '山梨', '栃木']);
 const ALL_REGIONS = ['北海道','青森','岩手','宮城','秋田','山形','福島','茨城','栃木','群馬','埼玉','千葉','東京','神奈川','新潟','富山','石川','福井','山梨','長野','岐阜','静岡','愛知','三重','滋賀','京都','大阪','兵庫','奈良','和歌山','鳥取','島根','岡山','広島','山口','徳島','香川','愛媛','高知','福岡','佐賀','長崎','熊本','大分','宮崎','鹿児島','沖縄'];
 const AIR_SOURCE = 'https://www.mod.go.jp/asdf/event/list.html';
@@ -111,7 +115,7 @@ function makeEvent({ date, region, branch, title, location, officialUrl, imageUr
     ageRestriction: /年齢制限|未就学児/.test(details), price: /有料/.test(details) ? '有料（公式情報を確認）' : '原則無料（公式情報を確認）',
     accessRank: profile.rank, accessNote: profile.note, officialUrl, imageUrl: finalImage,
     imageIsIllustration: finalImage.startsWith('./assets/'), mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`,
-    source
+    source, scope: branch === '海自' ? (ALLOWED.has(region) ? '首都圏' : '全国') : undefined
   };
 }
 
@@ -286,13 +290,40 @@ function parseSea(markdown) {
   return events;
 }
 
+function parseSeaKure(markdown) {
+  const out = [];
+  const section = (markdown.split('##### 現在受付中の日程')[1] || '').split('##### 呉地方総監部第1庁舎')[0] || '';
+  const year = new Date().getFullYear();
+  for (const row of section.split('\n').filter(line => /^\|?\s*\d{1,2}月\d{1,2}日/.test(line))) {
+    const md = row.match(/(\d{1,2})月(\d{1,2})日/);
+    if (!md) continue;
+    const date = `${year}-${String(md[1]).padStart(2,'0')}-${String(md[2]).padStart(2,'0')}`;
+    out.push(makeEvent({ date, region:'広島', branch:'海自', title:'呉在泊艦艇・地方総監部 一般公開',
+      location:'呉基地係船堀地区・呉地方総監部（広島県呉市）', officialUrl:SEA_KURE_OFFICIAL,
+      imageUrl:'./assets/event-sea.jpg', source:'海上自衛隊 呉地方隊', details:`抽選・事前申込 ${clean(row)}`,
+      forceCategory:'艦艇・一般公開' }));
+  }
+  return out;
+}
+
+function parseSeaTateyama(markdown) {
+  if (!/ヘリコプターフェスティバル\s*in\s*TATEYAMA\s*2026/i.test(markdown)) return [];
+  const date = '2026-10-10';
+  const image = (markdown.match(/!\[[^\]]*\]\((https?:\/\/[^)]+\.(?:jpe?g|png|webp)[^)]*)\)/i) || [])[1];
+  return [makeEvent({ date, region:'千葉', branch:'海自', title:'ヘリコプターフェスティバル in TATEYAMA 2026',
+    location:'海上自衛隊 館山航空基地（千葉県館山市宮城無番地）', officialUrl:SEA_TATEYAMA_OFFICIAL,
+    imageUrl:image || './assets/event-sea.jpg', source:'海上自衛隊 第21航空群・館山航空基地', details:markdown,
+    forceCategory:'基地祭・記念行事' })];
+}
+
 async function main() {
   const response = await fetch(SOURCE, { headers: { 'User-Agent': 'jsdf-events/1.0' } });
   if (!response.ok) throw new Error(`取得失敗: ${response.status}`);
   const markdown = await response.text();
-  const [landBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText] = await Promise.all([
+  const [landBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, seaKureText, seaTateyamaText] = await Promise.all([
     fetchOptional(LAND_BAND_SOURCE, '第1音楽隊'), fetchOptional(MUSIC_FESTIVAL_SOURCE, '自衛隊音楽まつり'),
-    fetchOptional(CHIBA_POLICE_SOURCE, '千葉県警音楽隊'), fetchOptional(KANAGAWA_POLICE_SOURCE, '神奈川県警音楽隊')
+    fetchOptional(CHIBA_POLICE_SOURCE, '千葉県警音楽隊'), fetchOptional(KANAGAWA_POLICE_SOURCE, '神奈川県警音楽隊'),
+    fetchOptional(SEA_KURE_SOURCE, '海自呉地方隊'), fetchOptional(SEA_TATEYAMA_SOURCE, '海自館山航空基地')
   ]);
   const calendarMonths = [0,1,2].map(offset => { const d = new Date(); d.setMonth(d.getMonth() + offset); return [d.getFullYear(), d.getMonth() + 1]; });
   const tokyoPolicePages = await Promise.all(calendarMonths.map(([y,m]) => fetchOptional(
@@ -332,15 +363,17 @@ async function main() {
   const musicFestivalEvents = parseMusicFestival(musicFestivalText);
   const chibaPoliceEvents = parseChibaPolice(chibaPoliceText);
   const kanagawaPoliceEvents = parseKanagawaPolice(kanagawaPoliceText);
-  console.log(`追加取得: 第1音楽隊${landBandEvents.length}件 / 音楽まつり${musicFestivalEvents.length}件 / 千葉県警${chibaPoliceEvents.length}件 / 神奈川県警${kanagawaPoliceEvents.length}件 / 警視庁${tokyoPoliceEvents.length + tokyoPoliceMusicEvents.length}件`);
+  const seaRegionalEvents = [...parseSeaKure(seaKureText), ...parseSeaTateyama(seaTateyamaText)];
+  console.log(`追加取得: 海自地方公式${seaRegionalEvents.length}件 / 第1音楽隊${landBandEvents.length}件 / 音楽まつり${musicFestivalEvents.length}件 / 千葉県警${chibaPoliceEvents.length}件 / 神奈川県警${kanagawaPoliceEvents.length}件 / 警視庁${tokyoPoliceEvents.length + tokyoPoliceMusicEvents.length}件`);
   const portEvents = PORT_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
-  const combined = [...parse(markdown), ...seaEvents, ...supplemental, ...landBandEvents, ...portEvents,
+  const combined = [...parse(markdown), ...seaEvents, ...seaRegionalEvents, ...supplemental, ...landBandEvents, ...portEvents,
     ...musicFestivalEvents, ...chibaPoliceEvents, ...kanagawaPoliceEvents, ...tokyoPoliceEvents, ...tokyoPoliceMusicEvents];
   const unique = [...new Map(combined.map(e => [`${e.date}|${e.title.replace(/[（(].*$/,'')}`, e])).values()];
   const events = unique
     .filter(e => new Date(`${e.date}T00:00:00+09:00`) >= now)
     .sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title));
   const data = { updatedAt: new Date().toISOString(), sourceUrl: 'https://www.mod.go.jp/j/press/events/', seaSourceUrl: SEA_OFFICIAL,
+    seaSources:[SEA_OFFICIAL, SEA_KURE_OFFICIAL, SEA_TATEYAMA_OFFICIAL],
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE], count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
   console.log(`${events.length}件を書き出しました`);
