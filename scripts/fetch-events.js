@@ -373,11 +373,16 @@ function parseAirCentralBand(markdown) {
 
 function parseMusicFestival(markdown) {
   if (!/自衛隊音楽まつり2026/.test(markdown)) return [];
-  const out = [];
-  for (const date of ['2026-11-19','2026-11-20','2026-11-21']) out.push(makeEvent({ date, region:'東京', branch:'その他',
-    title:'自衛隊音楽まつり2026', location:'日本武道館（東京都千代田区北の丸公園）', officialUrl:MUSIC_FESTIVAL_OFFICIAL,
-    imageUrl:'./assets/event-land.jpg', source:'陸上自衛隊 自衛隊音楽まつり', details:markdown, forceCategory:'音楽隊' }));
-  return out;
+  const performances = [
+    ['2026-11-19','自衛隊音楽まつり2026｜リハーサル公演 18:00'],
+    ['2026-11-20','自衛隊音楽まつり2026｜第1回 14:00・第2回 18:00（招待公演）'],
+    ['2026-11-21','自衛隊音楽まつり2026｜第3回 9:30（招待）・第4回 13:30・第5回 17:30']
+  ];
+  const applicationDetails = '要申込／応募期間（1次公募）2026年8月20日〜9月11日／応募期間（2次公募）2026年9月30日〜10月14日（実施されない場合あり）／年齢制限・入場条件は公式サイトで確認';
+  return performances.map(([date,title]) => makeEvent({ date, region:'東京', branch:'その他', title,
+    location:'日本武道館（東京都千代田区北の丸公園）', officialUrl:MUSIC_FESTIVAL_OFFICIAL,
+    imageUrl:'https://www.mod.go.jp/gsdf/event/marching_festival/festival2026/images/img_mv_pc.webp',
+    source:'陸上自衛隊 自衛隊音楽まつり', details:`${applicationDetails}\n${markdown}`, forceCategory:'音楽隊' }));
 }
 
 function parseChibaPolice(markdown) {
