@@ -117,6 +117,29 @@ const SHIP_WATCH_PORTS = [
   { name:'千葉港・船橋港', area:'千葉', coverage:'千葉県港湾課・自治体発表を巡回', sourceUrl:'https://www.pref.chiba.lg.jp/kouwan/', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E5%8D%83%E8%91%89%E6%B8%AF' },
   { name:'木更津港', area:'千葉', coverage:'千葉県港湾課・木更津港発表を巡回', sourceUrl:'https://www.pref.chiba.lg.jp/kouwan/chibanokouwan/kisarazu.html', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E6%9C%A8%E6%9B%B4%E6%B4%A5%E6%B8%AF' }
 ];
+const PHOTO_OPPORTUNITIES = [
+  { id:'yokosuka-cruise', recurring:true, kind:'軍港撮影', title:'YOKOSUKA軍港めぐり', dateLabel:'ほぼ毎日運航', location:'汐入桟橋・横須賀港', time:'11:00〜15:00を中心に運航（約45分）', note:'海自・米海軍の在港艦を海上から撮影できる常設候補。見られる艦は当日の在港状況によります。', officialUrl:'https://yokosuka-gunko.jp/information/', bookingUrl:'https://reservation.tryangle-web.com/tryangle-public/', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E6%B1%90%E5%85%A5%E6%A1%9F%E6%A9%8B' },
+  { id:'verny-park', recurring:true, kind:'軍港撮影', title:'ヴェルニー公園から横須賀本港を撮影', dateLabel:'公園開園中', location:'ヴェルニー公園', time:'予約不要', note:'一般区域から海自・米海軍の在港艦を撮影できる候補。艦名・停泊位置・見え方の保証はありません。', officialUrl:'https://www.cocoyoko.net/spot/verny-park.html', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E3%83%B4%E3%82%A7%E3%83%AB%E3%83%8B%E3%83%BC%E5%85%AC%E5%9C%92' },
+  ...[
+    ['2026-09-05','06:30','15:00','大さん橋','ダイヤモンド・プリンセス'],
+    ['2026-09-15','06:30','15:00','大さん橋','ダイヤモンド・プリンセス'],
+    ['2026-09-18','09:00','17:00','大さん橋','飛鳥Ⅱ'],
+    ['2026-09-19','非公開','17:00','新港','三井オーシャンサクラ（初入港）'],
+    ['2026-09-22','06:30','15:00','大さん橋','ダイヤモンド・プリンセス'],
+    ['2026-09-23','09:00','17:00','新港','三井オーシャンサクラ'],
+    ['2026-09-23','09:00','17:00','大さん橋','飛鳥Ⅱ'],
+    ['2026-09-25','09:00','17:00','大さん橋','飛鳥Ⅱ'],
+    ['2026-09-27','09:00','17:00','新港','三井オーシャンサクラ'],
+    ['2026-09-27','09:00','17:00','大さん橋','飛鳥Ⅱ']
+  ].map(([date,arrival,departure,berth,title]) => ({ id:`${date}-${berth}-${title}`, date, kind:'客船撮影', title,
+    location:`横浜港 ${berth}`, time:`入港 ${arrival}／出港 ${departure}`, note:'横浜市公式の入港予定。軍艦ではありません。大さん橋または新港周辺から撮影できる大型客船です。',
+    officialUrl:'https://www.city.yokohama.lg.jp/kanko-bunka/minato/kyakusen/nyuko/2026.html', mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`横浜港 ${berth}`)}` }))
+];
+function buildPhotoOpportunities(now) {
+  const today = now.toISOString().slice(0, 10);
+  return PHOTO_OPPORTUNITIES.filter(item => item.recurring || item.date >= today)
+    .sort((a,b) => Number(b.recurring) - Number(a.recurring) || (a.date || '').localeCompare(b.date || '') || a.title.localeCompare(b.title));
+}
 function buildShipWatches(now) {
   const today = now.toISOString().slice(0, 10);
   const rank = item => item.date >= today ? 0 : (item.endDate || item.date) >= today ? 1 : 2;
@@ -712,6 +735,7 @@ async function main() {
     const now = new Date(); now.setHours(0, 0, 0, 0);
     const shipWatches = buildShipWatches(now);
     const data = { ...previousData, updatedAt:new Date().toISOString(), shipWatchSources:SHIP_WATCH_SOURCES, shipWatchPorts:SHIP_WATCH_PORTS,
+      photoOpportunities:buildPhotoOpportunities(now),
       shipWatchPolicy:'公式発表された行動予定・寄港・一般公開と直近45日程度の外国艦活動のみ掲載。現在位置、目撃情報、未確認情報は扱わない。',
       shipWatchCount:shipWatches.length, shipWatches };
     await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
@@ -832,6 +856,7 @@ async function main() {
     musicSources:[LAND_BAND_OFFICIAL, CENTRAL_BAND_OFFICIAL, EASTERN_BAND_OFFICIAL, TOKYO_BAND_OFFICIAL, AIR_CENTRAL_BAND_OFFICIAL, MUSIC_FESTIVAL_OFFICIAL],
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE, TOKYO_POLICE_BAND_OFFICIAL],
     coastGuardSources:[COAST_GUARD_OFFICIAL], shipWatchSources:SHIP_WATCH_SOURCES, shipWatchPorts:SHIP_WATCH_PORTS,
+    photoOpportunities:buildPhotoOpportunities(now),
     shipWatchPolicy:'公式発表された行動予定・寄港・一般公開と直近45日程度の外国艦活動のみ掲載。現在位置、目撃情報、未確認情報は扱わない。',
     shipWatchCount:shipWatches.length, shipWatches, count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');

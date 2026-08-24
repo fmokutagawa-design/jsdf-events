@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T21:36:12.936Z",
+  "updatedAt": "2026-08-24T21:40:59.806Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -1930,6 +1930,143 @@
       "coverage": "千葉県港湾課・木更津港発表を巡回",
       "sourceUrl": "https://www.pref.chiba.lg.jp/kouwan/chibanokouwan/kisarazu.html",
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9C%A8%E6%9B%B4%E6%B4%A5%E6%B8%AF"
+    }
+  ],
+  "photoOpportunities": [
+    {
+      "id": "yokosuka-cruise",
+      "recurring": true,
+      "kind": "軍港撮影",
+      "title": "YOKOSUKA軍港めぐり",
+      "dateLabel": "ほぼ毎日運航",
+      "location": "汐入桟橋・横須賀港",
+      "time": "11:00〜15:00を中心に運航（約45分）",
+      "note": "海自・米海軍の在港艦を海上から撮影できる常設候補。見られる艦は当日の在港状況によります。",
+      "officialUrl": "https://yokosuka-gunko.jp/information/",
+      "bookingUrl": "https://reservation.tryangle-web.com/tryangle-public/",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B1%90%E5%85%A5%E6%A1%9F%E6%A9%8B"
+    },
+    {
+      "id": "verny-park",
+      "recurring": true,
+      "kind": "軍港撮影",
+      "title": "ヴェルニー公園から横須賀本港を撮影",
+      "dateLabel": "公園開園中",
+      "location": "ヴェルニー公園",
+      "time": "予約不要",
+      "note": "一般区域から海自・米海軍の在港艦を撮影できる候補。艦名・停泊位置・見え方の保証はありません。",
+      "officialUrl": "https://www.cocoyoko.net/spot/verny-park.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E3%83%B4%E3%82%A7%E3%83%AB%E3%83%8B%E3%83%BC%E5%85%AC%E5%9C%92"
+    },
+    {
+      "id": "2026-09-05-大さん橋-ダイヤモンド・プリンセス",
+      "date": "2026-09-05",
+      "kind": "客船撮影",
+      "title": "ダイヤモンド・プリンセス",
+      "location": "横浜港 大さん橋",
+      "time": "入港 06:30／出港 15:00",
+      "note": "横浜市公式の入港予定。軍艦ではありません。大さん橋または新港周辺から撮影できる大型客船です。",
+      "officialUrl": "https://www.city.yokohama.lg.jp/kanko-bunka/minato/kyakusen/nyuko/2026.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%B5%9C%E6%B8%AF%20%E5%A4%A7%E3%81%95%E3%82%93%E6%A9%8B"
+    },
+    {
+      "id": "2026-09-15-大さん橋-ダイヤモンド・プリンセス",
+      "date": "2026-09-15",
+      "kind": "客船撮影",
+      "title": "ダイヤモンド・プリンセス",
+      "location": "横浜港 大さん橋",
+      "time": "入港 06:30／出港 15:00",
+      "note": "横浜市公式の入港予定。軍艦ではありません。大さん橋または新港周辺から撮影できる大型客船です。",
+      "officialUrl": "https://www.city.yokohama.lg.jp/kanko-bunka/minato/kyakusen/nyuko/2026.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%B5%9C%E6%B8%AF%20%E5%A4%A7%E3%81%95%E3%82%93%E6%A9%8B"
+    },
+    {
+      "id": "2026-09-18-大さん橋-飛鳥Ⅱ",
+      "date": "2026-09-18",
+      "kind": "客船撮影",
+      "title": "飛鳥Ⅱ",
+      "location": "横浜港 大さん橋",
+      "time": "入港 09:00／出港 17:00",
+      "note": "横浜市公式の入港予定。軍艦ではありません。大さん橋または新港周辺から撮影できる大型客船です。",
+      "officialUrl": "https://www.city.yokohama.lg.jp/kanko-bunka/minato/kyakusen/nyuko/2026.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%B5%9C%E6%B8%AF%20%E5%A4%A7%E3%81%95%E3%82%93%E6%A9%8B"
+    },
+    {
+      "id": "2026-09-19-新港-三井オーシャンサクラ（初入港）",
+      "date": "2026-09-19",
+      "kind": "客船撮影",
+      "title": "三井オーシャンサクラ（初入港）",
+      "location": "横浜港 新港",
+      "time": "入港 非公開／出港 17:00",
+      "note": "横浜市公式の入港予定。軍艦ではありません。大さん橋または新港周辺から撮影できる大型客船です。",
+      "officialUrl": "https://www.city.yokohama.lg.jp/kanko-bunka/minato/kyakusen/nyuko/2026.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%B5%9C%E6%B8%AF%20%E6%96%B0%E6%B8%AF"
+    },
+    {
+      "id": "2026-09-22-大さん橋-ダイヤモンド・プリンセス",
+      "date": "2026-09-22",
+      "kind": "客船撮影",
+      "title": "ダイヤモンド・プリンセス",
+      "location": "横浜港 大さん橋",
+      "time": "入港 06:30／出港 15:00",
+      "note": "横浜市公式の入港予定。軍艦ではありません。大さん橋または新港周辺から撮影できる大型客船です。",
+      "officialUrl": "https://www.city.yokohama.lg.jp/kanko-bunka/minato/kyakusen/nyuko/2026.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%B5%9C%E6%B8%AF%20%E5%A4%A7%E3%81%95%E3%82%93%E6%A9%8B"
+    },
+    {
+      "id": "2026-09-23-新港-三井オーシャンサクラ",
+      "date": "2026-09-23",
+      "kind": "客船撮影",
+      "title": "三井オーシャンサクラ",
+      "location": "横浜港 新港",
+      "time": "入港 09:00／出港 17:00",
+      "note": "横浜市公式の入港予定。軍艦ではありません。大さん橋または新港周辺から撮影できる大型客船です。",
+      "officialUrl": "https://www.city.yokohama.lg.jp/kanko-bunka/minato/kyakusen/nyuko/2026.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%B5%9C%E6%B8%AF%20%E6%96%B0%E6%B8%AF"
+    },
+    {
+      "id": "2026-09-23-大さん橋-飛鳥Ⅱ",
+      "date": "2026-09-23",
+      "kind": "客船撮影",
+      "title": "飛鳥Ⅱ",
+      "location": "横浜港 大さん橋",
+      "time": "入港 09:00／出港 17:00",
+      "note": "横浜市公式の入港予定。軍艦ではありません。大さん橋または新港周辺から撮影できる大型客船です。",
+      "officialUrl": "https://www.city.yokohama.lg.jp/kanko-bunka/minato/kyakusen/nyuko/2026.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%B5%9C%E6%B8%AF%20%E5%A4%A7%E3%81%95%E3%82%93%E6%A9%8B"
+    },
+    {
+      "id": "2026-09-25-大さん橋-飛鳥Ⅱ",
+      "date": "2026-09-25",
+      "kind": "客船撮影",
+      "title": "飛鳥Ⅱ",
+      "location": "横浜港 大さん橋",
+      "time": "入港 09:00／出港 17:00",
+      "note": "横浜市公式の入港予定。軍艦ではありません。大さん橋または新港周辺から撮影できる大型客船です。",
+      "officialUrl": "https://www.city.yokohama.lg.jp/kanko-bunka/minato/kyakusen/nyuko/2026.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%B5%9C%E6%B8%AF%20%E5%A4%A7%E3%81%95%E3%82%93%E6%A9%8B"
+    },
+    {
+      "id": "2026-09-27-新港-三井オーシャンサクラ",
+      "date": "2026-09-27",
+      "kind": "客船撮影",
+      "title": "三井オーシャンサクラ",
+      "location": "横浜港 新港",
+      "time": "入港 09:00／出港 17:00",
+      "note": "横浜市公式の入港予定。軍艦ではありません。大さん橋または新港周辺から撮影できる大型客船です。",
+      "officialUrl": "https://www.city.yokohama.lg.jp/kanko-bunka/minato/kyakusen/nyuko/2026.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%B5%9C%E6%B8%AF%20%E6%96%B0%E6%B8%AF"
+    },
+    {
+      "id": "2026-09-27-大さん橋-飛鳥Ⅱ",
+      "date": "2026-09-27",
+      "kind": "客船撮影",
+      "title": "飛鳥Ⅱ",
+      "location": "横浜港 大さん橋",
+      "time": "入港 09:00／出港 17:00",
+      "note": "横浜市公式の入港予定。軍艦ではありません。大さん橋または新港周辺から撮影できる大型客船です。",
+      "officialUrl": "https://www.city.yokohama.lg.jp/kanko-bunka/minato/kyakusen/nyuko/2026.html",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%B5%9C%E6%B8%AF%20%E5%A4%A7%E3%81%95%E3%82%93%E6%A9%8B"
     }
   ]
 }
