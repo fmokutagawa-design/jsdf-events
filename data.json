@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T03:15:46.895Z",
+  "updatedAt": "2026-08-24T03:21:47.919Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -7,12 +7,24 @@
     "https://www.mod.go.jp/msdf/kure/announcement/tour/index.html",
     "https://www.mod.go.jp/msdf/tateyama/faw21/ivent.html"
   ],
+  "portSources": [
+    "https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/",
+    "https://www.city.yokohama.lg.jp/kanko-bunka/minato/",
+    "https://www.kouwan.metro.tokyo.lg.jp/kanko/",
+    "https://www.pref.chiba.lg.jp/kouwan/"
+  ],
+  "foreignVesselSources": [
+    "https://www.mod.go.jp/msdf/release/",
+    "https://www.mod.go.jp/msdf/yokosuka/news-list/",
+    "https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/",
+    "https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/"
+  ],
   "policeSources": [
     "https://www.police.pref.chiba.jp/kohoka/orders_bandAct_04.html",
     "https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html",
     "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/event/calendar/"
   ],
-  "count": 44,
+  "count": 46,
   "events": [
     {
       "id": "2026-08-24-東京-海上自衛隊-第2術科学校見学会（施設見学･体験喫食等）",
@@ -33,7 +45,8 @@
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E2%97%8F%E9%9B%86%E5%90%88%E5%A0%B4%E6%89%80%20%E3%83%BB%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%92%E3%83%AB%E5%B8%82%E3%83%B6%E8%B0%B7%20%EF%BC%88%E6%9D%B1%E4%BA%AC%E9%83%BD%20%E6%96%B0%E5%AE%BF%E5%8C%BA%20%E5%B8%82%E8%B0%B7%E6%9C%AC%E6%9D%91%E7%94%BA%EF%BC%89%20%E2%97%8F%E8%A6%8B%E5%AD%A6%E5%A0%B4%E6%89%80%20%E3%83%BB%E6%B5%B7%E4%B8%8A%E8%87%AA%E8%A1%9B%E9%9A%8A%20%E7%AC%AC2%E8%A1%93%E7%A7%91%E5%AD%A6%E6%A0%A1%20%EF%BC%88%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%20%E6%A8%AA%E9%A0%88%E8%B3%80%E5%B8%82%20%E7%94%B0%E6%B5%A6%E6%B8%AF%E7%94%BA%E7%84%A1%E7%95%AA%E5%9C%B0%EF%BC%89",
       "scope": "首都圏",
-      "source": "海上自衛隊 イベント情報"
+      "source": "海上自衛隊 イベント情報",
+      "sourceType": "海自公式"
     },
     {
       "id": "2026-08-26-高知-海上自衛隊-護衛艦「あきづき」一般公開",
@@ -54,7 +67,8 @@
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E7%9F%A5%E6%96%B0%E6%B8%AF",
       "scope": "全国",
-      "source": "海上自衛隊 イベント情報"
+      "source": "海上自衛隊 イベント情報",
+      "sourceType": "海自公式"
     },
     {
       "id": "2026-08-27-千葉-2026警察音楽隊研修会-吹奏楽コンサート",
@@ -74,7 +88,8 @@
       "imageUrl": "https://www.police.pref.chiba.jp/content/common/000071050.jpg",
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E8%81%96%E5%BE%B3%E5%A4%A7%E5%AD%A6%E5%B7%9D%E4%B8%A6%E9%A6%99%E9%A0%86%E8%A8%98%E5%BF%B5%E8%AC%9B%E5%A0%82",
-      "source": "千葉県警察 音楽隊"
+      "source": "千葉県警察 音楽隊",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-08-27-神奈川-第367回マリーンコンサート",
@@ -94,7 +109,8 @@
       "imageUrl": "https://www.police.pref.kanagawa.jp/assets/entry/a8050_05.jpg",
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%AF%E3%82%A4%E3%83%BC%E3%83%B3%E3%82%BA%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%E6%A8%AA%E6%B5%9C%20%E3%82%AF%E3%82%A4%E3%83%BC%E3%83%B3%E3%82%BA%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB",
-      "source": "神奈川県警察 音楽隊"
+      "source": "神奈川県警察 音楽隊",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-08-29-東京-夏休み特別イベント",
@@ -114,7 +130,8 @@
       "imageUrl": "./assets/event-land.jpg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%BA%83%E5%A0%B1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC(%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%B7%B4%E9%A6%AC%E5%8C%BA)",
-      "source": "防衛省 イベント・交流活動"
+      "source": "防衛省 イベント・交流活動",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-08-29-北海道-海上自衛隊-函館基地隊-基地開放2026",
@@ -135,7 +152,8 @@
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E2%97%8F%E4%BC%9A%E5%A0%B4%E2%91%A0%EF%BC%9A%E6%B5%B7%E4%B8%8A%E8%87%AA%E8%A1%9B%E9%9A%8A%20%E5%87%BD%E9%A4%A8%E5%9F%BA%E5%9C%B0%E9%9A%8A%EF%BC%88%E5%8C%97%E6%B5%B7%E9%81%93%20%E5%87%BD%E9%A4%A8%E5%B8%82%20%E5%A4%A7%E7%94%BA10-3%EF%BC%89%20%E2%97%8F%E4%BC%9A%E5%A0%B4%E2%91%A1%EF%BC%9A%E5%87%BD%E9%A4%A8%E6%B8%AF%20%E8%A5%BF%E5%9F%A0%E9%A0%AD%EF%BC%88%E5%8C%97%E6%B5%B7%E9%81%93%20%E5%87%BD%E9%A4%A8%E5%B8%82%20%E5%BC%81%E5%A4%A9%E7%94%BA20%EF%BC%89",
       "scope": "全国",
-      "source": "海上自衛隊 イベント情報"
+      "source": "海上自衛隊 イベント情報",
+      "sourceType": "海自公式"
     },
     {
       "id": "2026-08-30-広島-呉在泊艦艇・地方総監部-一般公開",
@@ -156,6 +174,7 @@
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%91%89%E5%9F%BA%E5%9C%B0%E4%BF%82%E8%88%B9%E5%A0%80%E5%9C%B0%E5%8C%BA%E3%83%BB%E5%91%89%E5%9C%B0%E6%96%B9%E7%B7%8F%E7%9B%A3%E9%83%A8%EF%BC%88%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%91%89%E5%B8%82%EF%BC%89",
       "source": "海上自衛隊 呉地方隊",
+      "sourceType": "海自公式",
       "scope": "全国"
     },
     {
@@ -176,7 +195,8 @@
       "imageUrl": "./assets/event-land.jpg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%BA%83%E5%A0%B1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC(%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%B7%B4%E9%A6%AC%E5%8C%BA)",
-      "source": "防衛省 イベント・交流活動"
+      "source": "防衛省 イベント・交流活動",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-08-31-神奈川-YOKOSUKA軍港めぐり-夏休みキャンペーン",
@@ -197,6 +217,7 @@
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B1%90%E5%85%A5%E6%A1%9F%E6%A9%8B%EF%BC%88%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E9%A0%88%E8%B3%80%E5%B8%82%EF%BC%89",
       "source": "横須賀市観光協会",
+      "sourceType": "自治体・港湾",
       "scope": "首都圏"
     },
     {
@@ -217,7 +238,8 @@
       "imageUrl": "./assets/event-police.svg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
-      "source": "警視庁 イベントカレンダー"
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-05-東京-調布署-秋の交通安全のつどい",
@@ -237,7 +259,8 @@
       "imageUrl": "./assets/event-police.svg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
-      "source": "警視庁 イベントカレンダー"
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-06-千葉-さんばしまつり２０２６",
@@ -257,7 +280,8 @@
       "imageUrl": "https://www.police.pref.chiba.jp/content/common/000071050.jpg",
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E3%81%95%E3%82%93%E3%81%B0%E3%81%97%E3%81%B2%E3%82%8D%E3%81%B0(%E5%8D%83%E8%91%89%E3%81%BF%E3%81%AA%E3%81%A8%E3%83%BB%E3%82%B1%E3%83%BC%E3%82%BA%E3%83%8F%E3%83%BC%E3%83%90%E3%83%BC%E5%89%8D)",
-      "source": "千葉県警察 音楽隊"
+      "source": "千葉県警察 音楽隊",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-06-東京-三鷹署-三鷹交通安全フェスタ",
@@ -277,7 +301,8 @@
       "imageUrl": "./assets/event-police.svg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
-      "source": "警視庁 イベントカレンダー"
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-06-広島-呉在泊艦艇・地方総監部-一般公開",
@@ -298,6 +323,7 @@
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%91%89%E5%9F%BA%E5%9C%B0%E4%BF%82%E8%88%B9%E5%A0%80%E5%9C%B0%E5%8C%BA%E3%83%BB%E5%91%89%E5%9C%B0%E6%96%B9%E7%B7%8F%E7%9B%A3%E9%83%A8%EF%BC%88%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%91%89%E5%B8%82%EF%BC%89",
       "source": "海上自衛隊 呉地方隊",
+      "sourceType": "海自公式",
       "scope": "全国"
     },
     {
@@ -318,7 +344,8 @@
       "imageUrl": "./assets/event-police.svg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
-      "source": "警視庁 イベントカレンダー"
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-07-静岡-MCV体験型見学(要申込8月31日(月)〆切､年齢制限)",
@@ -338,7 +365,8 @@
       "imageUrl": "https://www.mod.go.jp/pco/tokyo/toshima/img/0907_fuji.png",
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%AF%8C%E5%A3%AB%E5%AD%A6%E6%A0%A1%E3%81%8A%E3%82%88%E3%81%B3%E6%9D%B1%E5%AF%8C%E5%A3%AB%E6%BC%94%E7%BF%92%E5%A0%B4(%E9%9D%99%E5%B2%A1%E7%9C%8C%E9%A7%BF%E6%9D%B1%E9%83%A1%E5%B0%8F%E5%B1%B1%E7%94%BA)",
-      "source": "防衛省 イベント・交流活動"
+      "source": "防衛省 イベント・交流活動",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-09-11-東京-サイバーセキュリティ対策セミナー",
@@ -358,7 +386,29 @@
       "imageUrl": "./assets/event-police.svg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
-      "source": "警視庁 イベントカレンダー"
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式"
+    },
+    {
+      "id": "2026-09-12-東京-東京アクアシンフォニー-船上観覧ツアー",
+      "date": "2026-09-12",
+      "region": "東京",
+      "branch": "その他",
+      "title": "東京アクアシンフォニー 船上観覧ツアー",
+      "location": "お台場海浜公園周辺（東京都港区）",
+      "category": "港・艦船",
+      "application": true,
+      "applicationNote": "事前申込・抽選",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026081710",
+      "imageUrl": "./assets/event-sea.jpg",
+      "imageIsIllustration": true,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E3%81%8A%E5%8F%B0%E5%A0%B4%E6%B5%B7%E6%B5%9C%E5%85%AC%E5%9C%92%E5%91%A8%E8%BE%BA%EF%BC%88%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%EF%BC%89",
+      "source": "東京都港湾局",
+      "sourceType": "自治体・港湾"
     },
     {
       "id": "2026-09-12-東京-秋の全国交通安全運動-交通安全都民のつどい",
@@ -378,7 +428,8 @@
       "imageUrl": "./assets/event-police.svg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
-      "source": "警視庁 イベントカレンダー"
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-12-千葉-第18回セーフティコンサート",
@@ -398,7 +449,29 @@
       "imageUrl": "https://www.police.pref.chiba.jp/content/common/000071050.jpg",
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B5%A6%E5%AE%89%E5%B8%82%E6%96%87%E5%8C%96%E4%BC%9A%E9%A4%A8",
-      "source": "千葉県警察 音楽隊"
+      "source": "千葉県警察 音楽隊",
+      "sourceType": "警察公式"
+    },
+    {
+      "id": "2026-09-13-東京-東京アクアシンフォニー-船上観覧ツアー",
+      "date": "2026-09-13",
+      "region": "東京",
+      "branch": "その他",
+      "title": "東京アクアシンフォニー 船上観覧ツアー",
+      "location": "お台場海浜公園周辺（東京都港区）",
+      "category": "港・艦船",
+      "application": true,
+      "applicationNote": "事前申込・抽選",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026081710",
+      "imageUrl": "./assets/event-sea.jpg",
+      "imageIsIllustration": true,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E3%81%8A%E5%8F%B0%E5%A0%B4%E6%B5%B7%E6%B5%9C%E5%85%AC%E5%9C%92%E5%91%A8%E8%BE%BA%EF%BC%88%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%EF%BC%89",
+      "source": "東京都港湾局",
+      "sourceType": "自治体・港湾"
     },
     {
       "id": "2026-09-13-東京-田無署-二輪車実技教室(サンデーバイクスクール)",
@@ -418,7 +491,8 @@
       "imageUrl": "./assets/event-police.svg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
-      "source": "警視庁 イベントカレンダー"
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-13-東京-福生署-秋の交通安全フェスティバル",
@@ -438,7 +512,8 @@
       "imageUrl": "./assets/event-police.svg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
-      "source": "警視庁 イベントカレンダー"
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-15-千葉-流山警察署-秋の全国交通安全運動",
@@ -458,7 +533,8 @@
       "imageUrl": "https://www.police.pref.chiba.jp/content/common/000071050.jpg",
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B5%81%E5%B1%B1%E3%81%8A%E3%81%8A%E3%81%9F%E3%81%8B%E3%81%AE%E6%A3%AE%E9%A7%85%E5%8D%97%E5%8F%A3%E9%83%BD%E5%B8%82%E5%BA%83%E5%A0%B4",
-      "source": "千葉県警察 音楽隊"
+      "source": "千葉県警察 音楽隊",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-17-千葉-千葉西警察署-秋の全国交通安全運動キャンペーン",
@@ -478,7 +554,8 @@
       "imageUrl": "https://www.police.pref.chiba.jp/content/common/000071050.jpg",
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E5%B9%95%E5%BC%B5%E6%96%B0%E9%83%BD%E5%BF%83",
-      "source": "千葉県警察 音楽隊"
+      "source": "千葉県警察 音楽隊",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-26-東京-上野署-上野交通安全フェスティバル",
@@ -498,7 +575,8 @@
       "imageUrl": "./assets/event-police.svg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
-      "source": "警視庁 イベントカレンダー"
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-27-東京-西新井署-エンジョイ・ライダー・スクール",
@@ -518,7 +596,8 @@
       "imageUrl": "./assets/event-police.svg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
-      "source": "警視庁 イベントカレンダー"
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-29-東京-上野署-見て学ぶ、交通安全。スケアードストレイト",
@@ -538,7 +617,8 @@
       "imageUrl": "./assets/event-police.svg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
-      "source": "警視庁 イベントカレンダー"
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-29-千葉-交通安全フェア☆ちば２０２６",
@@ -558,7 +638,8 @@
       "imageUrl": "https://www.police.pref.chiba.jp/content/common/000071050.jpg",
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8D%83%E8%91%89%E5%B8%82%E7%94%9F%E6%B6%AF%E5%AD%A6%E7%BF%92%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%202%E9%9A%8E%E3%83%9B%E3%83%BC%E3%83%AB",
-      "source": "千葉県警察 音楽隊"
+      "source": "千葉県警察 音楽隊",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-09-29-千葉-習志野駐屯地空挺団見学ツアー(要申込8月31日(月)〆切､年齢制限)",
@@ -578,7 +659,8 @@
       "imageUrl": "https://www.mod.go.jp/pco/tokyo/koutou/img/0929_narasino.png",
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%BF%92%E5%BF%97%E9%87%8E%E9%A7%90%E5%B1%AF%E5%9C%B0(%E5%8D%83%E8%91%89%E7%9C%8C%E8%88%B9%E6%A9%8B%E5%B8%82)",
-      "source": "防衛省 イベント・交流活動"
+      "source": "防衛省 イベント・交流活動",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-09-30-東京-第24回戦争史研究国際フォーラム(要申込)",
@@ -598,7 +680,8 @@
       "imageUrl": "./assets/event-land.jpg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E3%82%A6%E3%82%A7%E3%83%93%E3%83%8A%E3%83%BC%E5%BD%A2%E5%BC%8F%20(%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E9%96%8B%E5%82%AC)",
-      "source": "防衛省 イベント・交流活動"
+      "source": "防衛省 イベント・交流活動",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-10-01-東京-府中基地秋祭り",
@@ -618,7 +701,8 @@
       "imageUrl": "./assets/event-air.jpg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%BA%9C%E4%B8%AD%E5%9F%BA%E5%9C%B0",
-      "source": "航空自衛隊 イベント一覧"
+      "source": "航空自衛隊 イベント一覧",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-10-03-東京-小松川署-二輪車実技教室（サタデーバイクスクール）",
@@ -638,7 +722,8 @@
       "imageUrl": "./assets/event-police.svg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
-      "source": "警視庁 イベントカレンダー"
+      "source": "警視庁 イベントカレンダー",
+      "sourceType": "警察公式"
     },
     {
       "id": "2026-10-03-千葉-巡回演奏会in成田",
@@ -658,7 +743,8 @@
       "imageUrl": "http://www.mod.go.jp/gsdf/eae/1d/event/img/large.jpg",
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%88%90%E7%94%B0%E5%9B%BD%E9%9A%9B%E6%96%87%E5%8C%96%E4%BC%9A%E9%A4%A8%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%EF%BC%88%E5%8D%83%E8%91%89%E7%9C%8C%E6%88%90%E7%94%B0%E5%B8%82%EF%BC%89",
-      "source": "陸上自衛隊 第1音楽隊"
+      "source": "陸上自衛隊 第1音楽隊",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-10-10-千葉-ヘリコプターフェスティバル-in-TATEYAMA-2026",
@@ -679,6 +765,7 @@
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B5%B7%E4%B8%8A%E8%87%AA%E8%A1%9B%E9%9A%8A%20%E9%A4%A8%E5%B1%B1%E8%88%AA%E7%A9%BA%E5%9F%BA%E5%9C%B0%EF%BC%88%E5%8D%83%E8%91%89%E7%9C%8C%E9%A4%A8%E5%B1%B1%E5%B8%82%E5%AE%AE%E5%9F%8E%E7%84%A1%E7%95%AA%E5%9C%B0%EF%BC%89",
       "source": "海上自衛隊 第21航空群・館山航空基地",
+      "sourceType": "海自公式",
       "scope": "首都圏"
     },
     {
@@ -699,7 +786,8 @@
       "imageUrl": "./assets/event-air.jpg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%9F%BC%E7%8E%89%E7%9C%8C%E9%B4%BB%E5%B7%A3%E5%B8%82",
-      "source": "航空自衛隊 イベント一覧"
+      "source": "航空自衛隊 イベント一覧",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-10-25-静岡-エアフェスタ浜松2026",
@@ -719,7 +807,8 @@
       "imageUrl": "./assets/event-air.jpg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B5%9C%E6%9D%BE%E5%9F%BA%E5%9C%B0",
-      "source": "航空自衛隊 イベント一覧"
+      "source": "航空自衛隊 イベント一覧",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-11-03-埼玉-入間航空祭",
@@ -739,7 +828,8 @@
       "imageUrl": "./assets/event-air.jpg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%85%A5%E9%96%93%E5%9F%BA%E5%9C%B0",
-      "source": "航空自衛隊 イベント一覧"
+      "source": "航空自衛隊 イベント一覧",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-11-19-東京-自衛隊音楽まつり2026",
@@ -759,7 +849,8 @@
       "imageUrl": "./assets/event-land.jpg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%97%A5%E6%9C%AC%E6%AD%A6%E9%81%93%E9%A4%A8%EF%BC%88%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E5%8C%97%E3%81%AE%E4%B8%B8%E5%85%AC%E5%9C%92%EF%BC%89",
-      "source": "陸上自衛隊 自衛隊音楽まつり"
+      "source": "陸上自衛隊 自衛隊音楽まつり",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-11-20-東京-自衛隊音楽まつり2026",
@@ -779,7 +870,8 @@
       "imageUrl": "./assets/event-land.jpg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%97%A5%E6%9C%AC%E6%AD%A6%E9%81%93%E9%A4%A8%EF%BC%88%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E5%8C%97%E3%81%AE%E4%B8%B8%E5%85%AC%E5%9C%92%EF%BC%89",
-      "source": "陸上自衛隊 自衛隊音楽まつり"
+      "source": "陸上自衛隊 自衛隊音楽まつり",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-11-21-東京-自衛隊音楽まつり2026",
@@ -799,7 +891,8 @@
       "imageUrl": "./assets/event-land.jpg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%97%A5%E6%9C%AC%E6%AD%A6%E9%81%93%E9%A4%A8%EF%BC%88%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E5%8C%97%E3%81%AE%E4%B8%B8%E5%85%AC%E5%9C%92%EF%BC%89",
-      "source": "陸上自衛隊 自衛隊音楽まつり"
+      "source": "陸上自衛隊 自衛隊音楽まつり",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-12-06-茨城-百里基地開庁60周年記念航空祭",
@@ -819,7 +912,8 @@
       "imageUrl": "./assets/event-air.jpg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%99%BE%E9%87%8C%E5%9F%BA%E5%9C%B0",
-      "source": "航空自衛隊 イベント一覧"
+      "source": "航空自衛隊 イベント一覧",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2026-12-20-東京-第42回ふれあいコンサート",
@@ -839,7 +933,8 @@
       "imageUrl": "http://www.mod.go.jp/gsdf/eae/1d/event/img/large.jpg",
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%BF%E6%A9%8B%E5%8C%BA%E6%96%87%E5%8C%96%E4%BC%9A%E9%A4%A8%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%EF%BC%88%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%9D%BF%E6%A9%8B%E5%8C%BA%EF%BC%89",
-      "source": "陸上自衛隊 第1音楽隊"
+      "source": "陸上自衛隊 第1音楽隊",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2027-03-07-東京-東京マラソン2027（ブルーインパルス展示飛行）",
@@ -859,7 +954,8 @@
       "imageUrl": "./assets/event-air.jpg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD",
-      "source": "航空自衛隊 イベント一覧"
+      "source": "航空自衛隊 イベント一覧",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2027-03-07-東京-第51回定期演奏会",
@@ -879,7 +975,8 @@
       "imageUrl": "http://www.mod.go.jp/gsdf/eae/1d/event/img/large.jpg",
       "imageIsIllustration": false,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%B7%B4%E9%A6%AC%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%EF%BC%88%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%B7%B4%E9%A6%AC%E5%8C%BA%EF%BC%89",
-      "source": "陸上自衛隊 第1音楽隊"
+      "source": "陸上自衛隊 第1音楽隊",
+      "sourceType": "自衛隊公式"
     },
     {
       "id": "2027-03-19-神奈川-2027年国際園芸博覧会 GREEN×EXPO 2027（ブルーインパルス展示飛行）",
@@ -899,7 +996,8 @@
       "imageUrl": "./assets/event-air.jpg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E6%B5%9C%E5%B8%82",
-      "source": "航空自衛隊 イベント一覧"
+      "source": "航空自衛隊 イベント一覧",
+      "sourceType": "自衛隊公式"
     }
   ]
 }

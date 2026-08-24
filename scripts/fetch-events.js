@@ -11,6 +11,18 @@ const SEA_KURE_SOURCE = 'https://r.jina.ai/https://www.mod.go.jp/msdf/kure/annou
 const SEA_KURE_OFFICIAL = 'https://www.mod.go.jp/msdf/kure/announcement/tour/index.html';
 const SEA_TATEYAMA_SOURCE = 'https://r.jina.ai/https://www.mod.go.jp/msdf/tateyama/faw21/ivent.html';
 const SEA_TATEYAMA_OFFICIAL = 'https://www.mod.go.jp/msdf/tateyama/faw21/ivent.html';
+const PORT_OFFICIAL_SOURCES = [
+  'https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/',
+  'https://www.city.yokohama.lg.jp/kanko-bunka/minato/',
+  'https://www.kouwan.metro.tokyo.lg.jp/kanko/',
+  'https://www.pref.chiba.lg.jp/kouwan/'
+];
+const FOREIGN_VESSEL_SOURCES = [
+  'https://www.mod.go.jp/msdf/release/',
+  'https://www.mod.go.jp/msdf/yokosuka/news-list/',
+  'https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/',
+  'https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/'
+];
 const ALLOWED = new Set(['神奈川', '東京', '埼玉', '千葉', '茨城', '静岡', '山梨', '栃木']);
 const ALL_REGIONS = ['北海道','青森','岩手','宮城','秋田','山形','福島','茨城','栃木','群馬','埼玉','千葉','東京','神奈川','新潟','富山','石川','福井','山梨','長野','岐阜','静岡','愛知','三重','滋賀','京都','大阪','兵庫','奈良','和歌山','鳥取','島根','岡山','広島','山口','徳島','香川','愛媛','高知','福岡','佐賀','長崎','熊本','大分','宮崎','鹿児島','沖縄'];
 const AIR_SOURCE = 'https://www.mod.go.jp/asdf/event/list.html';
@@ -31,7 +43,11 @@ const LAND_BAND_SUPPLEMENTS = [
 ];
 const PORT_SUPPLEMENTS = [
   { date:'2026-08-31', region:'神奈川', branch:'海自', title:'YOKOSUKA軍港めぐり 夏休みキャンペーン', location:'汐入桟橋（神奈川県横須賀市）', category:'港・艦船',
-    officialUrl:'https://yokosuka-kanko.com/events/events-21079/', imageUrl:'./assets/event-sea.jpg', source:'横須賀市観光協会' }
+    officialUrl:'https://yokosuka-kanko.com/events/events-21079/', imageUrl:'./assets/event-sea.jpg', source:'横須賀市観光協会', sourceType:'自治体・港湾' },
+  { date:'2026-09-12', region:'東京', branch:'その他', title:'東京アクアシンフォニー 船上観覧ツアー', location:'お台場海浜公園周辺（東京都港区）', category:'港・艦船',
+    officialUrl:'https://www.metro.tokyo.lg.jp/information/press/2026/08/2026081710', imageUrl:'./assets/event-sea.jpg', source:'東京都港湾局', sourceType:'自治体・港湾', details:'事前申込・抽選' },
+  { date:'2026-09-13', region:'東京', branch:'その他', title:'東京アクアシンフォニー 船上観覧ツアー', location:'お台場海浜公園周辺（東京都港区）', category:'港・艦船',
+    officialUrl:'https://www.metro.tokyo.lg.jp/information/press/2026/08/2026081710', imageUrl:'./assets/event-sea.jpg', source:'東京都港湾局', sourceType:'自治体・港湾', details:'事前申込・抽選' }
 ];
 // 空自一覧は画面上の日付が取得用テキストから省かれるため、開催年の日付だけ補助登録。
 // 毎日の統合表取得と併用し、同じ催しは下の重複排除で一件にまとめる。
@@ -105,7 +121,16 @@ function fallbackImage(branch, title = '') {
   return './assets/event-land.jpg';
 }
 
-function makeEvent({ date, region, branch, title, location, officialUrl, imageUrl, source, details = '', forceCategory }) {
+function inferSourceType(event) {
+  if (event.sourceType) return event.sourceType;
+  if (/外国艦|米海軍|US Navy|U\.S\. Navy/i.test(`${event.title} ${event.source}`)) return '外国艦船';
+  if (/市|県|都|港湾|観光協会/.test(event.source || '')) return '自治体・港湾';
+  if (event.branch === '海自') return '海自公式';
+  if (event.branch === '警察') return '警察公式';
+  return '自衛隊公式';
+}
+
+function makeEvent({ date, region, branch, title, location, officialUrl, imageUrl, source, sourceType, details = '', forceCategory }) {
   const profile = access(region, location);
   const finalImage = imageUrl || fallbackImage(branch, title);
   return {
@@ -115,7 +140,8 @@ function makeEvent({ date, region, branch, title, location, officialUrl, imageUr
     ageRestriction: /年齢制限|未就学児/.test(details), price: /有料/.test(details) ? '有料（公式情報を確認）' : '原則無料（公式情報を確認）',
     accessRank: profile.rank, accessNote: profile.note, officialUrl, imageUrl: finalImage,
     imageIsIllustration: finalImage.startsWith('./assets/'), mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`,
-    source, scope: branch === '海自' ? (ALLOWED.has(region) ? '首都圏' : '全国') : undefined
+    source, sourceType: sourceType || (branch === '海自' ? '海自公式' : branch === '警察' ? '警察公式' : '自衛隊公式'),
+    scope: branch === '海自' ? (ALLOWED.has(region) ? '首都圏' : '全国') : undefined
   };
 }
 
@@ -371,9 +397,11 @@ async function main() {
   const unique = [...new Map(combined.map(e => [`${e.date}|${e.title.replace(/[（(].*$/,'')}`, e])).values()];
   const events = unique
     .filter(e => new Date(`${e.date}T00:00:00+09:00`) >= now)
+    .map(e => ({ ...e, sourceType:inferSourceType(e) }))
     .sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title));
   const data = { updatedAt: new Date().toISOString(), sourceUrl: 'https://www.mod.go.jp/j/press/events/', seaSourceUrl: SEA_OFFICIAL,
     seaSources:[SEA_OFFICIAL, SEA_KURE_OFFICIAL, SEA_TATEYAMA_OFFICIAL],
+    portSources:PORT_OFFICIAL_SOURCES, foreignVesselSources:FOREIGN_VESSEL_SOURCES,
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE], count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
   console.log(`${events.length}件を書き出しました`);
