@@ -11,6 +11,7 @@ const SEA_KURE_SOURCE = 'https://r.jina.ai/https://www.mod.go.jp/msdf/kure/annou
 const SEA_KURE_OFFICIAL = 'https://www.mod.go.jp/msdf/kure/announcement/tour/index.html';
 const SEA_TATEYAMA_SOURCE = 'https://r.jina.ai/https://www.mod.go.jp/msdf/tateyama/faw21/ivent.html';
 const SEA_TATEYAMA_OFFICIAL = 'https://www.mod.go.jp/msdf/tateyama/faw21/ivent.html';
+const COCOYOKO_BASE_SOURCE = 'https://www.cocoyoko.net/event/genre/base/';
 const PORT_OFFICIAL_SOURCES = [
   'https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/',
   'https://www.city.yokohama.lg.jp/kanko-bunka/minato/',
@@ -21,7 +22,8 @@ const FOREIGN_VESSEL_SOURCES = [
   'https://www.mod.go.jp/msdf/release/',
   'https://www.mod.go.jp/msdf/yokosuka/news-list/',
   'https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/',
-  'https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/'
+  'https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/',
+  'https://www.cocoyoko.net/event/genre/base/'
 ];
 const BASE_OPEN_SOURCES = [
   'https://www.mod.go.jp/msdf/yokosuka/news-list/',
@@ -30,7 +32,8 @@ const BASE_OPEN_SOURCES = [
   'https://www.mod.go.jp/msdf/maizuru/news/',
   'https://www.mod.go.jp/msdf/oominato/',
   'https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/',
-  'https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/'
+  'https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/',
+  'https://www.cocoyoko.net/event/genre/base/'
 ];
 const ALLOWED = new Set(['神奈川', '東京', '埼玉', '千葉', '茨城', '静岡', '山梨', '栃木']);
 const ALL_REGIONS = ['北海道','青森','岩手','宮城','秋田','山形','福島','茨城','栃木','群馬','埼玉','千葉','東京','神奈川','新潟','富山','石川','福井','山梨','長野','岐阜','静岡','愛知','三重','滋賀','京都','大阪','兵庫','奈良','和歌山','鳥取','島根','岡山','広島','山口','徳島','香川','愛媛','高知','福岡','佐賀','長崎','熊本','大分','宮崎','鹿児島','沖縄'];
@@ -145,6 +148,35 @@ function inferOpenType(event) {
   if (/基地(?:一般)?開放|基地祭|一般開放|地方総監部一般公開|スプリングフェスタ|フレンドシップデー/i.test(text)) return '基地一般開放';
   if (/艦艇|護衛艦|掃海|潜水艦|ミサイル艇|船舶一般公開|軍港/.test(text)) return '艦艇・港湾公開';
   return '';
+}
+
+function isCancelled(event) {
+  return /開催中止|中止(?:となりました|します|決定)|実施されません|開催を見送/.test(
+    `${event.title || ''} ${event.details || ''} ${event.applicationNote || ''} ${event.status || ''}`
+  );
+}
+
+async function parseCocoyokoBase(html) {
+  const out = [];
+  for (const block of html.match(/<li>[\s\S]*?<\/li>/g) || []) {
+    const url = (block.match(/<a href="([^"]+)"/) || [])[1];
+    const status = (block.match(/statusLabel">(20\d{2}:\d{2}:\d{2})[^|]*\|(20\d{2}:\d{2}:\d{2})/) || []);
+    const title = clean((block.match(/<h3[^>]*>([\s\S]*?)<\/h3>/) || [])[1] || '').replace(/<[^>]+>/g, '');
+    const location = clean((block.match(/entryAreaBox[^>]*>([\s\S]*?)<\/div>/) || [])[1] || '米海軍横須賀基地').replace(/<[^>]+>/g, '');
+    const imageUrl = (block.match(/background-image:\s*url\(([^)]+)\)/) || [])[1];
+    const tags = clean((block.match(/entryTagBox">([\s\S]*?)<\/div>/) || [])[1] || '').replace(/<[^>]+>/g, ' ');
+    if (!url || !status[1] || !title || !/米海軍|自衛隊/.test(tags)) continue;
+    if (!/基地|艦|フレンドシップ|スプリングフェスタ|ベース歴史ツアー|フリート|一般公開/.test(title)) continue;
+    const eventDates = [...new Set([status[1], status[2]].filter(Boolean).map(value => value.replace(/:/g, '-')))];
+    if (eventDates.every(date => new Date(`${date}T23:59:59+09:00`) < new Date())) continue;
+    const details = await fetchOptional(url, `横須賀市観光情報 ${title}`);
+    if (/開催中止|開催を中止|実施されません|開催を見送/.test(details)) continue;
+    for (const date of eventDates) out.push(makeEvent({ date, region:'神奈川', branch:/米海軍/.test(tags) ? 'その他' : '海自', title,
+      location:location || '米海軍横須賀基地', officialUrl:url, imageUrl, source:'横須賀市観光情報',
+      sourceType:/米海軍/.test(tags) ? '米海軍基地' : '自治体・港湾', details,
+      forceCategory:/米海軍/.test(tags) ? '米軍基地一般開放' : '基地祭・記念行事' }));
+  }
+  return out;
 }
 
 function makeEvent({ date, region, branch, title, location, officialUrl, imageUrl, source, sourceType, details = '', forceCategory }) {
@@ -363,10 +395,11 @@ async function main() {
   const response = await fetch(SOURCE, { headers: { 'User-Agent': 'jsdf-events/1.0' } });
   if (!response.ok) throw new Error(`取得失敗: ${response.status}`);
   const markdown = await response.text();
-  const [landBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, seaKureText, seaTateyamaText] = await Promise.all([
+  const [landBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, seaKureText, seaTateyamaText, cocoyokoBaseText] = await Promise.all([
     fetchOptional(LAND_BAND_SOURCE, '第1音楽隊'), fetchOptional(MUSIC_FESTIVAL_SOURCE, '自衛隊音楽まつり'),
     fetchOptional(CHIBA_POLICE_SOURCE, '千葉県警音楽隊'), fetchOptional(KANAGAWA_POLICE_SOURCE, '神奈川県警音楽隊'),
-    fetchOptional(SEA_KURE_SOURCE, '海自呉地方隊'), fetchOptional(SEA_TATEYAMA_SOURCE, '海自館山航空基地')
+    fetchOptional(SEA_KURE_SOURCE, '海自呉地方隊'), fetchOptional(SEA_TATEYAMA_SOURCE, '海自館山航空基地'),
+    fetchOptional(COCOYOKO_BASE_SOURCE, '横須賀市観光情報 米海軍・自衛隊一覧')
   ]);
   const calendarMonths = [0,1,2].map(offset => { const d = new Date(); d.setMonth(d.getMonth() + offset); return [d.getFullYear(), d.getMonth() + 1]; });
   const tokyoPolicePages = await Promise.all(calendarMonths.map(([y,m]) => fetchOptional(
@@ -407,12 +440,14 @@ async function main() {
   const chibaPoliceEvents = parseChibaPolice(chibaPoliceText);
   const kanagawaPoliceEvents = parseKanagawaPolice(kanagawaPoliceText);
   const seaRegionalEvents = [...parseSeaKure(seaKureText), ...parseSeaTateyama(seaTateyamaText)];
+  const cocoyokoBaseEvents = await parseCocoyokoBase(cocoyokoBaseText);
   console.log(`追加取得: 海自地方公式${seaRegionalEvents.length}件 / 第1音楽隊${landBandEvents.length}件 / 音楽まつり${musicFestivalEvents.length}件 / 千葉県警${chibaPoliceEvents.length}件 / 神奈川県警${kanagawaPoliceEvents.length}件 / 警視庁${tokyoPoliceEvents.length + tokyoPoliceMusicEvents.length}件`);
   const portEvents = PORT_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
-  const combined = [...parse(markdown), ...seaEvents, ...seaRegionalEvents, ...supplemental, ...landBandEvents, ...portEvents,
+  const combined = [...parse(markdown), ...seaEvents, ...seaRegionalEvents, ...cocoyokoBaseEvents, ...supplemental, ...landBandEvents, ...portEvents,
     ...musicFestivalEvents, ...chibaPoliceEvents, ...kanagawaPoliceEvents, ...tokyoPoliceEvents, ...tokyoPoliceMusicEvents];
   const unique = [...new Map(combined.map(e => [`${e.date}|${e.title.replace(/[（(].*$/,'')}`, e])).values()];
   const events = unique
+    .filter(e => !isCancelled(e))
     .filter(e => new Date(`${e.date}T00:00:00+09:00`) >= now)
     .map(e => ({ ...e, sourceType:inferSourceType(e), openType:inferOpenType(e) }))
     .sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title));

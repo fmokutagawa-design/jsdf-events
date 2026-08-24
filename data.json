@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T03:24:56.281Z",
+  "updatedAt": "2026-08-24T03:27:45.081Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -17,7 +17,8 @@
     "https://www.mod.go.jp/msdf/release/",
     "https://www.mod.go.jp/msdf/yokosuka/news-list/",
     "https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/",
-    "https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/"
+    "https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/",
+    "https://www.cocoyoko.net/event/genre/base/"
   ],
   "baseOpenSources": [
     "https://www.mod.go.jp/msdf/yokosuka/news-list/",
@@ -26,7 +27,8 @@
     "https://www.mod.go.jp/msdf/maizuru/news/",
     "https://www.mod.go.jp/msdf/oominato/",
     "https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/",
-    "https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/"
+    "https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/",
+    "https://www.cocoyoko.net/event/genre/base/"
   ],
   "policeSources": [
     "https://www.police.pref.chiba.jp/kohoka/orders_bandAct_04.html",
