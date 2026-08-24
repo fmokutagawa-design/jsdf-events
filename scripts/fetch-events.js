@@ -41,6 +41,24 @@ const MILITARY_PORT_CITY_SOURCES = [
   { city:'舞鶴', url:'https://www.city.maizuru.kyoto.jp/' },
   { city:'大湊・むつ', url:'https://www.city.mutsu.lg.jp/topics/' }
 ];
+const SEA_UNIT_SOURCES = [
+  { name:'横須賀地方隊', region:'神奈川', location:'海上自衛隊 横須賀地区', url:'https://www.mod.go.jp/msdf/yokosuka/news-list/' },
+  { name:'舞鶴地方隊', region:'京都', location:'海上自衛隊 舞鶴地区', url:'https://www.mod.go.jp/msdf/maizuru/news/' },
+  { name:'呉地方隊', region:'広島', location:'海上自衛隊 呉地区', url:'https://www.mod.go.jp/msdf/kure/announcement/' },
+  { name:'佐世保地方隊', region:'長崎', location:'海上自衛隊 佐世保地区', url:'https://www.mod.go.jp/msdf/sasebo/2_pr_event/2_pr_event.html' },
+  { name:'大湊地区隊', region:'青森', location:'海上自衛隊 大湊地区', url:'https://www.mod.go.jp/msdf/oominato/' },
+  { name:'阪神基地隊', region:'兵庫', location:'海上自衛隊 阪神基地隊', url:'https://www.mod.go.jp/msdf/hanshin/' },
+  { name:'下関基地隊', region:'山口', location:'海上自衛隊 下関基地隊', url:'https://www.mod.go.jp/msdf/shimoki/' },
+  { name:'八戸航空基地', region:'青森', location:'海上自衛隊 八戸航空基地', url:'https://www.mod.go.jp/msdf/hatinohe/event/index.html' },
+  { name:'館山航空基地', region:'千葉', location:'海上自衛隊 館山航空基地', url:'https://www.mod.go.jp/msdf/tateyama/faw21/ivent.html' },
+  { name:'岩国航空基地', region:'山口', location:'海上自衛隊 岩国航空基地', url:'https://www.mod.go.jp/msdf/iwakuni/' },
+  { name:'第22航空群・大村航空基地', region:'長崎', location:'海上自衛隊 大村航空基地', url:'https://www.mod.go.jp/msdf/22aw/event/kichisai/kitisai.html' },
+  { name:'小月航空基地', region:'山口', location:'海上自衛隊 小月航空基地', url:'https://www.mod.go.jp/msdf/oz-atg/' },
+  { name:'徳島航空基地', region:'徳島', location:'海上自衛隊 徳島航空基地', url:'https://www.mod.go.jp/msdf/tokusima/' },
+  { name:'鹿屋航空基地', region:'鹿児島', location:'海上自衛隊 鹿屋航空基地', url:'https://www.mod.go.jp/msdf/kanoya/' },
+  { name:'第5航空群・那覇航空基地', region:'沖縄', location:'海上自衛隊 那覇航空基地', url:'https://www.mod.go.jp/msdf/naha/release.html' },
+  { name:'第1術科学校・幹部候補生学校', region:'広島', location:'海上自衛隊 第1術科学校（江田島）', url:'https://www.mod.go.jp/msdf/onemss/' }
+];
 const BASE_OPEN_SOURCES = [
   'https://www.mod.go.jp/msdf/yokosuka/news-list/',
   'https://www.mod.go.jp/msdf/kure/announcement/',
@@ -431,7 +449,30 @@ function parseSeaFukuoka(markdown) {
   return out;
 }
 
+function parseUnitEventCandidates(markdown, unit) {
+  const out = [];
+  const lines = markdown.normalize('NFKC').split('\n');
+  const eventWords = /一般公開|一般開放|基地(?:一般)?開放|基地祭|フリート(?:ウィーク|フェスタ)|オータムフェスタ|サマーフェスタ|スウェルフェスタ|体験航海|艦艇見学/;
+  const rejectWords = /出店|売店|業者|募集要領|過去のイベント|活動の様子|終了しました|開催中止|中止となりました/;
+  for (let i = 0; i < lines.length; i++) {
+    const heading = clean(lines[i]).replace(/^#+\s*/, '');
+    if (!eventWords.test(heading) || rejectWords.test(heading) || heading.length < 5 || heading.length > 90) continue;
+    const nearby = lines.slice(Math.max(0, i - 3), Math.min(lines.length, i + 7)).join(' ');
+    if (rejectWords.test(nearby)) continue;
+    const eventDates = dates(nearby);
+    if (!eventDates.length) continue;
+    const title = heading.replace(/^.*?Image:\s*/, '').replace(/^イベント情報\s*/, '').trim();
+    if (!title || /^(?:一般公開|一般開放|基地一般開放)$/.test(title)) continue;
+    for (const date of eventDates) out.push(makeEvent({ date, region:unit.region, branch:'海自', title,
+      location:unit.location, officialUrl:unit.url, imageUrl:'./assets/event-sea.jpg', source:`海上自衛隊 ${unit.name}`,
+      details:nearby, forceCategory:/艦|航海/.test(title) ? '艦艇・一般公開' : '基地祭・記念行事' }));
+  }
+  return out;
+}
+
 async function main() {
+  let previousData = { events:[], seaUnitSources:[] };
+  try { previousData = JSON.parse(await fs.readFile(path.join(ROOT, 'data.json'), 'utf8')); } catch {}
   const response = await fetch(SOURCE, { headers: { 'User-Agent': 'jsdf-events/1.0' } });
   if (!response.ok) throw new Error(`取得失敗: ${response.status}`);
   const markdown = await response.text();
@@ -442,6 +483,21 @@ async function main() {
     fetchOptional(SEA_HACHINOHE_SOURCE, '海自八戸航空基地'), fetchOptional(SEA_FUKUOKA_SOURCE, '福岡地本しらせ一般公開'),
     fetchOptional(COCOYOKO_BASE_SOURCE, '横須賀市観光情報 米海軍・自衛隊一覧')
   ]);
+  const unitTexts = new Array(SEA_UNIT_SOURCES.length).fill('');
+  const rotation = Math.floor(Date.now() / 86400000) % 4;
+  // 無料取得先への負荷を抑えるため4組を日替わり巡回し、4日で全基地を確認する。
+  for (let index = 0; index < SEA_UNIT_SOURCES.length; index++) {
+    if (index % 4 !== rotation) continue;
+    const unit = SEA_UNIT_SOURCES[index];
+    unitTexts[index] = await fetchOptional(`https://r.jina.ai/${unit.url}`, unit.name);
+    await new Promise(resolve => setTimeout(resolve, 500));
+  }
+  const freshUnitEvents = unitTexts.flatMap((text, index) => text ? parseUnitEventCandidates(text, SEA_UNIT_SOURCES[index]) : []);
+  const preservedUnitEvents = SEA_UNIT_SOURCES.flatMap((unit, index) => unitTexts[index] ? [] : previousData.events.filter(event => event.source === `海上自衛隊 ${unit.name}`));
+  const unitEvents = [...preservedUnitEvents, ...freshUnitEvents];
+  const previousUnitStatus = new Map((previousData.seaUnitSources || []).map(item => [item.url, item]));
+  const unitSourceStatus = SEA_UNIT_SOURCES.map((unit, index) => ({ name:unit.name, url:unit.url,
+    fetched:Boolean(unitTexts[index]) || Boolean(previousUnitStatus.get(unit.url)?.fetched), checkedToday:index % 4 === rotation }));
   const calendarMonths = [0,1,2].map(offset => { const d = new Date(); d.setMonth(d.getMonth() + offset); return [d.getFullYear(), d.getMonth() + 1]; });
   const tokyoPolicePages = await Promise.all(calendarMonths.map(([y,m]) => fetchOptional(
     `https://r.jina.ai/${TOKYO_POLICE_BASE}calendar${y}${String(m).padStart(2,'0')}.html`, '警視庁カレンダー')));
@@ -485,7 +541,11 @@ async function main() {
   const cocoyokoBaseEvents = await parseCocoyokoBase(cocoyokoBaseText);
   console.log(`追加取得: 海自地方公式${seaRegionalEvents.length}件 / 第1音楽隊${landBandEvents.length}件 / 音楽まつり${musicFestivalEvents.length}件 / 千葉県警${chibaPoliceEvents.length}件 / 神奈川県警${kanagawaPoliceEvents.length}件 / 警視庁${tokyoPoliceEvents.length + tokyoPoliceMusicEvents.length}件`);
   const portEvents = PORT_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
-  const combined = [...parse(markdown), ...seaEvents, ...seaRegionalEvents, ...cocoyokoBaseEvents, ...supplemental, ...landBandEvents, ...portEvents,
+  const optionalSuccesses = [landBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText,
+    ...tokyoPolicePages, ...tokyoPoliceMusicPages].filter(Boolean).length;
+  const degraded = optionalSuccesses < 6;
+  if (degraded) console.warn(`取得先障害を検出: 前回の正常データを保持します（成功${optionalSuccesses}系統）`);
+  const combined = [...(degraded ? previousData.events : []), ...parse(markdown), ...seaEvents, ...seaRegionalEvents, ...unitEvents, ...cocoyokoBaseEvents, ...supplemental, ...landBandEvents, ...portEvents,
     ...musicFestivalEvents, ...chibaPoliceEvents, ...kanagawaPoliceEvents, ...tokyoPoliceEvents, ...tokyoPoliceMusicEvents];
   const unique = [...new Map(combined.map(e => [`${e.date}|${e.title.replace(/[（(].*$/,'')}`, e])).values()];
   const events = unique
@@ -497,6 +557,7 @@ async function main() {
     seaSources:[SEA_OFFICIAL, SEA_KURE_OFFICIAL, SEA_TATEYAMA_OFFICIAL, SEA_HACHINOHE_OFFICIAL, SEA_FUKUOKA_OFFICIAL],
     portSources:PORT_OFFICIAL_SOURCES, foreignVesselSources:FOREIGN_VESSEL_SOURCES, baseOpenSources:BASE_OPEN_SOURCES,
     militaryPortCitySources:MILITARY_PORT_CITY_SOURCES,
+    seaUnitSources:unitSourceStatus,
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE], count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
   console.log(`${events.length}件を書き出しました`);

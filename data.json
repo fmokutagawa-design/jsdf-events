@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T03:35:58.052Z",
+  "updatedAt": "2026-08-24T03:42:21.411Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -59,6 +59,104 @@
     {
       "city": "大湊・むつ",
       "url": "https://www.city.mutsu.lg.jp/topics/"
+    }
+  ],
+  "seaUnitSources": [
+    {
+      "name": "横須賀地方隊",
+      "url": "https://www.mod.go.jp/msdf/yokosuka/news-list/",
+      "fetched": false,
+      "checkedToday": false
+    },
+    {
+      "name": "舞鶴地方隊",
+      "url": "https://www.mod.go.jp/msdf/maizuru/news/",
+      "fetched": true,
+      "checkedToday": true
+    },
+    {
+      "name": "呉地方隊",
+      "url": "https://www.mod.go.jp/msdf/kure/announcement/",
+      "fetched": false,
+      "checkedToday": false
+    },
+    {
+      "name": "佐世保地方隊",
+      "url": "https://www.mod.go.jp/msdf/sasebo/2_pr_event/2_pr_event.html",
+      "fetched": false,
+      "checkedToday": false
+    },
+    {
+      "name": "大湊地区隊",
+      "url": "https://www.mod.go.jp/msdf/oominato/",
+      "fetched": true,
+      "checkedToday": false
+    },
+    {
+      "name": "阪神基地隊",
+      "url": "https://www.mod.go.jp/msdf/hanshin/",
+      "fetched": true,
+      "checkedToday": true
+    },
+    {
+      "name": "下関基地隊",
+      "url": "https://www.mod.go.jp/msdf/shimoki/",
+      "fetched": false,
+      "checkedToday": false
+    },
+    {
+      "name": "八戸航空基地",
+      "url": "https://www.mod.go.jp/msdf/hatinohe/event/index.html",
+      "fetched": false,
+      "checkedToday": false
+    },
+    {
+      "name": "館山航空基地",
+      "url": "https://www.mod.go.jp/msdf/tateyama/faw21/ivent.html",
+      "fetched": false,
+      "checkedToday": false
+    },
+    {
+      "name": "岩国航空基地",
+      "url": "https://www.mod.go.jp/msdf/iwakuni/",
+      "fetched": true,
+      "checkedToday": true
+    },
+    {
+      "name": "第22航空群・大村航空基地",
+      "url": "https://www.mod.go.jp/msdf/22aw/event/kichisai/kitisai.html",
+      "fetched": true,
+      "checkedToday": false
+    },
+    {
+      "name": "小月航空基地",
+      "url": "https://www.mod.go.jp/msdf/oz-atg/",
+      "fetched": false,
+      "checkedToday": false
+    },
+    {
+      "name": "徳島航空基地",
+      "url": "https://www.mod.go.jp/msdf/tokusima/",
+      "fetched": true,
+      "checkedToday": false
+    },
+    {
+      "name": "鹿屋航空基地",
+      "url": "https://www.mod.go.jp/msdf/kanoya/",
+      "fetched": true,
+      "checkedToday": true
+    },
+    {
+      "name": "第5航空群・那覇航空基地",
+      "url": "https://www.mod.go.jp/msdf/naha/release.html",
+      "fetched": false,
+      "checkedToday": false
+    },
+    {
+      "name": "第1術科学校・幹部候補生学校",
+      "url": "https://www.mod.go.jp/msdf/onemss/",
+      "fetched": false,
+      "checkedToday": false
     }
   ],
   "policeSources": [
