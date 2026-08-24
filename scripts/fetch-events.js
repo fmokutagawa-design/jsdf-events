@@ -117,9 +117,10 @@ const SHIP_WATCH_PORTS = [
   { name:'千葉港・船橋港', area:'千葉', coverage:'千葉県港湾課・自治体発表を巡回', sourceUrl:'https://www.pref.chiba.lg.jp/kouwan/', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E5%8D%83%E8%91%89%E6%B8%AF' },
   { name:'木更津港', area:'千葉', coverage:'千葉県港湾課・木更津港発表を巡回', sourceUrl:'https://www.pref.chiba.lg.jp/kouwan/chibanokouwan/kisarazu.html', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E6%9C%A8%E6%9B%B4%E6%B4%A5%E6%B8%AF' }
 ];
+const YOKOHAMA_PORT_SCHEDULE = 'https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=';
 const PHOTO_OPPORTUNITIES = [
-  { id:'yokosuka-cruise', recurring:true, kind:'軍港撮影', title:'YOKOSUKA軍港めぐり', dateLabel:'ほぼ毎日運航', location:'汐入桟橋・横須賀港', time:'11:00〜15:00を中心に運航（約45分）', note:'海自・米海軍の在港艦を海上から撮影できる常設候補。見られる艦は当日の在港状況によります。', officialUrl:'https://yokosuka-gunko.jp/information/', bookingUrl:'https://reservation.tryangle-web.com/tryangle-public/', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E6%B1%90%E5%85%A5%E6%A1%9F%E6%A9%8B' },
-  { id:'verny-park', recurring:true, kind:'軍港撮影', title:'ヴェルニー公園から横須賀本港を撮影', dateLabel:'公園開園中', location:'ヴェルニー公園', time:'予約不要', note:'一般区域から海自・米海軍の在港艦を撮影できる候補。艦名・停泊位置・見え方の保証はありません。', officialUrl:'https://www.cocoyoko.net/spot/verny-park.html', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E3%83%B4%E3%82%A7%E3%83%AB%E3%83%8B%E3%83%BC%E5%85%AC%E5%9C%92' },
+  { id:'yokosuka-cruise', recurring:true, audience:'naval', kind:'軍港撮影', title:'YOKOSUKA軍港めぐり', dateLabel:'ほぼ毎日運航', location:'汐入桟橋・横須賀港', time:'11:00〜15:00を中心に運航（約45分）', note:'海自・米海軍の在港艦を海上から撮影できる常設候補。見られる艦は当日の在港状況によります。', officialUrl:'https://yokosuka-gunko.jp/information/', bookingUrl:'https://reservation.tryangle-web.com/tryangle-public/', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E6%B1%90%E5%85%A5%E6%A1%9F%E6%A9%8B' },
+  { id:'verny-park', recurring:true, audience:'naval', kind:'軍港撮影', title:'ヴェルニー公園から横須賀本港を撮影', dateLabel:'公園開園中', location:'ヴェルニー公園', time:'予約不要', note:'一般区域から海自・米海軍の在港艦を撮影できる候補。艦名・停泊位置・見え方の保証はありません。', officialUrl:'https://www.cocoyoko.net/spot/verny-park.html', mapUrl:'https://www.google.com/maps/search/?api=1&query=%E3%83%B4%E3%82%A7%E3%83%AB%E3%83%8B%E3%83%BC%E5%85%AC%E5%9C%92' },
   ...[
     ['2026-09-05','06:30','15:00','大さん橋','ダイヤモンド・プリンセス'],
     ['2026-09-15','06:30','15:00','大さん橋','ダイヤモンド・プリンセス'],
@@ -131,7 +132,7 @@ const PHOTO_OPPORTUNITIES = [
     ['2026-09-25','09:00','17:00','大さん橋','飛鳥Ⅱ'],
     ['2026-09-27','09:00','17:00','新港','三井オーシャンサクラ'],
     ['2026-09-27','09:00','17:00','大さん橋','飛鳥Ⅱ']
-  ].map(([date,arrival,departure,berth,title]) => ({ id:`${date}-${berth}-${title}`, date, kind:'客船撮影', title,
+  ].map(([date,arrival,departure,berth,title]) => ({ id:`${date}-${berth}-${title}`, date, audience:'cruise', kind:'客船撮影', title,
     location:`横浜港 ${berth}`, time:`入港 ${arrival}／出港 ${departure}`, note:'横浜市公式の入港予定。軍艦ではありません。大さん橋または新港周辺から撮影できる大型客船です。',
     officialUrl:'https://www.city.yokohama.lg.jp/kanko-bunka/minato/kyakusen/nyuko/2026.html', mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`横浜港 ${berth}`)}` }))
 ];
@@ -139,6 +140,27 @@ function buildPhotoOpportunities(now) {
   const today = now.toISOString().slice(0, 10);
   return PHOTO_OPPORTUNITIES.filter(item => item.recurring || item.date >= today)
     .sort((a,b) => Number(b.recurring) - Number(a.recurring) || (a.date || '').localeCompare(b.date || '') || a.title.localeCompare(b.title));
+}
+function classifyPortVessel(v = {}) {
+  const text = `${v.name} ${v.vesselClass} ${v.agent}`.normalize('NFKC');
+  if (/護衛艦|練習艦|掃海|輸送艦|補給艦|砕氷艦|軍艦|NAVY|WARSHIP|USS\s|USNS\s|HMS\s|HMAS\s|KRI\s|ROKS\s|JS\s/i.test(text)) return 'naval';
+  if (/巡視|海上保安|官公庁|水産庁|測量船|消防艇|警察艇/.test(text)) return 'public';
+  if (/調査船|研究船|練習船|帆船|海洋調査|しんかい|ちきゅう/.test(text)) return 'special';
+  if (/客船|クルーズ|旅客/.test(text)) return 'cruise';
+  return 'commercial';
+}
+function parseYokohamaPortVessels(html = '') {
+  const rows = new Map();
+  for (const m of html.matchAll(/arytbl\[(\d+)\]\[(\w+)\]\s*=\s*'([^']*)';/g)) {
+    if (!rows.has(m[1])) rows.set(m[1], {});
+    rows.get(m[1])[m[2]] = m[3].replace(/<BR>/gi, ' ').replace(/　/g, ' ').trim();
+  }
+  return [...rows.entries()].map(([index, r]) => {
+    const vessel = { id:`yokohama-${index}-${r.VesselName || ''}`, name:r.VesselName || '船名未登録', callSign:r.CallSign || '', country:r.Country || '',
+      vesselClass:r.VesselClass || '船種未登録', status:r.VesStatus || r.Status || '入港予定', berth:r.PBerth || r.MBerth || '',
+      arrival:r.PAta || r.PEta || r.EAta || '', departure:r.PAtd || r.EAtd || '', agent:r.AgentName || '', sourceUrl:YOKOHAMA_PORT_SCHEDULE };
+    return { ...vessel, category:classifyPortVessel(vessel) };
+  });
 }
 function buildShipWatches(now) {
   const today = now.toISOString().slice(0, 10);
@@ -734,8 +756,11 @@ async function main() {
   if (process.argv.includes('--ship-watch-only')) {
     const now = new Date(); now.setHours(0, 0, 0, 0);
     const shipWatches = buildShipWatches(now);
+    const portText = await fetchOptional(YOKOHAMA_PORT_SCHEDULE, '横浜港入出港予定');
+    const portVessels = portText ? parseYokohamaPortVessels(portText) : (previousData.portVessels || []);
     const data = { ...previousData, updatedAt:new Date().toISOString(), shipWatchSources:SHIP_WATCH_SOURCES, shipWatchPorts:SHIP_WATCH_PORTS,
-      photoOpportunities:buildPhotoOpportunities(now),
+      photoOpportunities:buildPhotoOpportunities(now), portVesselSource:YOKOHAMA_PORT_SCHEDULE,
+      portVesselCheckedAt:new Date().toISOString(), portVesselCount:portVessels.length, portVessels,
       shipWatchPolicy:'公式発表された行動予定・寄港・一般公開と直近45日程度の外国艦活動のみ掲載。現在位置、目撃情報、未確認情報は扱わない。',
       shipWatchCount:shipWatches.length, shipWatches };
     await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
@@ -844,6 +869,8 @@ async function main() {
     .map(e => ({ ...e, sourceType:inferSourceType(e), openType:inferOpenType(e) }))
     .sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title));
   const shipWatches = buildShipWatches(now);
+  const portText = await fetchOptional(YOKOHAMA_PORT_SCHEDULE, '横浜港入出港予定');
+  const portVessels = portText ? parseYokohamaPortVessels(portText) : (previousData.portVessels || []);
   const data = { updatedAt: new Date().toISOString(), sourceUrl: 'https://www.mod.go.jp/j/press/events/', seaSourceUrl: SEA_OFFICIAL,
     seaSources:[SEA_OFFICIAL, SEA_KURE_OFFICIAL, SEA_TATEYAMA_OFFICIAL, SEA_HACHINOHE_OFFICIAL, SEA_FUKUOKA_OFFICIAL],
     portSources:PORT_OFFICIAL_SOURCES, foreignVesselSources:FOREIGN_VESSEL_SOURCES, baseOpenSources:BASE_OPEN_SOURCES,
@@ -856,7 +883,8 @@ async function main() {
     musicSources:[LAND_BAND_OFFICIAL, CENTRAL_BAND_OFFICIAL, EASTERN_BAND_OFFICIAL, TOKYO_BAND_OFFICIAL, AIR_CENTRAL_BAND_OFFICIAL, MUSIC_FESTIVAL_OFFICIAL],
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE, TOKYO_POLICE_BAND_OFFICIAL],
     coastGuardSources:[COAST_GUARD_OFFICIAL], shipWatchSources:SHIP_WATCH_SOURCES, shipWatchPorts:SHIP_WATCH_PORTS,
-    photoOpportunities:buildPhotoOpportunities(now),
+    photoOpportunities:buildPhotoOpportunities(now), portVesselSource:YOKOHAMA_PORT_SCHEDULE,
+    portVesselCheckedAt:new Date().toISOString(), portVesselCount:portVessels.length, portVessels,
     shipWatchPolicy:'公式発表された行動予定・寄港・一般公開と直近45日程度の外国艦活動のみ掲載。現在位置、目撃情報、未確認情報は扱わない。',
     shipWatchCount:shipWatches.length, shipWatches, count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
