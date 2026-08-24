@@ -80,8 +80,10 @@ const MUSIC_FESTIVAL_SOURCE = 'https://r.jina.ai/http://www.mod.go.jp/gsdf/event
 const MUSIC_FESTIVAL_OFFICIAL = 'https://www.mod.go.jp/gsdf/event/marching_festival/festival2026/';
 const CHIBA_POLICE_SOURCE = 'https://r.jina.ai/https://www.police.pref.chiba.jp/kohoka/orders_bandAct_04.html';
 const CHIBA_POLICE_OFFICIAL = 'https://www.police.pref.chiba.jp/kohoka/orders_bandAct_04.html';
-const KANAGAWA_POLICE_SOURCE = 'https://r.jina.ai/https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html';
 const KANAGAWA_POLICE_OFFICIAL = 'https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html';
+const FETCH_DAY = new Date().toISOString().slice(0, 10);
+// 県警ページは更新後も変換サービス側の古い本文が返ることがあるため、日単位で再検証する。
+const KANAGAWA_POLICE_SOURCE = `https://r.jina.ai/${KANAGAWA_POLICE_OFFICIAL}?checked=${FETCH_DAY}`;
 const COAST_GUARD_SOURCE = 'https://r.jina.ai/https://www.kaiho.mlit.go.jp/doc/event/jyouhou.html';
 const COAST_GUARD_OFFICIAL = 'https://www.kaiho.mlit.go.jp/doc/event/jyouhou.html';
 const TOKYO_POLICE_BASE = 'https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/event/calendar/';
@@ -247,8 +249,8 @@ function makeEvent({ date, region, branch, title, location, officialUrl, imageUr
   const finalImage = imageUrl || fallbackImage(branch, title);
   return {
     id: `${date}-${region}-${title}`.replace(/\s/g, '-'), date, region, branch, title, location,
-    category: forceCategory || category(title), application: /要応募|要申込|事前申込|抽選|入場券/.test(details),
-    applicationNote: (details.match(/(?:応募期間|応募締切|申込締切|事前申込)[^。\n]*/) || [])[0] || '',
+    category: forceCategory || category(title), application: /要応募|要申込|事前申込|申込期間|抽選|入場券/.test(details),
+    applicationNote: (details.match(/(?:応募期間|応募締切|申込期間|申込締切|事前申込)[^。\n]*/) || [])[0] || '',
     ageRestriction: /年齢制限|未就学児/.test(details), price: /有料/.test(details) ? '有料（公式情報を確認）' : '原則無料（公式情報を確認）',
     accessRank: profile.rank, accessNote: profile.note, officialUrl, imageUrl: finalImage,
     imageIsIllustration: finalImage.startsWith('./assets/'), mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`,
@@ -325,6 +327,26 @@ function parseKanagawaPolice(markdown) {
       source:'神奈川県警察 音楽隊', details:block, forceCategory:'警察音楽隊' }));
   }
   return out;
+}
+
+function kanagawaPoliceDetailLinks(markdown) {
+  return [...new Set([...markdown.matchAll(/\((https?:\/\/www\.police\.pref\.kanagawa\.jp\/assets\/entry\/[^)]+\.txt)\)/gi)].map(match => match[1]))];
+}
+
+function parseKanagawaPoliceDetail(text, detailUrl) {
+  const normalized = text.normalize('NFKC');
+  const dateText = (normalized.match(/日程\s*[：:]\s*([^\n]+)/) || [])[1] || '';
+  const eraYear = (dateText.match(/令和\s*[０-９\d]+年/) || [])[0];
+  const year = eraYear ? 2018 + Number(eraYear.normalize('NFKC').match(/\d+/)[0]) : new Date().getFullYear();
+  const date = japaneseDate(dateText, year);
+  const title = clean((normalized.split('\n').find(line => /演奏会|コンサート/.test(line)) || '').replace(/^\uFEFF/, ''));
+  const location = clean((normalized.match(/会場\s*[：:]\s*([^\n]+)/) || [])[1] || '神奈川県内');
+  if (!date || !title) return [];
+  const imageUrl = detailUrl.replace(/\.txt(?:\?.*)?$/i, '.jpg');
+  const anchor = /a8050_05\.txt/i.test(detailUrl) ? 'maricon' : /a8050_08\.txt/i.test(detailUrl) ? 'odawara' : '';
+  return [makeEvent({ date, region:'神奈川', branch:'警察', title, location,
+    officialUrl:`${KANAGAWA_POLICE_OFFICIAL}${anchor ? `#${anchor}` : ''}`, imageUrl,
+    source:'神奈川県警察 音楽隊', details:normalized, forceCategory:'警察音楽隊' })];
 }
 
 function parseTokyoPoliceCalendar(markdown, year, month, kind = 'event') {
@@ -585,7 +607,13 @@ async function main() {
   }));
   const musicFestivalEvents = parseMusicFestival(musicFestivalText);
   const chibaPoliceEvents = parseChibaPolice(chibaPoliceText);
-  const kanagawaPoliceEvents = parseKanagawaPolice(kanagawaPoliceText);
+  const kanagawaPoliceDetailUrls = kanagawaPoliceDetailLinks(kanagawaPoliceText);
+  const kanagawaPoliceDetailTexts = await Promise.all(kanagawaPoliceDetailUrls.map(url =>
+    fetchOptional(`${url}?checked=${FETCH_DAY}`, `神奈川県警音楽隊 添付情報 ${url.split('/').pop()}`)));
+  const kanagawaPoliceEvents = [
+    ...parseKanagawaPolice(kanagawaPoliceText),
+    ...kanagawaPoliceDetailTexts.flatMap((text, index) => text ? parseKanagawaPoliceDetail(text, kanagawaPoliceDetailUrls[index]) : [])
+  ];
   const coastGuardEvents = parseKanagawaCoastGuard(coastGuardText);
   const seaRegionalEvents = [...parseSeaKure(seaKureText), ...parseSeaTateyama(seaTateyamaText),
     ...parseSeaHachinohe(seaHachinoheText), ...parseSeaFukuoka(seaFukuokaText)];

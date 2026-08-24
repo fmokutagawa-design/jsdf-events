@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T05:08:40.485Z",
+  "updatedAt": "2026-08-24T13:48:23.333Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -230,7 +230,7 @@
   "coastGuardSources": [
     "https://www.kaiho.mlit.go.jp/doc/event/jyouhou.html"
   ],
-  "count": 54,
+  "count": 55,
   "events": [
     {
       "id": "2026-08-24-東京-海上自衛隊-第2術科学校見学会（施設見学･体験喫食等）",
@@ -1340,6 +1340,28 @@
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%99%BE%E9%87%8C%E5%9F%BA%E5%9C%B0",
       "source": "航空自衛隊 イベント一覧",
       "sourceType": "自衛隊公式",
+      "openType": ""
+    },
+    {
+      "id": "2026-12-06-神奈川-神奈川県警察音楽隊第91回定期演奏会",
+      "date": "2026-12-06",
+      "region": "神奈川",
+      "branch": "警察",
+      "title": "神奈川県警察音楽隊第91回定期演奏会",
+      "location": "小田原三の丸ホール 大ホール",
+      "category": "警察音楽隊",
+      "application": true,
+      "applicationNote": "申込期間:令和8年9月11日(金曜日)から9月30日(水曜日)\r",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html#odawara",
+      "imageUrl": "https://www.police.pref.kanagawa.jp/assets/entry/a8050_08.jpg",
+      "imageIsIllustration": false,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%B0%8F%E7%94%B0%E5%8E%9F%E4%B8%89%E3%81%AE%E4%B8%B8%E3%83%9B%E3%83%BC%E3%83%AB%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB",
+      "source": "神奈川県警察 音楽隊",
+      "sourceType": "警察公式",
       "openType": ""
     },
     {
