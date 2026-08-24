@@ -74,6 +74,14 @@ const BASE_OPEN_SOURCES = [
 // 一般参加イベントとは別に、公式発表された艦船の行動・寄港予定を保持する。
 // 公開見学が確認できない寄港はイベント件数に含めず、その旨を明記する。
 const SHIP_WATCH_ITEMS = [
+  { date:'2026-04-13', endDate:'2026-09-16', region:'海外', vessel:'護衛艦「いせ」「いかづち」・輸送艦「しもきた」', vesselType:'護衛艦・輸送艦', location:'インド太平洋地域', watchCategory:'海外派遣', status:'IPD26派遣中（9月16日まで）', publicAccess:false, noMap:true,
+    summary:'令和8年度インド太平洋方面派遣の第1水上部隊。各国海軍との共同訓練などを実施する公式派遣です。一般公開予定ではありません。', officialUrl:'https://www.mod.go.jp/msdf/operation/cooperate/IPD26/', source:'海上自衛隊' },
+  { date:'2026-04-13', endDate:'2026-09-16', region:'海外', vessel:'護衛艦「かが」「ふゆづき」・補給艦「ましゅう」', vesselType:'護衛艦・補給艦', location:'インド太平洋地域', watchCategory:'海外派遣', status:'IPD26派遣中（9月16日まで）', publicAccess:false, noMap:true,
+    summary:'令和8年度インド太平洋方面派遣の第2水上部隊。各国海軍との共同訓練などを実施する公式派遣です。一般公開予定ではありません。', officialUrl:'https://www.mod.go.jp/msdf/operation/cooperate/IPD26/', source:'海上自衛隊' },
+  { date:'2026-04-13', endDate:'2026-09-16', region:'海外', vessel:'護衛艦「こんごう」', vesselType:'護衛艦', location:'インド太平洋地域', watchCategory:'海外派遣', status:'IPD26派遣中（9月16日まで）', publicAccess:false, noMap:true,
+    summary:'令和8年度インド太平洋方面派遣の第3水上部隊。RIMPACやパシフィック・ドラゴンなどに参加しています。一般公開予定ではありません。', officialUrl:'https://www.mod.go.jp/msdf/operation/cooperate/IPD26/', source:'海上自衛隊' },
+  { date:'2026-05-16', endDate:'2026-10-24', region:'海外', vessel:'練習艦「かしま」「やまぎり」', vesselType:'練習艦', location:'太平洋・大西洋・カリブ海・ベーリング海方面', watchCategory:'遠洋練習航海', status:'遠洋練習航海中（10月24日まで）', publicAccess:false, noMap:true,
+    summary:'第70回遠洋練習航海。米国、カナダ、アイスランド、パナマ、メキシコなどへの寄港と親善訓練を予定しています。', officialUrl:'https://www.mod.go.jp/msdf/operation/training/enyo/2026/', source:'海上自衛隊' },
   { date:'2026-09-21', region:'神奈川', vessel:'砕氷艦「しらせ」', vesselType:'砕氷艦', location:'横須賀', watchCategory:'行動予定', status:'公式行動予定', publicAccess:false,
     summary:'令和8年度総合訓練の出港予定。一般公開・見学の公式発表は確認されていません。', officialUrl:'https://www.mod.go.jp/msdf/release/202607/20260709.pdf', source:'海上幕僚監部' },
   { date:'2026-09-25', endDate:'2026-09-28', region:'北海道', vessel:'砕氷艦「しらせ」', vesselType:'砕氷艦', location:'稚内', watchCategory:'寄港予定', status:'公式寄港予定', publicAccess:false,
@@ -710,7 +718,8 @@ async function main() {
     `https://r.jina.ai/${TOKYO_POLICE_MUSIC_BASE}calendar${y}${String(m).padStart(2,'0')}.html`, '警視庁音楽隊カレンダー')));
   const tokyoPoliceMusicEvents = tokyoPoliceMusicPages.flatMap((text, i) => parseTokyoPoliceCalendar(text, ...calendarMonths[i], 'music'));
   const tokyoPoliceGrandText = await fetchOptional(TOKYO_POLICE_GRAND_SOURCE, '警視庁音楽隊特設ページ');
-  const tokyoPoliceGrandEvents = parseTokyoPoliceGrand(tokyoPoliceGrandText);
+  const tokyoPoliceGrandEvents = tokyoPoliceGrandText ? parseTokyoPoliceGrand(tokyoPoliceGrandText) :
+    previousData.events.filter(event => event.source === '警視庁 音楽隊特設ページ');
   let seaEvents = [];
   try {
     const seaResponse = await fetch(SEA_SOURCE, { headers: { 'User-Agent': 'jsdf-events/1.0' } });
@@ -777,7 +786,7 @@ async function main() {
   const shipWatches = SHIP_WATCH_ITEMS
     .filter(item => new Date(`${item.endDate || item.date}T00:00:00+09:00`) >= now)
     .map(item => ({ ...item, id:`${item.date}-${item.vessel}-${item.location}`, imageUrl:'./assets/event-sea.jpg',
-      mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.location} 港`)}` }))
+      mapUrl:item.noMap ? '' : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.location} 港`)}` }))
     .sort((a,b) => a.date.localeCompare(b.date));
   const data = { updatedAt: new Date().toISOString(), sourceUrl: 'https://www.mod.go.jp/j/press/events/', seaSourceUrl: SEA_OFFICIAL,
     seaSources:[SEA_OFFICIAL, SEA_KURE_OFFICIAL, SEA_TATEYAMA_OFFICIAL, SEA_HACHINOHE_OFFICIAL, SEA_FUKUOKA_OFFICIAL],
