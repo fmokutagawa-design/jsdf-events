@@ -97,6 +97,10 @@ const PORT_SUPPLEMENTS = [
   { date:'2026-09-13', region:'東京', branch:'その他', title:'東京アクアシンフォニー 船上観覧ツアー', location:'お台場海浜公園周辺（東京都港区）', category:'港・艦船',
     officialUrl:'https://www.metro.tokyo.lg.jp/information/press/2026/08/2026081710', imageUrl:'./assets/event-sea.jpg', source:'東京都港湾局', sourceType:'自治体・港湾', details:'事前申込・抽選' }
 ];
+const REGIONAL_SUPPLEMENTS = [
+  { date:'2026-09-01', region:'神奈川', branch:'その他', title:'ビッグレスキューかながわ2026', location:'神奈川県総合防災センター・消防学校（神奈川県厚木市下津古久280）', category:'防災・合同訓練',
+    officialUrl:'https://www.pref.kanagawa.jp/docs/j8g/bigrescue/bigrescue.html', imageUrl:'./assets/event-land.jpg', source:'神奈川県・厚木市', sourceType:'自治体公式', details:'救出救助訓練・展示体験／愛甲石田駅から無料シャトルバス' }
+];
 // 空自一覧は画面上の日付が取得用テキストから省かれるため、開催年の日付だけ補助登録。
 // 毎日の統合表取得と併用し、同じ催しは下の重複排除で一件にまとめる。
 const AIR_SUPPLEMENTS = [
@@ -541,11 +545,12 @@ async function main() {
   const cocoyokoBaseEvents = await parseCocoyokoBase(cocoyokoBaseText);
   console.log(`追加取得: 海自地方公式${seaRegionalEvents.length}件 / 第1音楽隊${landBandEvents.length}件 / 音楽まつり${musicFestivalEvents.length}件 / 千葉県警${chibaPoliceEvents.length}件 / 神奈川県警${kanagawaPoliceEvents.length}件 / 警視庁${tokyoPoliceEvents.length + tokyoPoliceMusicEvents.length}件`);
   const portEvents = PORT_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
+  const regionalEvents = REGIONAL_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
   const optionalSuccesses = [landBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText,
     ...tokyoPolicePages, ...tokyoPoliceMusicPages].filter(Boolean).length;
   const degraded = optionalSuccesses < 6;
   if (degraded) console.warn(`取得先障害を検出: 前回の正常データを保持します（成功${optionalSuccesses}系統）`);
-  const combined = [...(degraded ? previousData.events : []), ...parse(markdown), ...seaEvents, ...seaRegionalEvents, ...unitEvents, ...cocoyokoBaseEvents, ...supplemental, ...landBandEvents, ...portEvents,
+  const combined = [...(degraded ? previousData.events : []), ...parse(markdown), ...seaEvents, ...seaRegionalEvents, ...unitEvents, ...cocoyokoBaseEvents, ...supplemental, ...landBandEvents, ...portEvents, ...regionalEvents,
     ...musicFestivalEvents, ...chibaPoliceEvents, ...kanagawaPoliceEvents, ...tokyoPoliceEvents, ...tokyoPoliceMusicEvents];
   const unique = [...new Map(combined.map(e => [`${e.date}|${e.title.replace(/[（(].*$/,'')}`, e])).values()];
   const events = unique
@@ -557,6 +562,7 @@ async function main() {
     seaSources:[SEA_OFFICIAL, SEA_KURE_OFFICIAL, SEA_TATEYAMA_OFFICIAL, SEA_HACHINOHE_OFFICIAL, SEA_FUKUOKA_OFFICIAL],
     portSources:PORT_OFFICIAL_SOURCES, foreignVesselSources:FOREIGN_VESSEL_SOURCES, baseOpenSources:BASE_OPEN_SOURCES,
     militaryPortCitySources:MILITARY_PORT_CITY_SOURCES,
+    regionalSources:REGIONAL_SUPPLEMENTS.map(item => item.officialUrl),
     seaUnitSources:unitSourceStatus,
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE], count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');

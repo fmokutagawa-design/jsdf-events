@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T03:42:21.411Z",
+  "updatedAt": "2026-08-24T03:56:36.575Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -60,6 +60,9 @@
       "city": "大湊・むつ",
       "url": "https://www.city.mutsu.lg.jp/topics/"
     }
+  ],
+  "regionalSources": [
+    "https://www.pref.kanagawa.jp/docs/j8g/bigrescue/bigrescue.html"
   ],
   "seaUnitSources": [
     {
@@ -164,7 +167,7 @@
     "https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html",
     "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/event/calendar/"
   ],
-  "count": 49,
+  "count": 50,
   "events": [
     {
       "id": "2026-08-24-東京-海上自衛隊-第2術科学校見学会（施設見学･体験喫食等）",
@@ -368,6 +371,28 @@
       "sourceType": "自治体・港湾",
       "scope": "首都圏",
       "openType": "艦艇・港湾公開"
+    },
+    {
+      "id": "2026-09-01-神奈川-ビッグレスキューかながわ2026",
+      "date": "2026-09-01",
+      "region": "神奈川",
+      "branch": "その他",
+      "title": "ビッグレスキューかながわ2026",
+      "location": "神奈川県総合防災センター・消防学校（神奈川県厚木市下津古久280）",
+      "category": "防災・合同訓練",
+      "application": false,
+      "applicationNote": "",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.pref.kanagawa.jp/docs/j8g/bigrescue/bigrescue.html",
+      "imageUrl": "./assets/event-land.jpg",
+      "imageIsIllustration": true,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E7%B7%8F%E5%90%88%E9%98%B2%E7%81%BD%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%BB%E6%B6%88%E9%98%B2%E5%AD%A6%E6%A0%A1%EF%BC%88%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E5%8E%9A%E6%9C%A8%E5%B8%82%E4%B8%8B%E6%B4%A5%E5%8F%A4%E4%B9%85280%EF%BC%89",
+      "source": "神奈川県・厚木市",
+      "sourceType": "自治体公式",
+      "openType": ""
     },
     {
       "id": "2026-09-05-東京-小松川署-二輪車実技教室（サタデーバイクスクール）",
