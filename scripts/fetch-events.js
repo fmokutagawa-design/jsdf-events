@@ -11,19 +11,35 @@ const SEA_KURE_SOURCE = 'https://r.jina.ai/https://www.mod.go.jp/msdf/kure/annou
 const SEA_KURE_OFFICIAL = 'https://www.mod.go.jp/msdf/kure/announcement/tour/index.html';
 const SEA_TATEYAMA_SOURCE = 'https://r.jina.ai/https://www.mod.go.jp/msdf/tateyama/faw21/ivent.html';
 const SEA_TATEYAMA_OFFICIAL = 'https://www.mod.go.jp/msdf/tateyama/faw21/ivent.html';
+const SEA_HACHINOHE_SOURCE = 'https://r.jina.ai/https://www.mod.go.jp/msdf/hatinohe/about/index.html';
+const SEA_HACHINOHE_OFFICIAL = 'https://www.mod.go.jp/msdf/hatinohe/about/index.html';
+const SEA_FUKUOKA_SOURCE = 'https://r.jina.ai/https://www.mod.go.jp/pco/fukuoka/event/index.html';
+const SEA_FUKUOKA_OFFICIAL = 'https://www.mod.go.jp/pco/fukuoka/event/index.html';
 const COCOYOKO_BASE_SOURCE = 'https://www.cocoyoko.net/event/genre/base/';
 const PORT_OFFICIAL_SOURCES = [
   'https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/',
   'https://www.city.yokohama.lg.jp/kanko-bunka/minato/',
   'https://www.kouwan.metro.tokyo.lg.jp/kanko/',
-  'https://www.pref.chiba.lg.jp/kouwan/'
+  'https://www.pref.chiba.lg.jp/kouwan/',
+  'https://www.city.kure.lg.jp/soshiki/67/m000051.html',
+  'https://www.city.sasebo.lg.jp/kichisei/',
+  'https://www.city.maizuru.kyoto.jp/',
+  'https://www.city.mutsu.lg.jp/topics/'
 ];
 const FOREIGN_VESSEL_SOURCES = [
   'https://www.mod.go.jp/msdf/release/',
   'https://www.mod.go.jp/msdf/yokosuka/news-list/',
   'https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/',
   'https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/',
-  'https://www.cocoyoko.net/event/genre/base/'
+  'https://www.cocoyoko.net/event/genre/base/',
+  'https://www.city.sasebo.lg.jp/kichisei/'
+];
+const MILITARY_PORT_CITY_SOURCES = [
+  { city:'横須賀', url:'https://www.cocoyoko.net/event/genre/base/' },
+  { city:'呉', url:'https://www.city.kure.lg.jp/soshiki/67/m000051.html' },
+  { city:'佐世保', url:'https://www.city.sasebo.lg.jp/kichisei/' },
+  { city:'舞鶴', url:'https://www.city.maizuru.kyoto.jp/' },
+  { city:'大湊・むつ', url:'https://www.city.mutsu.lg.jp/topics/' }
 ];
 const BASE_OPEN_SOURCES = [
   'https://www.mod.go.jp/msdf/yokosuka/news-list/',
@@ -31,6 +47,8 @@ const BASE_OPEN_SOURCES = [
   'https://www.mod.go.jp/msdf/sasebo/2_pr_event/2_pr_event.html',
   'https://www.mod.go.jp/msdf/maizuru/news/',
   'https://www.mod.go.jp/msdf/oominato/',
+  SEA_HACHINOHE_OFFICIAL,
+  SEA_FUKUOKA_OFFICIAL,
   'https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/',
   'https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/',
   'https://www.cocoyoko.net/event/genre/base/'
@@ -84,14 +102,16 @@ function links(s = '') {
 }
 
 function toYear(text) {
-  const m = text.match(/令和\s*(\d+)年/);
+  const normalized = text.normalize('NFKC');
+  const m = normalized.match(/令和\s*(\d+)年/);
   return m ? 2018 + Number(m[1]) : new Date().getFullYear();
 }
 
 function dates(text) {
-  const year = toYear(text);
+  const normalized = text.normalize('NFKC');
+  const year = toYear(normalized);
   const out = [];
-  for (const m of text.matchAll(/(\d{1,2})月\s*(\d{1,2})日/g)) {
+  for (const m of normalized.matchAll(/(\d{1,2})月\s*(\d{1,2})日/g)) {
     const iso = `${year}-${String(m[1]).padStart(2, '0')}-${String(m[2]).padStart(2, '0')}`;
     if (!out.includes(iso)) out.push(iso);
   }
@@ -391,14 +411,35 @@ function parseSeaTateyama(markdown) {
     forceCategory:'基地祭・記念行事' })];
 }
 
+function parseSeaHachinohe(markdown) {
+  if (!/(?:9月19日|９月１９日)[^。]*(?:オータムフェスタ|基地一般開放)/.test(markdown) &&
+      !/(?:オータムフェスタ|基地一般開放)[^。]*(?:9月19日|９月１９日)/.test(markdown)) return [];
+  return [makeEvent({ date:'2026-09-19', region:'青森', branch:'海自', title:'八戸航空基地 オータムフェスタ2026',
+    location:'海上自衛隊 八戸航空基地（青森県八戸市）', officialUrl:SEA_HACHINOHE_OFFICIAL,
+    imageUrl:'./assets/event-sea.jpg', source:'海上自衛隊 八戸航空基地', details:markdown,
+    forceCategory:'基地祭・記念行事' })];
+}
+
+function parseSeaFukuoka(markdown) {
+  const section = (markdown.split('## 砕氷艦しらせ一般公開')[1] || '').split('### CONTACT')[0] || '';
+  if (!section) return [];
+  const out = [];
+  for (const date of dates(section)) out.push(makeEvent({ date, region:'福岡', branch:'海自', title:'砕氷艦「しらせ」門司港一般公開',
+    location:'門司港西海岸ふ頭1号岸壁（福岡県北九州市門司区）', officialUrl:SEA_FUKUOKA_OFFICIAL,
+    imageUrl:'./assets/event-sea.jpg', source:'自衛隊福岡地方協力本部', details:section,
+    forceCategory:'艦艇・一般公開' }));
+  return out;
+}
+
 async function main() {
   const response = await fetch(SOURCE, { headers: { 'User-Agent': 'jsdf-events/1.0' } });
   if (!response.ok) throw new Error(`取得失敗: ${response.status}`);
   const markdown = await response.text();
-  const [landBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, seaKureText, seaTateyamaText, cocoyokoBaseText] = await Promise.all([
+  const [landBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText] = await Promise.all([
     fetchOptional(LAND_BAND_SOURCE, '第1音楽隊'), fetchOptional(MUSIC_FESTIVAL_SOURCE, '自衛隊音楽まつり'),
     fetchOptional(CHIBA_POLICE_SOURCE, '千葉県警音楽隊'), fetchOptional(KANAGAWA_POLICE_SOURCE, '神奈川県警音楽隊'),
     fetchOptional(SEA_KURE_SOURCE, '海自呉地方隊'), fetchOptional(SEA_TATEYAMA_SOURCE, '海自館山航空基地'),
+    fetchOptional(SEA_HACHINOHE_SOURCE, '海自八戸航空基地'), fetchOptional(SEA_FUKUOKA_SOURCE, '福岡地本しらせ一般公開'),
     fetchOptional(COCOYOKO_BASE_SOURCE, '横須賀市観光情報 米海軍・自衛隊一覧')
   ]);
   const calendarMonths = [0,1,2].map(offset => { const d = new Date(); d.setMonth(d.getMonth() + offset); return [d.getFullYear(), d.getMonth() + 1]; });
@@ -439,7 +480,8 @@ async function main() {
   const musicFestivalEvents = parseMusicFestival(musicFestivalText);
   const chibaPoliceEvents = parseChibaPolice(chibaPoliceText);
   const kanagawaPoliceEvents = parseKanagawaPolice(kanagawaPoliceText);
-  const seaRegionalEvents = [...parseSeaKure(seaKureText), ...parseSeaTateyama(seaTateyamaText)];
+  const seaRegionalEvents = [...parseSeaKure(seaKureText), ...parseSeaTateyama(seaTateyamaText),
+    ...parseSeaHachinohe(seaHachinoheText), ...parseSeaFukuoka(seaFukuokaText)];
   const cocoyokoBaseEvents = await parseCocoyokoBase(cocoyokoBaseText);
   console.log(`追加取得: 海自地方公式${seaRegionalEvents.length}件 / 第1音楽隊${landBandEvents.length}件 / 音楽まつり${musicFestivalEvents.length}件 / 千葉県警${chibaPoliceEvents.length}件 / 神奈川県警${kanagawaPoliceEvents.length}件 / 警視庁${tokyoPoliceEvents.length + tokyoPoliceMusicEvents.length}件`);
   const portEvents = PORT_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
@@ -452,8 +494,9 @@ async function main() {
     .map(e => ({ ...e, sourceType:inferSourceType(e), openType:inferOpenType(e) }))
     .sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title));
   const data = { updatedAt: new Date().toISOString(), sourceUrl: 'https://www.mod.go.jp/j/press/events/', seaSourceUrl: SEA_OFFICIAL,
-    seaSources:[SEA_OFFICIAL, SEA_KURE_OFFICIAL, SEA_TATEYAMA_OFFICIAL],
+    seaSources:[SEA_OFFICIAL, SEA_KURE_OFFICIAL, SEA_TATEYAMA_OFFICIAL, SEA_HACHINOHE_OFFICIAL, SEA_FUKUOKA_OFFICIAL],
     portSources:PORT_OFFICIAL_SOURCES, foreignVesselSources:FOREIGN_VESSEL_SOURCES, baseOpenSources:BASE_OPEN_SOURCES,
+    militaryPortCitySources:MILITARY_PORT_CITY_SOURCES,
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE], count: events.length, events };
   await fs.writeFile(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2) + '\n');
   console.log(`${events.length}件を書き出しました`);

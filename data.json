@@ -1,24 +1,31 @@
 {
-  "updatedAt": "2026-08-24T03:27:45.081Z",
+  "updatedAt": "2026-08-24T03:35:58.052Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
     "https://www.mod.go.jp/msdf/event/index.html",
     "https://www.mod.go.jp/msdf/kure/announcement/tour/index.html",
-    "https://www.mod.go.jp/msdf/tateyama/faw21/ivent.html"
+    "https://www.mod.go.jp/msdf/tateyama/faw21/ivent.html",
+    "https://www.mod.go.jp/msdf/hatinohe/about/index.html",
+    "https://www.mod.go.jp/pco/fukuoka/event/index.html"
   ],
   "portSources": [
     "https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/",
     "https://www.city.yokohama.lg.jp/kanko-bunka/minato/",
     "https://www.kouwan.metro.tokyo.lg.jp/kanko/",
-    "https://www.pref.chiba.lg.jp/kouwan/"
+    "https://www.pref.chiba.lg.jp/kouwan/",
+    "https://www.city.kure.lg.jp/soshiki/67/m000051.html",
+    "https://www.city.sasebo.lg.jp/kichisei/",
+    "https://www.city.maizuru.kyoto.jp/",
+    "https://www.city.mutsu.lg.jp/topics/"
   ],
   "foreignVesselSources": [
     "https://www.mod.go.jp/msdf/release/",
     "https://www.mod.go.jp/msdf/yokosuka/news-list/",
     "https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/",
     "https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/",
-    "https://www.cocoyoko.net/event/genre/base/"
+    "https://www.cocoyoko.net/event/genre/base/",
+    "https://www.city.sasebo.lg.jp/kichisei/"
   ],
   "baseOpenSources": [
     "https://www.mod.go.jp/msdf/yokosuka/news-list/",
@@ -26,16 +33,40 @@
     "https://www.mod.go.jp/msdf/sasebo/2_pr_event/2_pr_event.html",
     "https://www.mod.go.jp/msdf/maizuru/news/",
     "https://www.mod.go.jp/msdf/oominato/",
+    "https://www.mod.go.jp/msdf/hatinohe/about/index.html",
+    "https://www.mod.go.jp/pco/fukuoka/event/index.html",
     "https://www.city.yokosuka.kanagawa.jp/2150/nagekomi/",
     "https://cnrj.cnic.navy.mil/Installations/CFA-Yokosuka/",
     "https://www.cocoyoko.net/event/genre/base/"
+  ],
+  "militaryPortCitySources": [
+    {
+      "city": "横須賀",
+      "url": "https://www.cocoyoko.net/event/genre/base/"
+    },
+    {
+      "city": "呉",
+      "url": "https://www.city.kure.lg.jp/soshiki/67/m000051.html"
+    },
+    {
+      "city": "佐世保",
+      "url": "https://www.city.sasebo.lg.jp/kichisei/"
+    },
+    {
+      "city": "舞鶴",
+      "url": "https://www.city.maizuru.kyoto.jp/"
+    },
+    {
+      "city": "大湊・むつ",
+      "url": "https://www.city.mutsu.lg.jp/topics/"
+    }
   ],
   "policeSources": [
     "https://www.police.pref.chiba.jp/kohoka/orders_bandAct_04.html",
     "https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html",
     "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/event_koshu/event/event/calendar/"
   ],
-  "count": 46,
+  "count": 49,
   "events": [
     {
       "id": "2026-08-24-東京-海上自衛隊-第2術科学校見学会（施設見学･体験喫食等）",
@@ -594,6 +625,29 @@
       "openType": ""
     },
     {
+      "id": "2026-09-19-青森-八戸航空基地-オータムフェスタ2026",
+      "date": "2026-09-19",
+      "region": "青森",
+      "branch": "海自",
+      "title": "八戸航空基地 オータムフェスタ2026",
+      "location": "海上自衛隊 八戸航空基地（青森県八戸市）",
+      "category": "基地祭・記念行事",
+      "application": false,
+      "applicationNote": "",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.mod.go.jp/msdf/hatinohe/about/index.html",
+      "imageUrl": "./assets/event-sea.jpg",
+      "imageIsIllustration": true,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B5%B7%E4%B8%8A%E8%87%AA%E8%A1%9B%E9%9A%8A%20%E5%85%AB%E6%88%B8%E8%88%AA%E7%A9%BA%E5%9F%BA%E5%9C%B0%EF%BC%88%E9%9D%92%E6%A3%AE%E7%9C%8C%E5%85%AB%E6%88%B8%E5%B8%82%EF%BC%89",
+      "source": "海上自衛隊 八戸航空基地",
+      "sourceType": "海自公式",
+      "scope": "全国",
+      "openType": "基地一般開放"
+    },
+    {
       "id": "2026-09-26-東京-上野署-上野交通安全フェスティバル",
       "date": "2026-09-26",
       "region": "東京",
@@ -770,6 +824,29 @@
       "openType": ""
     },
     {
+      "id": "2026-10-03-福岡-砕氷艦「しらせ」門司港一般公開",
+      "date": "2026-10-03",
+      "region": "福岡",
+      "branch": "海自",
+      "title": "砕氷艦「しらせ」門司港一般公開",
+      "location": "門司港西海岸ふ頭1号岸壁（福岡県北九州市門司区）",
+      "category": "艦艇・一般公開",
+      "application": false,
+      "applicationNote": "",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.mod.go.jp/pco/fukuoka/event/index.html",
+      "imageUrl": "./assets/event-sea.jpg",
+      "imageIsIllustration": true,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E9%96%80%E5%8F%B8%E6%B8%AF%E8%A5%BF%E6%B5%B7%E5%B2%B8%E3%81%B5%E9%A0%AD1%E5%8F%B7%E5%B2%B8%E5%A3%81%EF%BC%88%E7%A6%8F%E5%B2%A1%E7%9C%8C%E5%8C%97%E4%B9%9D%E5%B7%9E%E5%B8%82%E9%96%80%E5%8F%B8%E5%8C%BA%EF%BC%89",
+      "source": "自衛隊福岡地方協力本部",
+      "sourceType": "海自公式",
+      "scope": "全国",
+      "openType": "艦艇・港湾公開"
+    },
+    {
       "id": "2026-10-03-千葉-巡回演奏会in成田",
       "date": "2026-10-03",
       "region": "千葉",
@@ -790,6 +867,29 @@
       "source": "陸上自衛隊 第1音楽隊",
       "sourceType": "自衛隊公式",
       "openType": ""
+    },
+    {
+      "id": "2026-10-04-福岡-砕氷艦「しらせ」門司港一般公開",
+      "date": "2026-10-04",
+      "region": "福岡",
+      "branch": "海自",
+      "title": "砕氷艦「しらせ」門司港一般公開",
+      "location": "門司港西海岸ふ頭1号岸壁（福岡県北九州市門司区）",
+      "category": "艦艇・一般公開",
+      "application": false,
+      "applicationNote": "",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.mod.go.jp/pco/fukuoka/event/index.html",
+      "imageUrl": "./assets/event-sea.jpg",
+      "imageIsIllustration": true,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E9%96%80%E5%8F%B8%E6%B8%AF%E8%A5%BF%E6%B5%B7%E5%B2%B8%E3%81%B5%E9%A0%AD1%E5%8F%B7%E5%B2%B8%E5%A3%81%EF%BC%88%E7%A6%8F%E5%B2%A1%E7%9C%8C%E5%8C%97%E4%B9%9D%E5%B7%9E%E5%B8%82%E9%96%80%E5%8F%B8%E5%8C%BA%EF%BC%89",
+      "source": "自衛隊福岡地方協力本部",
+      "sourceType": "海自公式",
+      "scope": "全国",
+      "openType": "艦艇・港湾公開"
     },
     {
       "id": "2026-10-10-千葉-ヘリコプターフェスティバル-in-TATEYAMA-2026",
