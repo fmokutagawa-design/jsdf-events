@@ -105,11 +105,7 @@ const REGIONAL_SUPPLEMENTS = [
   { date:'2026-09-04', region:'神奈川', branch:'その他', title:'横浜防災フェア2026', location:'横浜市役所アトリウム（横浜市中区）', category:'防災・合同訓練',
     officialUrl:'https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/bousaifair2026.html', imageUrl:'./assets/event-land.jpg', source:'横浜市', sourceType:'自治体公式', details:'11:00〜18:00／水難救助訓練・横浜市消防音楽隊・展示ブース' },
   { date:'2026-09-05', region:'神奈川', branch:'その他', title:'横浜防災フェア2026', location:'横浜市役所アトリウム（横浜市中区）', category:'防災・合同訓練',
-    officialUrl:'https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/bousaifair2026.html', imageUrl:'./assets/event-land.jpg', source:'横浜市', sourceType:'自治体公式', details:'11:00〜18:00／水難救助訓練・横浜市消防音楽隊・展示ブース' },
-  { date:'2026-10-04', region:'神奈川', branch:'その他', title:'令和8年度 横浜市総合防災訓練', location:'荏田南中学校・牛ケ谷公園（横浜市都筑区）', category:'防災・合同訓練',
-    officialUrl:'https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/sougoukunren.html', imageUrl:'./assets/event-land.jpg', source:'横浜市', sourceType:'自治体公式', details:'9:00〜12:00／実動訓練・一般向け展示体験' },
-  { date:'2026-10-25', region:'神奈川', branch:'その他', title:'令和8年度 相模原市総合防災訓練', location:'相模総合補給廠一部返還地ほか（相模原市）', category:'防災・合同訓練',
-    officialUrl:'https://www.city.sagamihara.kanagawa.jp/kurashi/1026529/bousai/1008801/1008805.html', imageUrl:'./assets/event-land.jpg', source:'相模原市', sourceType:'自治体公式', details:'第47回九都県市合同防災訓練・詳細は公式発表待ち' }
+    officialUrl:'https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/bousaifair2026.html', imageUrl:'./assets/event-land.jpg', source:'横浜市', sourceType:'自治体公式', details:'11:00〜18:00／水難救助訓練・横浜市消防音楽隊・展示ブース' }
 ];
 const KANAGAWA_PRIORITY_SOURCES = [
   { name:'神奈川県 防災・イベント', url:'https://www.pref.kanagawa.jp/docs/j8g/bigrescue/bigrescue.html' },
@@ -615,6 +611,7 @@ async function main() {
     militaryPortCitySources:MILITARY_PORT_CITY_SOURCES,
     regionalSources:REGIONAL_SUPPLEMENTS.map(item => item.officialUrl),
     kanagawaPrioritySources:KANAGAWA_PRIORITY_SOURCES,
+    coveragePolicy:{ fireDepartment:'消防音楽隊、特殊車両、消防艇・ヘリ、大規模出初式・消防フェア、または自衛隊・警察・海保との合同イベントのみ', excludes:'AED講習、防災講座、避難所訓練、消防団員向け訓練、町内会・関係者限定イベント' },
     seaUnitSources:unitSourceStatus,
     policeSources:[CHIBA_POLICE_OFFICIAL, KANAGAWA_POLICE_OFFICIAL, TOKYO_POLICE_BASE],
     coastGuardSources:[COAST_GUARD_OFFICIAL], count: events.length, events };

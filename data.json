@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T05:04:40.760Z",
+  "updatedAt": "2026-08-24T05:08:40.485Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -64,9 +64,7 @@
   "regionalSources": [
     "https://www.pref.kanagawa.jp/docs/j8g/bigrescue/bigrescue.html",
     "https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/bousaifair2026.html",
-    "https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/bousaifair2026.html",
-    "https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/sougoukunren.html",
-    "https://www.city.sagamihara.kanagawa.jp/kurashi/1026529/bousai/1008801/1008805.html"
+    "https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/bousaifair2026.html"
   ],
   "kanagawaPrioritySources": [
     {
@@ -122,6 +120,10 @@
       "url": "https://www.city.kawasaki.jp/kurashi/category/15-2-10-0-0-0-0-0-0-0.html"
     }
   ],
+  "coveragePolicy": {
+    "fireDepartment": "消防音楽隊、特殊車両、消防艇・ヘリ、大規模出初式・消防フェア、または自衛隊・警察・海保との合同イベントのみ",
+    "excludes": "AED講習、防災講座、避難所訓練、消防団員向け訓練、町内会・関係者限定イベント"
+  },
   "seaUnitSources": [
     {
       "name": "横須賀地方隊",
@@ -228,7 +230,7 @@
   "coastGuardSources": [
     "https://www.kaiho.mlit.go.jp/doc/event/jyouhou.html"
   ],
-  "count": 56,
+  "count": 54,
   "events": [
     {
       "id": "2026-08-24-東京-海上自衛隊-第2術科学校見学会（施設見学･体験喫食等）",
@@ -1097,28 +1099,6 @@
       "openType": ""
     },
     {
-      "id": "2026-10-04-神奈川-令和8年度-横浜市総合防災訓練",
-      "date": "2026-10-04",
-      "region": "神奈川",
-      "branch": "その他",
-      "title": "令和8年度 横浜市総合防災訓練",
-      "location": "荏田南中学校・牛ケ谷公園（横浜市都筑区）",
-      "category": "防災・合同訓練",
-      "application": false,
-      "applicationNote": "",
-      "ageRestriction": false,
-      "price": "原則無料（公式情報を確認）",
-      "accessRank": "○",
-      "accessNote": "公共交通で日帰り圏",
-      "officialUrl": "https://www.city.yokohama.lg.jp/bousai-kyukyu-bohan/bousai-saigai/moshimo/shitaisaku/kunren/sougoukunren.html",
-      "imageUrl": "./assets/event-land.jpg",
-      "imageIsIllustration": true,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E8%8D%8F%E7%94%B0%E5%8D%97%E4%B8%AD%E5%AD%A6%E6%A0%A1%E3%83%BB%E7%89%9B%E3%82%B1%E8%B0%B7%E5%85%AC%E5%9C%92%EF%BC%88%E6%A8%AA%E6%B5%9C%E5%B8%82%E9%83%BD%E7%AD%91%E5%8C%BA%EF%BC%89",
-      "source": "横浜市",
-      "sourceType": "自治体公式",
-      "openType": ""
-    },
-    {
       "id": "2026-10-04-福岡-砕氷艦「しらせ」門司港一般公開",
       "date": "2026-10-04",
       "region": "福岡",
@@ -1228,28 +1208,6 @@
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B5%9C%E6%9D%BE%E5%9F%BA%E5%9C%B0",
       "source": "航空自衛隊 イベント一覧",
       "sourceType": "自衛隊公式",
-      "openType": ""
-    },
-    {
-      "id": "2026-10-25-神奈川-令和8年度-相模原市総合防災訓練",
-      "date": "2026-10-25",
-      "region": "神奈川",
-      "branch": "その他",
-      "title": "令和8年度 相模原市総合防災訓練",
-      "location": "相模総合補給廠一部返還地ほか（相模原市）",
-      "category": "防災・合同訓練",
-      "application": false,
-      "applicationNote": "",
-      "ageRestriction": false,
-      "price": "原則無料（公式情報を確認）",
-      "accessRank": "○",
-      "accessNote": "公共交通で日帰り圏",
-      "officialUrl": "https://www.city.sagamihara.kanagawa.jp/kurashi/1026529/bousai/1008801/1008805.html",
-      "imageUrl": "./assets/event-land.jpg",
-      "imageIsIllustration": true,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%9B%B8%E6%A8%A1%E7%B7%8F%E5%90%88%E8%A3%9C%E7%B5%A6%E5%BB%A0%E4%B8%80%E9%83%A8%E8%BF%94%E9%82%84%E5%9C%B0%E3%81%BB%E3%81%8B%EF%BC%88%E7%9B%B8%E6%A8%A1%E5%8E%9F%E5%B8%82%EF%BC%89",
-      "source": "相模原市",
-      "sourceType": "自治体公式",
       "openType": ""
     },
     {
