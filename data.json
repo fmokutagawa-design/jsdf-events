@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T14:01:30.894Z",
+  "updatedAt": "2026-08-24T14:07:18.703Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -239,7 +239,7 @@
   "coastGuardSources": [
     "https://www.kaiho.mlit.go.jp/doc/event/jyouhou.html"
   ],
-  "count": 61,
+  "count": 62,
   "events": [
     {
       "id": "2026-08-24-東京-海上自衛隊-第2術科学校見学会（施設見学･体験喫食等）",
@@ -286,6 +286,29 @@
       "source": "海上自衛隊 イベント情報",
       "sourceType": "海自公式",
       "openType": "艦艇・港湾公開"
+    },
+    {
+      "id": "2026-08-26-東京-第13回避難訓練体験コンサート",
+      "date": "2026-08-26",
+      "region": "東京",
+      "branch": "海自",
+      "title": "第13回避難訓練体験コンサート",
+      "location": "J:COMホール八王子",
+      "category": "音楽隊",
+      "application": true,
+      "applicationNote": "定員に達し次第締切",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.mod.go.jp/msdf/tokyoband/posts/concert3.html",
+      "imageUrl": "./assets/event-sea.jpg",
+      "imageIsIllustration": true,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=J%3ACOM%E3%83%9B%E3%83%BC%E3%83%AB%E5%85%AB%E7%8E%8B%E5%AD%90",
+      "source": "海上自衛隊 東京音楽隊",
+      "sourceType": "海自公式",
+      "scope": "首都圏",
+      "openType": ""
     },
     {
       "id": "2026-08-27-千葉-2026警察音楽隊研修会-吹奏楽コンサート",

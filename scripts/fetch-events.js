@@ -83,6 +83,8 @@ const EASTERN_BAND_OFFICIAL = 'https://www.mod.go.jp/gsdf/ea/eaband/ensoukai.htm
 const EASTERN_BAND_SOURCE = `https://r.jina.ai/${EASTERN_BAND_OFFICIAL}?checked=${new Date().toISOString().slice(0, 10)}`;
 const TOKYO_BAND_OFFICIAL = 'https://www.mod.go.jp/msdf/application/tokyoband/index.html';
 const TOKYO_BAND_SOURCE = `https://r.jina.ai/${TOKYO_BAND_OFFICIAL}?checked=${new Date().toISOString().slice(0, 10)}`;
+const TOKYO_BAND_HOME = 'https://www.mod.go.jp/msdf/tokyoband/';
+const TOKYO_BAND_HOME_SOURCE = `https://r.jina.ai/${TOKYO_BAND_HOME}?checked=${new Date().toISOString().slice(0, 10)}`;
 const AIR_CENTRAL_BAND_OFFICIAL = 'https://www.mod.go.jp/asdf/acb/concertinfo/index.html';
 const AIR_CENTRAL_BAND_SOURCE = `https://r.jina.ai/${AIR_CENTRAL_BAND_OFFICIAL}?checked=${new Date().toISOString().slice(0, 10)}`;
 const MUSIC_FESTIVAL_SOURCE = 'https://r.jina.ai/http://www.mod.go.jp/gsdf/event/marching_festival/festival2026/';
@@ -108,7 +110,10 @@ const OFFICIAL_TICKET_EVENTS = [
   { date:'2026-09-25', region:'神奈川', branch:'海自', title:'海上自衛隊横須賀音楽隊 ふれあいコンサート2026',
     location:'横須賀芸術劇場 よこすか芸術劇場 大劇場', officialUrl:'https://teket.jp/13961/74895',
     imageUrl:'https://teket.jp/data/flyer/74895/AhArx5PqZT.jpg?t=1784702134', source:'海上自衛隊 横須賀地方総監部（teket）',
-    sourceType:'海自公式主催・外部申込', details:'要申込／2026/9/25 開場17:30 開演18:30／無料・QRチケットが必要／申込締切 2026/8/28 15:00', category:'音楽隊' }
+    sourceType:'海自公式主催・外部申込', details:'要申込／2026/9/25 開場17:30 開演18:30／無料・QRチケットが必要／申込締切 2026/8/28 15:00', category:'音楽隊' },
+  { date:'2026-08-26', region:'東京', branch:'海自', title:'第13回避難訓練体験コンサート',
+    location:'J:COMホール八王子', officialUrl:'https://www.mod.go.jp/msdf/tokyoband/posts/concert3.html',
+    source:'海上自衛隊 東京音楽隊', sourceType:'海自公式', details:'要申込／13:30〜15:15／定員に達し次第締切', category:'音楽隊' }
 ];
 const PORT_SUPPLEMENTS = [
   { date:'2026-08-31', region:'神奈川', branch:'海自', title:'YOKOSUKA軍港めぐり 夏休みキャンペーン', location:'汐入桟橋（神奈川県横須賀市）', category:'港・艦船',
@@ -335,6 +340,20 @@ function parseTokyoBand(markdown) {
   const location = clean((text.match(/### 会場[\s\S]{0,100}?\n\s*([^\n]+)/) || [])[1] || '文京シビックホール 大ホール');
   const imageUrl = (text.match(/!\[[^\]]*\]\((https?:\/\/[^)]+\/brassband\.jpg)\)/i) || [])[1];
   return date && title ? [makeEvent({ date, region:'東京', branch:'海自', title, location, officialUrl:TOKYO_BAND_OFFICIAL,
+    imageUrl, source:'海上自衛隊 東京音楽隊', details:text, forceCategory:'音楽隊' })] : [];
+}
+
+function tokyoBandPostLinks(markdown) {
+  return [...new Set([...markdown.matchAll(/\((https?:\/\/www\.mod\.go\.jp\/msdf\/tokyoband\/posts\/concert\d+\.html)\)/g)].map(match => match[1]))];
+}
+
+function parseTokyoBandPost(markdown, officialUrl) {
+  const text = markdown.normalize('NFKC');
+  const title = clean((text.match(/^#\s+(?:\[concert\])?([^\n]+)/m) || text.match(/\*\*[「『]?([^」』\n]+(?:コンサート|演奏会))[^*]*\*\*/) || [])[1] || '').replace(/^[「『]|[」』].*$/g, '');
+  const date = japaneseDate((text.match(/(?:日時[:：]|\*\*2\s+日時\*\*)[\s\S]{0,100}?((?:令和\d+年|20\d{2}年)\d{1,2}月\d{1,2}日)/) || [])[1] || '');
+  const location = clean((text.match(/場所[:：]\s*([^\n]+)/) || text.match(/\*\*3\s+会場\*\*[\s\S]{0,80}?\[([^\]]+)\]/) || [])[1] || '東京都内');
+  const imageUrl = (text.match(/!\[[^\]]*\]\((https?:\/\/www\.mod\.go\.jp\/msdf\/tokyoband\/img\/[^)]+\.(?:png|jpe?g))\)/i) || [])[1];
+  return date && title ? [makeEvent({ date, region:'東京', branch:'海自', title, location, officialUrl,
     imageUrl, source:'海上自衛隊 東京音楽隊', details:text, forceCategory:'音楽隊' })] : [];
 }
 
@@ -619,9 +638,9 @@ async function main() {
   const response = await fetch(SOURCE, { headers: { 'User-Agent': 'jsdf-events/1.0' } });
   if (!response.ok) throw new Error(`取得失敗: ${response.status}`);
   const markdown = await response.text();
-  const [landBandText, centralBandText, easternBandText, tokyoBandText, airCentralBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, coastGuardText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText] = await Promise.all([
+  const [landBandText, centralBandText, easternBandText, tokyoBandText, tokyoBandHomeText, airCentralBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, coastGuardText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText] = await Promise.all([
     fetchOptional(LAND_BAND_SOURCE, '第1音楽隊'), fetchOptional(CENTRAL_BAND_SOURCE, '中央音楽隊'),
-    fetchOptional(EASTERN_BAND_SOURCE, '東部方面音楽隊'), fetchOptional(TOKYO_BAND_SOURCE, '東京音楽隊'), fetchOptional(AIR_CENTRAL_BAND_SOURCE, '航空中央音楽隊'),
+    fetchOptional(EASTERN_BAND_SOURCE, '東部方面音楽隊'), fetchOptional(TOKYO_BAND_SOURCE, '東京音楽隊'), fetchOptional(TOKYO_BAND_HOME_SOURCE, '東京音楽隊トップ'), fetchOptional(AIR_CENTRAL_BAND_SOURCE, '航空中央音楽隊'),
     fetchOptional(MUSIC_FESTIVAL_SOURCE, '自衛隊音楽まつり'),
     fetchOptional(CHIBA_POLICE_SOURCE, '千葉県警音楽隊'), fetchOptional(KANAGAWA_POLICE_SOURCE, '神奈川県警音楽隊'),
     fetchOptional(COAST_GUARD_SOURCE, '海上保安庁イベント一覧'),
@@ -680,7 +699,11 @@ async function main() {
     imageUrl:'http://www.mod.go.jp/gsdf/eae/1d/event/img/large.jpg', source:'陸上自衛隊 第1音楽隊', forceCategory:'音楽隊'
   }));
   const centralBandEvents = parseCentralBand(centralBandText);
-  const directoryBandEvents = [...parseEasternBand(easternBandText), ...parseTokyoBand(tokyoBandText), ...parseAirCentralBand(airCentralBandText)];
+  const tokyoBandPostUrls = tokyoBandPostLinks(tokyoBandHomeText);
+  const tokyoBandPostTexts = await Promise.all(tokyoBandPostUrls.map(url => fetchOptional(`https://r.jina.ai/${url}?checked=${FETCH_DAY}`, `東京音楽隊記事 ${url.split('/').pop()}`)));
+  const directoryBandEvents = [...parseEasternBand(easternBandText), ...parseTokyoBand(tokyoBandText),
+    ...tokyoBandPostTexts.flatMap((text, index) => text ? parseTokyoBandPost(text, tokyoBandPostUrls[index]) : []),
+    ...parseAirCentralBand(airCentralBandText)];
   const musicFestivalEvents = parseMusicFestival(musicFestivalText);
   const chibaPoliceEvents = parseChibaPolice(chibaPoliceText);
   const kanagawaPoliceDetailUrls = kanagawaPoliceDetailLinks(kanagawaPoliceText);
@@ -698,7 +721,7 @@ async function main() {
   const portEvents = PORT_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
   const officialTicketEvents = OFFICIAL_TICKET_EVENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
   const regionalEvents = REGIONAL_SUPPLEMENTS.map(item => makeEvent({ ...item, forceCategory:item.category }));
-  const optionalSuccesses = [landBandText, centralBandText, easternBandText, tokyoBandText, airCentralBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, coastGuardText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText,
+  const optionalSuccesses = [landBandText, centralBandText, easternBandText, tokyoBandText, tokyoBandHomeText, airCentralBandText, musicFestivalText, chibaPoliceText, kanagawaPoliceText, coastGuardText, seaKureText, seaTateyamaText, seaHachinoheText, seaFukuokaText, cocoyokoBaseText,
     ...tokyoPolicePages, ...tokyoPoliceMusicPages].filter(Boolean).length;
   const degraded = optionalSuccesses < 6;
   if (degraded) console.warn(`取得先障害を検出: 前回の正常データを保持します（成功${optionalSuccesses}系統）`);
