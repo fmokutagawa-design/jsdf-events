@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T13:52:58.806Z",
+  "updatedAt": "2026-08-24T13:56:19.297Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -230,7 +230,7 @@
   "coastGuardSources": [
     "https://www.kaiho.mlit.go.jp/doc/event/jyouhou.html"
   ],
-  "count": 56,
+  "count": 58,
   "events": [
     {
       "id": "2026-08-24-東京-海上自衛隊-第2術科学校見学会（施設見学･体験喫食等）",
@@ -409,6 +409,28 @@
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%BA%83%E5%A0%B1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC(%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%B7%B4%E9%A6%AC%E5%8C%BA)",
       "source": "防衛省 イベント・交流活動",
+      "sourceType": "自衛隊公式",
+      "openType": ""
+    },
+    {
+      "id": "2026-08-30-群馬-陸上自衛隊中央音楽隊演奏会",
+      "date": "2026-08-30",
+      "region": "群馬",
+      "branch": "陸自",
+      "title": "陸上自衛隊中央音楽隊演奏会",
+      "location": "富岡市 かぶら文化ホール",
+      "category": "音楽隊",
+      "application": true,
+      "applicationNote": "応募終了",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.mod.go.jp/gsdf/central/concert/",
+      "imageUrl": "https://www.mod.go.jp/gsdf/central/concert/img/comingsoon2.png",
+      "imageIsIllustration": false,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%AF%8C%E5%B2%A1%E5%B8%82%20%E3%81%8B%E3%81%B6%E3%82%89%E6%96%87%E5%8C%96%E3%83%9B%E3%83%BC%E3%83%AB",
+      "source": "陸上自衛隊 中央音楽隊",
       "sourceType": "自衛隊公式",
       "openType": ""
     },
@@ -830,6 +852,28 @@
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B5%81%E5%B1%B1%E3%81%8A%E3%81%8A%E3%81%9F%E3%81%8B%E3%81%AE%E6%A3%AE%E9%A7%85%E5%8D%97%E5%8F%A3%E9%83%BD%E5%B8%82%E5%BA%83%E5%A0%B4",
       "source": "千葉県警察 音楽隊",
       "sourceType": "警察公式",
+      "openType": ""
+    },
+    {
+      "id": "2026-09-16-東京-陸上自衛隊中央音楽隊-第179回定期演奏会",
+      "date": "2026-09-16",
+      "region": "東京",
+      "branch": "陸自",
+      "title": "陸上自衛隊中央音楽隊 第179回定期演奏会",
+      "location": "すみだトリフォニーホール 大ホール",
+      "category": "音楽隊",
+      "application": true,
+      "applicationNote": "応募締切:8月23日(日) 24:00",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.mod.go.jp/gsdf/central/concert/179/index.html",
+      "imageUrl": "https://www.mod.go.jp/gsdf/central/concert/img/179.png",
+      "imageIsIllustration": false,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E3%81%99%E3%81%BF%E3%81%A0%E3%83%88%E3%83%AA%E3%83%95%E3%82%A9%E3%83%8B%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB",
+      "source": "陸上自衛隊 中央音楽隊",
+      "sourceType": "自衛隊公式",
       "openType": ""
     },
     {
@@ -1475,5 +1519,10 @@
       "sourceType": "自衛隊公式",
       "openType": ""
     }
+  ],
+  "musicSources": [
+    "https://www.mod.go.jp/gsdf/eae/1d/event/1band.html",
+    "https://www.mod.go.jp/gsdf/central/concert/",
+    "https://www.mod.go.jp/gsdf/event/marching_festival/festival2026/"
   ]
 }
