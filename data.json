@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-26T16:36:06.425Z",
+  "updatedAt": "2026-08-26T16:44:54.966Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -141,13 +141,13 @@
       "name": "呉地方隊",
       "url": "https://www.mod.go.jp/msdf/kure/announcement/",
       "fetched": true,
-      "checkedToday": true
+      "checkedToday": false
     },
     {
       "name": "佐世保地方隊",
       "url": "https://www.mod.go.jp/msdf/sasebo/2_pr_event/2_pr_event.html",
-      "fetched": false,
-      "checkedToday": false
+      "fetched": true,
+      "checkedToday": true
     },
     {
       "name": "大湊地区隊",
@@ -165,13 +165,13 @@
       "name": "下関基地隊",
       "url": "https://www.mod.go.jp/msdf/shimoki/",
       "fetched": true,
-      "checkedToday": true
+      "checkedToday": false
     },
     {
       "name": "八戸航空基地",
       "url": "https://www.mod.go.jp/msdf/hatinohe/event/index.html",
-      "fetched": false,
-      "checkedToday": false
+      "fetched": true,
+      "checkedToday": true
     },
     {
       "name": "館山航空基地",
@@ -189,13 +189,13 @@
       "name": "第22航空群・大村航空基地",
       "url": "https://www.mod.go.jp/msdf/22aw/event/kichisai/kitisai.html",
       "fetched": true,
-      "checkedToday": true
+      "checkedToday": false
     },
     {
       "name": "小月航空基地",
       "url": "https://www.mod.go.jp/msdf/oz-atg/",
-      "fetched": false,
-      "checkedToday": false
+      "fetched": true,
+      "checkedToday": true
     },
     {
       "name": "徳島航空基地",
@@ -213,13 +213,13 @@
       "name": "第5航空群・那覇航空基地",
       "url": "https://www.mod.go.jp/msdf/naha/release.html",
       "fetched": true,
-      "checkedToday": true
+      "checkedToday": false
     },
     {
       "name": "第1術科学校・幹部候補生学校",
       "url": "https://www.mod.go.jp/msdf/onemss/",
-      "fetched": false,
-      "checkedToday": false
+      "fetched": true,
+      "checkedToday": true
     }
   ],
   "musicDirectorySource": "https://ajda.jp/publics/index/64/",
@@ -476,8 +476,8 @@
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/YOKOHAMA/schedule_1.html",
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html"
   ],
-  "portVesselCheckedAt": "2026-08-26T16:36:06.426Z",
-  "portVesselCount": 191,
+  "portVesselCheckedAt": "2026-08-26T16:44:54.967Z",
+  "portVesselCount": 190,
   "portVessels": [
     {
       "id": "yokohama-0-TONG MAO 2",
@@ -2075,27 +2075,6 @@
       "area": "神奈川",
       "sourceGroup": "横浜市港湾局",
       "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "jcg-chiba-08/27-00:30-ATLANTIC-BRIDGE-出航",
-      "name": "ATLANTIC BRIDGE",
-      "callSign": "",
-      "country": "SGP",
-      "vesselClass": "船種未公表",
-      "status": "出航",
-      "berth": "中央Ｇ",
-      "arrival": "",
-      "departure": "2026/08/27 00:30",
-      "agent": "日本通運(株)",
-      "length": "126",
-      "tonnage": "7532",
-      "draft": "8",
-      "pilot": "Ｘ",
-      "port": "千葉航路",
-      "area": "千葉",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/CHIBA/schedule_1.html",
       "category": "commercial"
     },
     {
@@ -4442,54 +4421,8 @@
       "mapUrl": ""
     }
   ],
-  "count": 68,
+  "count": 67,
   "events": [
-    {
-      "id": "2026-08-26-高知-海上自衛隊-護衛艦「あきづき」一般公開",
-      "date": "2026-08-26",
-      "region": "高知",
-      "branch": "海自",
-      "title": "海上自衛隊 護衛艦「あきづき」一般公開",
-      "location": "高知新港",
-      "category": "艦艇・一般公開",
-      "application": false,
-      "applicationNote": "",
-      "ageRestriction": false,
-      "price": "原則無料（公式情報を確認）",
-      "accessRank": "○",
-      "accessNote": "公共交通で日帰り圏",
-      "officialUrl": "https://www.mod.go.jp/pco/kochi/event_0807.html",
-      "imageUrl": "https://www.mod.go.jp/msdf/event/img/0807posuta-.png",
-      "imageIsIllustration": false,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E7%9F%A5%E6%96%B0%E6%B8%AF",
-      "scope": "全国",
-      "source": "海上自衛隊 イベント情報",
-      "sourceType": "海自公式",
-      "openType": "艦艇・港湾公開"
-    },
-    {
-      "id": "2026-08-26-東京-第13回避難訓練体験コンサート",
-      "date": "2026-08-26",
-      "region": "東京",
-      "branch": "海自",
-      "title": "第13回避難訓練体験コンサート",
-      "location": "J:COMホール八王子",
-      "category": "音楽隊",
-      "application": true,
-      "applicationNote": "",
-      "ageRestriction": false,
-      "price": "原則無料（公式情報を確認）",
-      "accessRank": "○",
-      "accessNote": "公共交通で日帰り圏",
-      "officialUrl": "https://www.mod.go.jp/msdf/tokyoband/posts/concert3.html",
-      "imageUrl": "./assets/event-sea.jpg",
-      "imageIsIllustration": true,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=J%3ACOM%E3%83%9B%E3%83%BC%E3%83%AB%E5%85%AB%E7%8E%8B%E5%AD%90",
-      "source": "海上自衛隊 東京音楽隊",
-      "sourceType": "海自公式",
-      "scope": "首都圏",
-      "openType": ""
-    },
     {
       "id": "2026-08-27-千葉-2026警察音楽隊研修会-吹奏楽コンサート",
       "date": "2026-08-27",
@@ -5355,6 +5288,29 @@
       "source": "警視庁 イベントカレンダー",
       "sourceType": "警察公式",
       "openType": ""
+    },
+    {
+      "id": "2026-09-27-広島-呉在泊艦艇・地方総監部-一般公開",
+      "date": "2026-09-27",
+      "region": "広島",
+      "branch": "海自",
+      "title": "呉在泊艦艇・地方総監部 一般公開",
+      "location": "呉基地係船堀地区・呉地方総監部（広島県呉市）",
+      "category": "艦艇・一般公開",
+      "application": true,
+      "applicationNote": "事前申込 | 9月27日（日） | 締切：9月13日（日） | 当選発表（予定）：9月17日（木） |",
+      "ageRestriction": false,
+      "price": "原則無料（公式情報を確認）",
+      "accessRank": "○",
+      "accessNote": "公共交通で日帰り圏",
+      "officialUrl": "https://www.mod.go.jp/msdf/kure/announcement/tour/index.html",
+      "imageUrl": "./assets/event-sea.jpg",
+      "imageIsIllustration": true,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%91%89%E5%9F%BA%E5%9C%B0%E4%BF%82%E8%88%B9%E5%A0%80%E5%9C%B0%E5%8C%BA%E3%83%BB%E5%91%89%E5%9C%B0%E6%96%B9%E7%B7%8F%E7%9B%A3%E9%83%A8%EF%BC%88%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%91%89%E5%B8%82%EF%BC%89",
+      "source": "海上自衛隊 呉地方隊",
+      "sourceType": "海自公式",
+      "scope": "全国",
+      "openType": "艦艇・港湾公開"
     },
     {
       "id": "2026-09-27-東京-西新井署-エンジョイ・ライダー・スクール",
