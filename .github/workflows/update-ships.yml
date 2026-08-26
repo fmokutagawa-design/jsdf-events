@@ -1,12 +1,16 @@
-name: Update events
+name: Update port and ship data
 on:
   schedule:
-    - cron: '15 21 * * *'
+    # Every three hours at :45 JST-aligned slots; the 06:45 run follows the daily full update.
+    - cron: '45 0,3,6,9,12,15,18,21 * * *'
   workflow_dispatch:
 permissions:
   contents: write
   pages: write
   id-token: write
+concurrency:
+  group: port-data-update
+  cancel-in-progress: false
 jobs:
   update:
     environment:
@@ -18,13 +22,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node scripts/fetch-events.js
+      - name: Refresh port and ship data
+        run: node scripts/fetch-events.js --ship-watch-only
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --cached --quiet || git commit -m "Update event data"
+          git diff --cached --quiet || git commit -m "Update port and ship data"
           git push
       - uses: actions/configure-pages@v5
         with:
