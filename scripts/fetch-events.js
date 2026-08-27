@@ -215,14 +215,31 @@ async function fetchPortVessels(previous = []) {
   const combined = [...yokohama, ...routeResults.flat()];
   return [...new Map(combined.map(v => [`${v.sourceUrl}|${v.name}|${v.status}|${v.arrival || v.departure}|${v.berth}`, v])).values()];
 }
-function buildShipWatches(now) {
+function buildShipWatches(now, events = [], portVessels = []) {
   const today = now.toISOString().slice(0, 10);
   const rank = item => item.date >= today ? 0 : (item.endDate || item.date) >= today ? 1 : 2;
-  return SHIP_WATCH_ITEMS
+  const fixed = SHIP_WATCH_ITEMS
     .filter(item => new Date(`${item.keepUntil || item.endDate || item.date}T00:00:00+09:00`) >= now)
-    .map(item => ({ ...item, id:`${item.date}-${item.vessel}-${item.location}`, imageUrl:'./assets/event-sea.jpg',
+    .map(item => ({ ...item, scope:item.region === '海外' ? 'overseas' : ((item.endDate || item.date) < today ? 'archive' : 'domestic'), id:`${item.date}-${item.vessel}-${item.location}`, imageUrl:'./assets/event-sea.jpg',
       mapUrl:item.noMap ? '' : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.location} 港`)}` }))
-    .sort((a,b) => rank(a) - rank(b) || (rank(a) === 2 ? b.date.localeCompare(a.date) : a.date.localeCompare(b.date)));
+  const eventWatches = events
+    .filter(item => item.branch === '海自' && /艦艇|一般公開|体験航海|艦船|護衛艦|掃海艇|砕氷艦|フリート/.test(`${item.category || ''} ${item.openType || ''} ${item.title || ''}`))
+    .map(item => ({ date:item.date, region:item.region, vessel:item.title, vesselType:item.category || '艦艇イベント', location:item.location,
+      watchCategory:'国内・一般公開', status:item.openType || '一般向けイベント', publicAccess:true, scope:'domestic',
+      summary:item.details || '海上自衛隊または主催者の公式案内に掲載された一般向けイベントです。', officialUrl:item.officialUrl,
+      source:item.source || '公式イベント情報', id:`event-${item.date}-${item.title}-${item.location}`, imageUrl:item.imageUrl || './assets/event-sea.jpg', mapUrl:item.mapUrl }));
+  const detected = portVessels.filter(item => item.category === 'naval').map(item => {
+    const raw = item.arrival || item.departure || '', match = raw.match(/(20\d{2})\/(\d{2})\/(\d{2})/);
+    if (!match) return null;
+    const date = `${match[1]}-${match[2]}-${match[3]}`;
+    return { date, region:item.area, vessel:item.name, vesselType:item.vesselClass, location:`${item.port}${item.berth ? `・${item.berth}` : ''}`,
+      watchCategory:'港湾公式表で検出', status:item.status || '入出航予定', publicAccess:false, scope:'domestic',
+      summary:'港湾・航路の公式予定表で軍艦または海軍艦艇として検出しました。一般公開情報ではありません。時刻や行動は変更される場合があります。',
+      officialUrl:item.sourceUrl, source:item.sourceGroup, id:`port-${item.id}`, imageUrl:'./assets/event-sea.jpg',
+      mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.port} ${item.berth || ''}`)}` };
+  }).filter(Boolean).filter(item => item.date >= today);
+  return [...new Map([...eventWatches, ...detected, ...fixed].map(item => [`${item.date}|${item.vessel}|${item.location}`, item])).values()]
+    .sort((a,b) => (a.scope === 'overseas') - (b.scope === 'overseas') || rank(a) - rank(b) || (rank(a) === 2 ? b.date.localeCompare(a.date) : a.date.localeCompare(b.date)));
 }
 const ALLOWED = new Set(['神奈川', '東京', '埼玉', '千葉', '茨城', '静岡', '山梨', '栃木']);
 const ALL_REGIONS = ['北海道','青森','岩手','宮城','秋田','山形','福島','茨城','栃木','群馬','埼玉','千葉','東京','神奈川','新潟','富山','石川','福井','山梨','長野','岐阜','静岡','愛知','三重','滋賀','京都','大阪','兵庫','奈良','和歌山','鳥取','島根','岡山','広島','山口','徳島','香川','愛媛','高知','福岡','佐賀','長崎','熊本','大分','宮崎','鹿児島','沖縄'];
@@ -808,8 +825,8 @@ async function main() {
   try { previousData = JSON.parse(await fs.readFile(path.join(ROOT, 'data.json'), 'utf8')); } catch {}
   if (process.argv.includes('--ship-watch-only')) {
     const now = new Date(); now.setHours(0, 0, 0, 0);
-    const shipWatches = buildShipWatches(now);
     const portVessels = await fetchPortVessels(previousData.portVessels || []);
+    const shipWatches = buildShipWatches(now, previousData.events || [], portVessels);
     const data = { ...previousData, updatedAt:new Date().toISOString(), shipWatchSources:SHIP_WATCH_SOURCES, shipWatchPorts:SHIP_WATCH_PORTS,
       photoOpportunities:buildPhotoOpportunities(now), portVesselSource:YOKOHAMA_PORT_SCHEDULE, portVesselSources:[YOKOHAMA_PORT_SCHEDULE, ...TOKYO_BAY_ROUTE_SOURCES.map(s => s.url)],
       portVesselCheckedAt:new Date().toISOString(), portVesselCount:portVessels.length, portVessels,
@@ -920,8 +937,8 @@ async function main() {
     .filter(e => new Date(`${e.date}T00:00:00+09:00`) >= now)
     .map(e => ({ ...e, sourceType:inferSourceType(e), openType:inferOpenType(e) }))
     .sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title));
-  const shipWatches = buildShipWatches(now);
   const portVessels = await fetchPortVessels(previousData.portVessels || []);
+  const shipWatches = buildShipWatches(now, events, portVessels);
   const data = { updatedAt: new Date().toISOString(), sourceUrl: 'https://www.mod.go.jp/j/press/events/', seaSourceUrl: SEA_OFFICIAL,
     seaSources:[SEA_OFFICIAL, SEA_KURE_OFFICIAL, SEA_TATEYAMA_OFFICIAL, SEA_HACHINOHE_OFFICIAL, SEA_FUKUOKA_OFFICIAL],
     portSources:PORT_OFFICIAL_SOURCES, foreignVesselSources:FOREIGN_VESSEL_SOURCES, baseOpenSources:BASE_OPEN_SOURCES,
