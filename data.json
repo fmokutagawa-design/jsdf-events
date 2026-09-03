@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T11:43:43.860Z",
+  "updatedAt": "2026-09-03T16:41:27.651Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -476,8 +476,8 @@
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/YOKOHAMA/schedule_1.html",
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html"
   ],
-  "portVesselCheckedAt": "2026-09-03T11:43:43.860Z",
-  "portVesselCount": 275,
+  "portVesselCheckedAt": "2026-09-03T16:41:27.652Z",
+  "portVesselCount": 239,
   "portVessels": [
     {
       "id": "yokohama-0-TONG MAO 2",
@@ -582,75 +582,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-6-大成丸",
-      "name": "大成丸",
-      "callSign": "7JPO",
-      "country": "日本国",
-      "vesselClass": "訓練船",
-      "status": "離岸済",
-      "berth": "OS0AC  大さん橋ふ頭Ａ号岸壁",
-      "arrival": "08/30 13:45",
-      "departure": "09/03 14:00",
-      "agent": "海技教育機構",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-7-ECO MASSACHUSETT",
-      "name": "ECO MASSACHUSETT",
-      "callSign": "V7GE2",
-      "country": "マーシャル諸島共和国",
-      "vesselClass": "一般貨物船",
-      "status": "離岸済",
-      "berth": "DKL5C  ＤＬ５",
-      "arrival": "09/01 11:00",
-      "departure": "09/03 16:00",
-      "agent": "澁澤倉庫横浜営業",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-8-CFT-5",
-      "name": "CFT-5",
-      "callSign": "RP0308",
-      "country": "日本国",
-      "vesselClass": "その他の船舶",
-      "status": "離岸済",
-      "berth": "HA01C  本牧ふ頭Ａ突堤１号岸壁",
-      "arrival": "09/01 14:00",
-      "departure": "09/02 06:00",
-      "agent": "横浜はしけ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-9-XIN HAI 79",
-      "name": "XIN HAI 79",
-      "callSign": "3E8314",
-      "country": "パナマ共和国",
-      "vesselClass": "一般貨物船",
-      "status": "離岸済",
-      "berth": "YS09C  山下ふ頭９号岸壁",
-      "arrival": "09/01 14:00",
-      "departure": "09/02 19:00",
-      "agent": "東京ﾏﾘﾝｻｰﾋﾞｽ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-10-CFT-2",
+      "id": "yokohama-6-CFT-2",
       "name": "CFT-2",
       "callSign": "RP0306",
       "country": "日本国",
@@ -667,58 +599,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-11-MSC LORENA",
-      "name": "MSC LORENA",
-      "callSign": "3EBO9",
-      "country": "パナマ共和国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "HBC1C  本牧ふ頭ＢＣ突堤間１号岸壁",
-      "arrival": "09/01 18:59",
-      "departure": "09/03 02:00",
-      "agent": "上組海務課",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-12-第１１大神丸",
-      "name": "第１１大神丸",
-      "callSign": "JK5352",
-      "country": "日本国",
-      "vesselClass": "一般貨物船",
-      "status": "離岸済",
-      "berth": "SG03C  鈴繁３号岸壁",
-      "arrival": "09/02 07:00",
-      "departure": "09/03 10:00",
-      "agent": "東照海運㈱",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-13-XI YUAN",
-      "name": "XI YUAN",
-      "callSign": "V3LE",
-      "country": "ベリーズ",
-      "vesselClass": "一般貨物船",
-      "status": "離岸済",
-      "berth": "SG01C  鈴繁１号岸壁",
-      "arrival": "09/02 07:30",
-      "departure": "09/03 20:00",
-      "agent": "(株)ｼｭｳﾎｳ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-14-CSSC YUAN JING",
+      "id": "yokohama-7-CSSC YUAN JING",
       "name": "CSSC YUAN JING",
       "callSign": "VRSA8",
       "country": "香港（中華人民共和国）",
@@ -735,58 +616,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-15-和丸",
-      "name": "和丸",
-      "callSign": "JK5384",
-      "country": "日本国",
-      "vesselClass": "砂利・砂・石材",
-      "status": "離岸済",
-      "berth": "V5071  港内",
-      "arrival": "09/02 12:59",
-      "departure": "09/03 06:00",
-      "agent": "東照海運㈱",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-16-CFT-3",
-      "name": "CFT-3",
-      "callSign": "RP0307",
-      "country": "日本国",
-      "vesselClass": "その他の船舶",
-      "status": "離岸済",
-      "berth": "HA03C  本牧ふ頭Ａ突堤３号岸壁",
-      "arrival": "09/02 13:55",
-      "departure": "09/03 06:00",
-      "agent": "横浜はしけ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-17-陸龍丸",
-      "name": "陸龍丸",
-      "callSign": "JLPP",
-      "country": "日本国",
-      "vesselClass": "セメント船",
-      "status": "離岸済",
-      "berth": "HSK2C  本牧ふ頭新建材２号岸壁",
-      "arrival": "09/02 14:25",
-      "departure": "09/03 13:00",
-      "agent": "東海運内航",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-18-進洋丸",
+      "id": "yokohama-8-進洋丸",
       "name": "進洋丸",
       "callSign": "7KOJ",
       "country": "日本国",
@@ -803,386 +633,12 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-19-SHUN LONG",
-      "name": "SHUN LONG",
-      "callSign": "3E2286",
-      "country": "パナマ共和国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "HD05C  本牧ふ頭Ｄ突堤５号岸壁",
-      "arrival": "09/02 18:59",
-      "departure": "09/03 04:00",
-      "agent": "日新 横浜港運代理",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-20-INVICTA",
-      "name": "INVICTA",
-      "callSign": "V7A2600",
-      "country": "マーシャル諸島共和国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "HC06C  本牧ふ頭Ｃ突堤６号岸壁",
-      "arrival": "09/02 18:59",
-      "departure": "09/03 16:00",
-      "agent": "正和",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-21-SITC BUSAN",
-      "name": "SITC BUSAN",
-      "callSign": "VRLQ7",
-      "country": "香港（中華人民共和国）",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "MC01C  南本牧ふ頭１号岸壁",
-      "arrival": "09/02 17:45",
-      "departure": "09/03 05:30",
-      "agent": "日新 横浜港運代理",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-22-EMMANUEL P",
-      "name": "EMMANUEL P",
-      "callSign": "V7A5488",
-      "country": "マーシャル諸島共和国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "MC02C  南本牧ふ頭２号岸壁",
-      "arrival": "09/02 20:01",
-      "departure": "09/03 10:45",
-      "agent": "ﾕﾆｴﾂｸｽNCT南本牧タ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-23-GLORY ZHENDONG",
-      "name": "GLORY ZHENDONG",
-      "callSign": "VRPZ4",
-      "country": "香港（中華人民共和国）",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "HC08C  本牧ふ頭Ｃ突堤８号岸壁",
-      "arrival": "09/02 20:29",
-      "departure": "09/03 05:00",
-      "agent": "山九HASCO分",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-24-CHUN JIN",
-      "name": "CHUN JIN",
-      "callSign": "BPWW5",
-      "country": "中華人民共和国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "DKT9C  大黒ふ頭Ｔ－９号岸壁",
-      "arrival": "09/02 22:29",
-      "departure": "09/03 05:00",
-      "agent": "東京ﾏﾘﾝｻｰﾋﾞｽ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-25-和丸",
-      "name": "和丸",
-      "callSign": "JK5384",
-      "country": "日本国",
-      "vesselClass": "砂利・砂・石材",
-      "status": "離岸済",
-      "berth": "V5071  港内",
-      "arrival": "09/03 06:30",
-      "departure": "09/03 09:00",
-      "agent": "東照海運㈱",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-26-豊福丸",
-      "name": "豊福丸",
-      "callSign": "JD2177",
-      "country": "日本国",
-      "vesselClass": "自動車専用船",
-      "status": "離岸済",
-      "berth": "TJ03C  トヨタ自動車３号さん橋",
-      "arrival": "09/03 07:15",
-      "departure": "09/03 11:30",
-      "agent": "藤木企業トヨタ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-27-NEPTUNE LEADER",
-      "name": "NEPTUNE LEADER",
-      "callSign": "7KVK",
-      "country": "日本国",
-      "vesselClass": "自動車専用船",
-      "status": "離岸済",
-      "berth": "DKC3C  ＤＣ３",
-      "arrival": "09/03 07:10",
-      "departure": "09/03 15:00",
-      "agent": "郵船ｺｰﾃﾞｨｱﾙ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-28-TS JOHOR",
-      "name": "TS JOHOR",
-      "callSign": "V7A7436",
-      "country": "マーシャル諸島共和国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "HD01C  本牧ふ頭Ｄ突堤１号岸壁",
-      "arrival": "09/03 07:29",
-      "departure": "09/03 17:00",
-      "agent": "上組海務課",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-29-OSG BOSSTEC",
-      "name": "OSG BOSSTEC",
-      "callSign": "VRBK8",
-      "country": "香港（中華人民共和国）",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "HD01C  本牧ふ頭Ｄ突堤１号岸壁",
-      "arrival": "09/03 07:29",
-      "departure": "09/03 12:00",
-      "agent": "日本通運㈱横浜港運",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-30-EVER BLISS",
-      "name": "EVER BLISS",
-      "callSign": "H9PP",
-      "country": "パナマ共和国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "MC03C  南本牧ふ頭３号岸壁",
-      "arrival": "09/03 07:46",
-      "departure": "09/03 18:00",
-      "agent": "京浜港運",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-31-第15光運丸＆NK-S",
-      "name": "第15光運丸＆NK-S",
-      "callSign": "RP1081",
-      "country": "日本国",
-      "vesselClass": "その他の船舶",
-      "status": "離岸済",
-      "berth": "V5071  港内",
-      "arrival": "09/03 07:59",
-      "departure": "09/03 12:00",
-      "agent": "東洋建設横浜支店",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-32-第六十三さだ丸",
-      "name": "第六十三さだ丸",
-      "callSign": "JD4058",
-      "country": "日本国",
-      "vesselClass": "砂利・砂・石材",
-      "status": "離岸済",
-      "berth": "SG03C  鈴繁３号岸壁",
-      "arrival": "09/03 08:00",
-      "departure": "09/03 10:00",
-      "agent": "東京国際埠頭横浜支店",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-33-みゆき",
-      "name": "みゆき",
-      "callSign": "JD4039",
-      "country": "日本国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "MC03C  南本牧ふ頭３号岸壁",
-      "arrival": "09/03 08:16",
-      "departure": "09/03 09:55",
-      "agent": "三菱倉庫横浜",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-34-PRESIDENT MONROE",
-      "name": "PRESIDENT MONROE",
-      "callSign": "WPMF",
-      "country": "アメリカ合衆国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "HD05C  本牧ふ頭Ｄ突堤５号岸壁",
-      "arrival": "09/03 08:29",
-      "departure": "09/03 19:00",
-      "agent": "住友倉庫代理店課",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-35-STEPHANIA K",
-      "name": "STEPHANIA K",
-      "callSign": "5LGW6",
-      "country": "リベリア共和国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "HC09C  本牧ふ頭Ｃ突堤９号岸壁",
-      "arrival": "09/03 08:29",
-      "departure": "09/03 17:00",
-      "agent": "山九OOCL分",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-36-WAN HAI 283",
-      "name": "WAN HAI 283",
-      "callSign": "9V6502",
-      "country": "シンガポール共和国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "HC05C  本牧ふ頭Ｃ突堤５号岸壁",
-      "arrival": "09/03 08:29",
-      "departure": "09/03 16:00",
-      "agent": "YSｴｰｼﾞｪﾝｼｰ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-37-公龍丸",
-      "name": "公龍丸",
-      "callSign": "JD3165",
-      "country": "日本国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "HBC1C  本牧ふ頭ＢＣ突堤間１号岸壁",
-      "arrival": "09/03 08:29",
-      "departure": "09/03 16:00",
-      "agent": "正和",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-38-太田川",
-      "name": "太田川",
-      "callSign": "JD3046",
-      "country": "日本国",
-      "vesselClass": "一般貨物船",
-      "status": "離岸済",
-      "berth": "HC08C  本牧ふ頭Ｃ突堤８号岸壁",
-      "arrival": "09/03 08:29",
-      "departure": "09/03 11:00",
-      "agent": "山九本牧ｺﾝﾃﾅ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-39-第二明祐＆海旺Ⅱ",
-      "name": "第二明祐＆海旺Ⅱ",
-      "callSign": "RP1190",
-      "country": "日本国",
-      "vesselClass": "その他の船舶",
-      "status": "係留中",
-      "berth": "SG03C  鈴繁３号岸壁",
-      "arrival": "09/03 08:30",
-      "departure": "",
-      "agent": "東照海運㈱",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-40-こはく",
-      "name": "こはく",
-      "callSign": "JD5046",
-      "country": "日本国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "HC07C  本牧ふ頭Ｃ突堤７号岸壁",
-      "arrival": "09/03 08:59",
-      "departure": "09/04 06:00",
-      "agent": "山九本牧ｺﾝﾃﾅ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-41-SNL NANJING",
+      "id": "yokohama-9-SNL NANJING",
       "name": "SNL NANJING",
       "callSign": "VRVP4",
       "country": "香港（中華人民共和国）",
       "vesselClass": "フルコンテナ船",
-      "status": "係留中",
+      "status": "離岸済",
       "berth": "MC01C  南本牧ふ頭１号岸壁",
       "arrival": "09/03 09:00",
       "departure": "09/04 04:00",
@@ -1194,63 +650,12 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-42-しらかば＆紅-130",
-      "name": "しらかば＆紅-130",
-      "callSign": "RP0976",
-      "country": "日本国",
-      "vesselClass": "その他の船舶",
-      "status": "離岸済",
-      "berth": "V5071  港内",
-      "arrival": "09/03 09:59",
-      "departure": "09/03 12:00",
-      "agent": "東洋建設横浜支店",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-43-MISSOURI EXPRESS",
-      "name": "MISSOURI EXPRESS",
-      "callSign": "WDM2203",
-      "country": "アメリカ合衆国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "MC04C  南本牧ふ頭４号岸壁",
-      "arrival": "09/03 11:46",
-      "departure": "09/03 20:45",
-      "agent": "三菱倉庫横浜",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-44-第一紅陽&紅-1200",
-      "name": "第一紅陽&紅-1200",
-      "callSign": "RP1218",
-      "country": "日本国",
-      "vesselClass": "その他の船舶",
-      "status": "離岸済",
-      "berth": "V5071  港内",
-      "arrival": "09/03 12:59",
-      "departure": "09/03 16:00",
-      "agent": "東洋建設横浜支店",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-45-TS HAKATA",
+      "id": "yokohama-10-TS HAKATA",
       "name": "TS HAKATA",
       "callSign": "V7A6216",
       "country": "マーシャル諸島共和国",
       "vesselClass": "フルコンテナ船",
-      "status": "係留中",
+      "status": "離岸済",
       "berth": "HD01C  本牧ふ頭Ｄ突堤１号岸壁",
       "arrival": "09/03 12:29",
       "departure": "09/03 23:59",
@@ -1262,58 +667,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-46-ひよどり",
-      "name": "ひよどり",
-      "callSign": "JD2366",
-      "country": "日本国",
-      "vesselClass": "フルコンテナ船",
-      "status": "離岸済",
-      "berth": "HC08C  本牧ふ頭Ｃ突堤８号岸壁",
-      "arrival": "09/03 12:29",
-      "departure": "09/03 17:00",
-      "agent": "山九本牧ｺﾝﾃﾅ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-47-POLARIS MILA",
-      "name": "POLARIS MILA",
-      "callSign": "D5EZ7",
-      "country": "リベリア共和国",
-      "vesselClass": "自動車専用船",
-      "status": "離岸済",
-      "berth": "DKC4C  ＤＣ４",
-      "arrival": "09/03 12:40",
-      "departure": "09/03 17:30",
-      "agent": "郵船ｺｰﾃﾞｨｱﾙ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-48-第二とよふじ丸",
-      "name": "第二とよふじ丸",
-      "callSign": "7JDI",
-      "country": "日本国",
-      "vesselClass": "自動車専用船",
-      "status": "離岸済",
-      "berth": "TJ03C  トヨタ自動車３号さん橋",
-      "arrival": "09/03 12:45",
-      "departure": "09/03 18:00",
-      "agent": "藤木企業トヨタ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-49-和丸",
+      "id": "yokohama-11-和丸",
       "name": "和丸",
       "callSign": "JK5384",
       "country": "日本国",
@@ -1330,24 +684,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-50-第15光運丸＆NK-S",
-      "name": "第15光運丸＆NK-S",
-      "callSign": "RP1081",
-      "country": "日本国",
-      "vesselClass": "その他の船舶",
-      "status": "離岸済",
-      "berth": "V5071  港内",
-      "arrival": "09/03 12:59",
-      "departure": "09/03 15:00",
-      "agent": "東洋建設横浜支店",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-51-CFT-3",
+      "id": "yokohama-12-CFT-3",
       "name": "CFT-3",
       "callSign": "RP0307",
       "country": "日本国",
@@ -1364,7 +701,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-52-HESTIA LEADER",
+      "id": "yokohama-13-HESTIA LEADER",
       "name": "HESTIA LEADER",
       "callSign": "7JDY",
       "country": "日本国",
@@ -1381,7 +718,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-53-CFT-5",
+      "id": "yokohama-14-CFT-5",
       "name": "CFT-5",
       "callSign": "RP0308",
       "country": "日本国",
@@ -1398,7 +735,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-54-ASIAN LUNA",
+      "id": "yokohama-15-ASIAN LUNA",
       "name": "ASIAN LUNA",
       "callSign": "9VCR4",
       "country": "シンガポール共和国",
@@ -1415,7 +752,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-55-WAN HAI 332",
+      "id": "yokohama-16-WAN HAI 332",
       "name": "WAN HAI 332",
       "callSign": "9V8495",
       "country": "シンガポール共和国",
@@ -1432,12 +769,12 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-56-ひよどり",
+      "id": "yokohama-17-ひよどり",
       "name": "ひよどり",
       "callSign": "JD2366",
       "country": "日本国",
       "vesselClass": "フルコンテナ船",
-      "status": "係留中",
+      "status": "離岸済",
       "berth": "V9  中ノ瀬アンカー",
       "arrival": "09/03 17:30",
       "departure": "09/04 00:15",
@@ -1449,24 +786,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-57-いくた",
-      "name": "いくた",
-      "callSign": "JD2239",
-      "country": "日本国",
-      "vesselClass": "フルコンテナ船",
-      "status": "係留中",
-      "berth": "MC03C  南本牧ふ頭３号岸壁",
-      "arrival": "09/03 18:46",
-      "departure": "09/03 23:00",
-      "agent": "三菱倉庫横浜",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-58-A ONTAKE",
+      "id": "yokohama-18-A ONTAKE",
       "name": "A ONTAKE",
       "callSign": "3E6588",
       "country": "パナマ共和国",
@@ -1483,7 +803,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-59-RIO KOBE",
+      "id": "yokohama-19-RIO KOBE",
       "name": "RIO KOBE",
       "callSign": "A8TT4",
       "country": "リベリア共和国",
@@ -1500,7 +820,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-60-SINOTRANS BANGKO",
+      "id": "yokohama-20-SINOTRANS BANGKO",
       "name": "SINOTRANS BANGKO",
       "callSign": "VRQA8",
       "country": "香港（中華人民共和国）",
@@ -1517,7 +837,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-61-SITC FANGCHENG",
+      "id": "yokohama-21-SITC FANGCHENG",
       "name": "SITC FANGCHENG",
       "callSign": "VRLG3",
       "country": "中華人民共和国",
@@ -1534,7 +854,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-62-APL ISLANDER",
+      "id": "yokohama-22-APL ISLANDER",
       "name": "APL ISLANDER",
       "callSign": "KGMQ",
       "country": "アメリカ合衆国",
@@ -1551,7 +871,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-63-FENG YUN HE",
+      "id": "yokohama-23-FENG YUN HE",
       "name": "FENG YUN HE",
       "callSign": "3FXG8",
       "country": "パナマ共和国",
@@ -1568,48 +888,14 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-64-げんぶ",
-      "name": "げんぶ",
-      "callSign": "JD5561",
-      "country": "日本国",
-      "vesselClass": "フルコンテナ船",
-      "status": "係留中",
-      "berth": "HD05C  本牧ふ頭Ｄ突堤５号岸壁",
-      "arrival": "09/03 20:29",
-      "departure": "09/03 21:00",
-      "agent": "ＡＴＳ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-65-はるかぜ",
-      "name": "はるかぜ",
-      "callSign": "JD5593",
-      "country": "日本国",
-      "vesselClass": "フルコンテナ船",
-      "status": "決定",
-      "berth": "HD05C  本牧ふ頭Ｄ突堤５号岸壁",
-      "arrival": "09/03 22:29",
-      "departure": "09/03 23:59",
-      "agent": "ＡＴＳ",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-66-いくた",
+      "id": "yokohama-24-いくた",
       "name": "いくた",
       "callSign": "JD2239",
       "country": "日本国",
       "vesselClass": "フルコンテナ船",
-      "status": "決定",
+      "status": "係留中",
       "berth": "HC06C  本牧ふ頭Ｃ突堤６号岸壁",
-      "arrival": "09/03 23:30",
+      "arrival": "09/03 22:30",
       "departure": "09/04 12:00",
       "agent": "山九本牧ｺﾝﾃﾅ",
       "port": "横浜港（横浜市港湾局）",
@@ -1619,12 +905,12 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-67-ひよどり",
+      "id": "yokohama-25-ひよどり",
       "name": "ひよどり",
       "callSign": "JD2366",
       "country": "日本国",
       "vesselClass": "フルコンテナ船",
-      "status": "決定",
+      "status": "係留中",
       "berth": "MC03C  南本牧ふ頭３号岸壁",
       "arrival": "09/04 00:46",
       "departure": "09/04 02:45",
@@ -1636,12 +922,12 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-68-すざく",
+      "id": "yokohama-26-すざく",
       "name": "すざく",
       "callSign": "JD4559",
       "country": "日本国",
       "vesselClass": "フルコンテナ船",
-      "status": "決定",
+      "status": "係留中",
       "berth": "HD05C  本牧ふ頭Ｄ突堤５号岸壁",
       "arrival": "09/04 01:29",
       "departure": "09/04 04:00",
@@ -1653,12 +939,12 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-69-ひょうご",
+      "id": "yokohama-27-ひょうご",
       "name": "ひょうご",
       "callSign": "JD2182",
       "country": "日本国",
       "vesselClass": "セミコンテナ船",
-      "status": "決定",
+      "status": "実績",
       "berth": "MC03C  南本牧ふ頭３号岸壁",
       "arrival": "09/04 01:46",
       "departure": "09/04 03:15",
@@ -1670,7 +956,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-70-ひょうご",
+      "id": "yokohama-28-ひょうご",
       "name": "ひょうご",
       "callSign": "JD2182",
       "country": "日本国",
@@ -1687,7 +973,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-71-和丸",
+      "id": "yokohama-29-和丸",
       "name": "和丸",
       "callSign": "JK5384",
       "country": "日本国",
@@ -1704,7 +990,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-72-HENG YU",
+      "id": "yokohama-30-HENG YU",
       "name": "HENG YU",
       "callSign": "BTUV",
       "country": "中華人民共和国",
@@ -1721,7 +1007,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-73-NOCC OCEANIC",
+      "id": "yokohama-31-NOCC OCEANIC",
       "name": "NOCC OCEANIC",
       "callSign": "LANK8",
       "country": "ノルウェー王国",
@@ -1738,7 +1024,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-74-MALAYSIA GRACE",
+      "id": "yokohama-32-MALAYSIA GRACE",
       "name": "MALAYSIA GRACE",
       "callSign": "9WUX3",
       "country": "マレーシア",
@@ -1755,7 +1041,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-75-第五すみせ丸",
+      "id": "yokohama-33-第五すみせ丸",
       "name": "第五すみせ丸",
       "callSign": "JE3162",
       "country": "日本国",
@@ -1772,7 +1058,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-76-EASLINE YANTAI",
+      "id": "yokohama-34-EASLINE YANTAI",
       "name": "EASLINE YANTAI",
       "callSign": "3EIK",
       "country": "パナマ共和国",
@@ -1789,7 +1075,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-77-DONGJIN FORTUNE",
+      "id": "yokohama-35-DONGJIN FORTUNE",
       "name": "DONGJIN FORTUNE",
       "callSign": "D7UJ",
       "country": "大韓民国",
@@ -1806,7 +1092,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-78-JUPITER SPIRIT",
+      "id": "yokohama-36-JUPITER SPIRIT",
       "name": "JUPITER SPIRIT",
       "callSign": "A8ZC2",
       "country": "リベリア共和国",
@@ -1823,7 +1109,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-79-MITSUI OCEAN SAK",
+      "id": "yokohama-37-MITSUI OCEAN SAK",
       "name": "MITSUI OCEAN SAK",
       "callSign": "7KVW",
       "country": "日本国",
@@ -1840,7 +1126,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-80-FUJITRANS WORLD",
+      "id": "yokohama-38-FUJITRANS WORLD",
       "name": "FUJITRANS WORLD",
       "callSign": "D5FO6",
       "country": "リベリア共和国",
@@ -1857,7 +1143,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-81-蓉翔丸",
+      "id": "yokohama-39-蓉翔丸",
       "name": "蓉翔丸",
       "callSign": "JH3502",
       "country": "日本国",
@@ -1874,7 +1160,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-82-EVER BUILD",
+      "id": "yokohama-40-EVER BUILD",
       "name": "EVER BUILD",
       "callSign": "3ELY7",
       "country": "パナマ共和国",
@@ -1891,7 +1177,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-83-ASAKA",
+      "id": "yokohama-41-ASAKA",
       "name": "ASAKA",
       "callSign": "D7BR",
       "country": "大韓民国",
@@ -1908,7 +1194,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-84-かこ",
+      "id": "yokohama-42-かこ",
       "name": "かこ",
       "callSign": "JD5485",
       "country": "日本国",
@@ -1925,7 +1211,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-85-WAN HAI 335",
+      "id": "yokohama-43-WAN HAI 335",
       "name": "WAN HAI 335",
       "callSign": "9V8501",
       "country": "シンガポール共和国",
@@ -1942,7 +1228,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-86-清和丸＆太陽号",
+      "id": "yokohama-44-清和丸＆太陽号",
       "name": "清和丸＆太陽号",
       "callSign": "RP1263",
       "country": "日本国",
@@ -1959,7 +1245,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-87-第六十一進宏丸",
+      "id": "yokohama-45-第六十一進宏丸",
       "name": "第六十一進宏丸",
       "callSign": "JD5468",
       "country": "日本国",
@@ -1976,7 +1262,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-88-第十八住若丸",
+      "id": "yokohama-46-第十八住若丸",
       "name": "第十八住若丸",
       "callSign": "JD4179",
       "country": "日本国",
@@ -1993,7 +1279,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-89-OCEAN DIGNITY",
+      "id": "yokohama-47-OCEAN DIGNITY",
       "name": "OCEAN DIGNITY",
       "callSign": "VRXX5",
       "country": "香港（中華人民共和国）",
@@ -2010,7 +1296,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-90-JFEヴィーナス",
+      "id": "yokohama-48-JFEヴィーナス",
       "name": "JFEヴィーナス",
       "callSign": "7KCH",
       "country": "日本国",
@@ -2027,7 +1313,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-91-東神丸",
+      "id": "yokohama-49-東神丸",
       "name": "東神丸",
       "callSign": "JD4766",
       "country": "日本国",
@@ -2044,7 +1330,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-92-DIONE LEADER",
+      "id": "yokohama-50-DIONE LEADER",
       "name": "DIONE LEADER",
       "callSign": "7KPJ",
       "country": "日本国",
@@ -2061,7 +1347,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-93-DREAM DIAMOND",
+      "id": "yokohama-51-DREAM DIAMOND",
       "name": "DREAM DIAMOND",
       "callSign": "3EHY5",
       "country": "パナマ共和国",
@@ -2078,7 +1364,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-94-第一紅陽&紅-1200",
+      "id": "yokohama-52-第一紅陽&紅-1200",
       "name": "第一紅陽&紅-1200",
       "callSign": "RP1218",
       "country": "日本国",
@@ -2095,7 +1381,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-95-VIKING PASSAMA",
+      "id": "yokohama-53-VIKING PASSAMA",
       "name": "VIKING PASSAMA",
       "callSign": "V7A5204",
       "country": "マーシャル諸島共和国",
@@ -2112,7 +1398,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-96-BANGKOK HIGHWAY",
+      "id": "yokohama-54-BANGKOK HIGHWAY",
       "name": "BANGKOK HIGHWAY",
       "callSign": "7KBG",
       "country": "日本国",
@@ -2129,7 +1415,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-97-大洸丸",
+      "id": "yokohama-55-大洸丸",
       "name": "大洸丸",
       "callSign": "JI3683",
       "country": "日本国",
@@ -2146,7 +1432,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-98-ひょうご",
+      "id": "yokohama-56-ひょうご",
       "name": "ひょうご",
       "callSign": "JD2182",
       "country": "日本国",
@@ -2163,7 +1449,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-99-和丸",
+      "id": "yokohama-57-和丸",
       "name": "和丸",
       "callSign": "JK5384",
       "country": "日本国",
@@ -2180,7 +1466,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-100-きたふじ＆KT-17",
+      "id": "yokohama-58-きたふじ＆KT-17",
       "name": "きたふじ＆KT-17",
       "callSign": "RP1242",
       "country": "日本国",
@@ -2197,7 +1483,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-101-第十五興徳丸",
+      "id": "yokohama-59-第十五興徳丸",
       "name": "第十五興徳丸",
       "callSign": "JD5696",
       "country": "日本国",
@@ -2214,7 +1500,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-102-とよふじ丸",
+      "id": "yokohama-60-とよふじ丸",
       "name": "とよふじ丸",
       "callSign": "JD2152",
       "country": "日本国",
@@ -2231,7 +1517,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-103-まいこ",
+      "id": "yokohama-61-まいこ",
       "name": "まいこ",
       "callSign": "JD2630",
       "country": "日本国",
@@ -2248,7 +1534,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-104-ひょうご",
+      "id": "yokohama-62-ひょうご",
       "name": "ひょうご",
       "callSign": "JD2182",
       "country": "日本国",
@@ -2265,7 +1551,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-105-ALS JUNO",
+      "id": "yokohama-63-ALS JUNO",
       "name": "ALS JUNO",
       "callSign": "CQ2187",
       "country": "ポルトガル共和国",
@@ -2282,7 +1568,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-106-黒潮丸",
+      "id": "yokohama-64-黒潮丸",
       "name": "黒潮丸",
       "callSign": "JL6668",
       "country": "日本国",
@@ -2299,7 +1585,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-107-CFT-3",
+      "id": "yokohama-65-CFT-3",
       "name": "CFT-3",
       "callSign": "RP0307",
       "country": "日本国",
@@ -2316,7 +1602,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-108-MAERSK NANSHA",
+      "id": "yokohama-66-MAERSK NANSHA",
       "name": "MAERSK NANSHA",
       "callSign": "V7A3997",
       "country": "マーシャル諸島共和国",
@@ -2333,7 +1619,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-109-A KAKOGAWA",
+      "id": "yokohama-67-A KAKOGAWA",
       "name": "A KAKOGAWA",
       "callSign": "VRWJ5",
       "country": "香港（中華人民共和国）",
@@ -2350,7 +1636,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-110-STAR VOYAGER",
+      "id": "yokohama-68-STAR VOYAGER",
       "name": "STAR VOYAGER",
       "callSign": "D7FU",
       "country": "大韓民国",
@@ -2367,7 +1653,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-111-EVER BOARD",
+      "id": "yokohama-69-EVER BOARD",
       "name": "EVER BOARD",
       "callSign": "BKLQ",
       "country": "台湾",
@@ -2384,7 +1670,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-112-SITC CHANGDE",
+      "id": "yokohama-70-SITC CHANGDE",
       "name": "SITC CHANGDE",
       "callSign": "VRVY5",
       "country": "香港（中華人民共和国）",
@@ -2401,7 +1687,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-113-CFT-5",
+      "id": "yokohama-71-CFT-5",
       "name": "CFT-5",
       "callSign": "RP0308",
       "country": "日本国",
@@ -2418,7 +1704,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-114-PRIME",
+      "id": "yokohama-72-PRIME",
       "name": "PRIME",
       "callSign": "XVXP7",
       "country": "ベトナム社会主義共和国",
@@ -2435,7 +1721,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-115-DIAMOND PRINCESS",
+      "id": "yokohama-73-DIAMOND PRINCESS",
       "name": "DIAMOND PRINCESS",
       "callSign": "ZCHI3",
       "country": "バーミューダ（イギリス）",
@@ -2452,7 +1738,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-116-PACIFIC BIRD",
+      "id": "yokohama-74-PACIFIC BIRD",
       "name": "PACIFIC BIRD",
       "callSign": "3E9004",
       "country": "パナマ共和国",
@@ -2469,7 +1755,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-117-VIKING PASSAMA",
+      "id": "yokohama-75-VIKING PASSAMA",
       "name": "VIKING PASSAMA",
       "callSign": "V7A5204",
       "country": "マーシャル諸島共和国",
@@ -2486,7 +1772,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-118-GLOVIS SILVER",
+      "id": "yokohama-76-GLOVIS SILVER",
       "name": "GLOVIS SILVER",
       "callSign": "D7FY",
       "country": "大韓民国",
@@ -2503,7 +1789,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-119-NAUSICAA",
+      "id": "yokohama-77-NAUSICAA",
       "name": "NAUSICAA",
       "callSign": "ZCHI5",
       "country": "バーミューダ（イギリス）",
@@ -2520,7 +1806,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-120-DREAM ANGEL",
+      "id": "yokohama-78-DREAM ANGEL",
       "name": "DREAM ANGEL",
       "callSign": "V7B3225",
       "country": "マーシャル諸島共和国",
@@ -2537,7 +1823,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-121-ASIAN INFINITY",
+      "id": "yokohama-79-ASIAN INFINITY",
       "name": "ASIAN INFINITY",
       "callSign": "V7B3178",
       "country": "マーシャル諸島共和国",
@@ -2554,7 +1840,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-122-ARIETTA",
+      "id": "yokohama-80-ARIETTA",
       "name": "ARIETTA",
       "callSign": "3E6109",
       "country": "パナマ共和国",
@@ -2571,7 +1857,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-123-PORT VILA CHIEF",
+      "id": "yokohama-81-PORT VILA CHIEF",
       "name": "PORT VILA CHIEF",
       "callSign": "9V9711",
       "country": "シンガポール共和国",
@@ -2588,7 +1874,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-124-KYOWA FALCON",
+      "id": "yokohama-82-KYOWA FALCON",
       "name": "KYOWA FALCON",
       "callSign": "V7TR3",
       "country": "マーシャル諸島共和国",
@@ -2605,7 +1891,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-125-GLANZ CORAL",
+      "id": "yokohama-83-GLANZ CORAL",
       "name": "GLANZ CORAL",
       "callSign": "3E4944",
       "country": "パナマ共和国",
@@ -2622,7 +1908,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-126-MARVELOUS ACE",
+      "id": "yokohama-84-MARVELOUS ACE",
       "name": "MARVELOUS ACE",
       "callSign": "7KIT",
       "country": "日本国",
@@ -2639,7 +1925,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-127-CEPHEUS LEADER",
+      "id": "yokohama-85-CEPHEUS LEADER",
       "name": "CEPHEUS LEADER",
       "callSign": "7KFD",
       "country": "日本国",
@@ -2656,7 +1942,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-128-SHINLINE 11",
+      "id": "yokohama-86-SHINLINE 11",
       "name": "SHINLINE 11",
       "callSign": "9WGF2",
       "country": "マレーシア",
@@ -2673,7 +1959,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-129-CARMEN",
+      "id": "yokohama-87-CARMEN",
       "name": "CARMEN",
       "callSign": "SMGW",
       "country": "スウェーデン王国",
@@ -2690,7 +1976,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-130-MITSUI OCEAN SAK",
+      "id": "yokohama-88-MITSUI OCEAN SAK",
       "name": "MITSUI OCEAN SAK",
       "callSign": "7KVW",
       "country": "日本国",
@@ -2707,7 +1993,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-131-日本丸",
+      "id": "yokohama-89-日本丸",
       "name": "日本丸",
       "callSign": "JFMC",
       "country": "日本国",
@@ -2724,7 +2010,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-132-GRACE ZEPHYR",
+      "id": "yokohama-90-GRACE ZEPHYR",
       "name": "GRACE ZEPHYR",
       "callSign": "3EHB3",
       "country": "パナマ共和国",
@@ -2741,7 +2027,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-133-BRILLIANT ACE",
+      "id": "yokohama-91-BRILLIANT ACE",
       "name": "BRILLIANT ACE",
       "callSign": "HPAK",
       "country": "パナマ共和国",
@@ -2758,7 +2044,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-134-TRITON LEADER",
+      "id": "yokohama-92-TRITON LEADER",
       "name": "TRITON LEADER",
       "callSign": "3FFE9",
       "country": "パナマ共和国",
@@ -2775,7 +2061,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-135-SKY AURORA",
+      "id": "yokohama-93-SKY AURORA",
       "name": "SKY AURORA",
       "callSign": "DSQN2",
       "country": "大韓民国",
@@ -2792,7 +2078,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-136-COSMIC ACE",
+      "id": "yokohama-94-COSMIC ACE",
       "name": "COSMIC ACE",
       "callSign": "3EDH6",
       "country": "パナマ共和国",
@@ -2809,7 +2095,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-137-MORNING CHERRY",
+      "id": "yokohama-95-MORNING CHERRY",
       "name": "MORNING CHERRY",
       "callSign": "3FOD5",
       "country": "パナマ共和国",
@@ -2826,7 +2112,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-138-TITUS",
+      "id": "yokohama-96-TITUS",
       "name": "TITUS",
       "callSign": "9HA4089",
       "country": "マルタ共和国",
@@ -2843,7 +2129,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-139-MITSUI OCEAN SAK",
+      "id": "yokohama-97-MITSUI OCEAN SAK",
       "name": "MITSUI OCEAN SAK",
       "callSign": "7KVW",
       "country": "日本国",
@@ -2860,7 +2146,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-140-TORTUGAS",
+      "id": "yokohama-98-TORTUGAS",
       "name": "TORTUGAS",
       "callSign": "9HA4366",
       "country": "マルタ共和国",
@@ -2877,7 +2163,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-141-KOKOMI",
+      "id": "yokohama-99-KOKOMI",
       "name": "KOKOMI",
       "callSign": "6YXU6",
       "country": "ジャマイカ",
@@ -2894,7 +2180,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-142-TAIHAI 1",
+      "id": "yokohama-100-TAIHAI 1",
       "name": "TAIHAI 1",
       "callSign": "VRWS7",
       "country": "香港（中華人民共和国）",
@@ -2911,7 +2197,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-143-MORNING LISA",
+      "id": "yokohama-101-MORNING LISA",
       "name": "MORNING LISA",
       "callSign": "3FRO6",
       "country": "パナマ共和国",
@@ -2928,7 +2214,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-144-POSITIVE PIONEER",
+      "id": "yokohama-102-POSITIVE PIONEER",
       "name": "POSITIVE PIONEER",
       "callSign": "H3YB",
       "country": "パナマ共和国",
@@ -2945,7 +2231,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-145-ANDROMEDA SPIRIT",
+      "id": "yokohama-103-ANDROMEDA SPIRIT",
       "name": "ANDROMEDA SPIRIT",
       "callSign": "3ELH2",
       "country": "パナマ共和国",
@@ -2962,7 +2248,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-146-ISTRA ACE",
+      "id": "yokohama-104-ISTRA ACE",
       "name": "ISTRA ACE",
       "callSign": "C6WE7",
       "country": "バハマ国",
@@ -2979,7 +2265,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-147-MITSUI OCEAN SAK",
+      "id": "yokohama-105-MITSUI OCEAN SAK",
       "name": "MITSUI OCEAN SAK",
       "callSign": "7KVW",
       "country": "日本国",
@@ -2996,7 +2282,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-148-DIAMOND PRINCESS",
+      "id": "yokohama-106-DIAMOND PRINCESS",
       "name": "DIAMOND PRINCESS",
       "callSign": "ZCHI3",
       "country": "バーミューダ（イギリス）",
@@ -3013,7 +2299,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-149-ASIAN INFINITY",
+      "id": "yokohama-107-ASIAN INFINITY",
       "name": "ASIAN INFINITY",
       "callSign": "V7B3178",
       "country": "マーシャル諸島共和国",
@@ -3030,7 +2316,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-150-PULAU TIOMAN",
+      "id": "yokohama-108-PULAU TIOMAN",
       "name": "PULAU TIOMAN",
       "callSign": "3EYO9",
       "country": "パナマ共和国",
@@ -3047,7 +2333,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-151-BLANCO ACE",
+      "id": "yokohama-109-BLANCO ACE",
       "name": "BLANCO ACE",
       "callSign": "3E3970",
       "country": "パナマ共和国",
@@ -3064,7 +2350,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-152-飛鳥Ⅱ",
+      "id": "yokohama-110-飛鳥Ⅱ",
       "name": "飛鳥Ⅱ",
       "callSign": "7JBI",
       "country": "日本国",
@@ -3081,7 +2367,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-153-ASIAN JEWEL",
+      "id": "yokohama-111-ASIAN JEWEL",
       "name": "ASIAN JEWEL",
       "callSign": "DYTX",
       "country": "フィリピン共和国",
@@ -3098,7 +2384,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-154-POSITIVE STAR",
+      "id": "yokohama-112-POSITIVE STAR",
       "name": "POSITIVE STAR",
       "callSign": "H8WC",
       "country": "パナマ共和国",
@@ -3115,7 +2401,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-155-DIAMOND PRINCESS",
+      "id": "yokohama-113-DIAMOND PRINCESS",
       "name": "DIAMOND PRINCESS",
       "callSign": "ZCHI3",
       "country": "バーミューダ（イギリス）",
@@ -3132,7 +2418,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-156-飛鳥Ⅱ",
+      "id": "yokohama-114-飛鳥Ⅱ",
       "name": "飛鳥Ⅱ",
       "callSign": "7JBI",
       "country": "日本国",
@@ -3149,7 +2435,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-157-MITSUI OCEAN SAK",
+      "id": "yokohama-115-MITSUI OCEAN SAK",
       "name": "MITSUI OCEAN SAK",
       "callSign": "7KVW",
       "country": "日本国",
@@ -3166,7 +2452,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-158-飛鳥Ⅱ",
+      "id": "yokohama-116-飛鳥Ⅱ",
       "name": "飛鳥Ⅱ",
       "callSign": "7JBI",
       "country": "日本国",
@@ -3183,7 +2469,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-159-SUNSHINE ACE",
+      "id": "yokohama-117-SUNSHINE ACE",
       "name": "SUNSHINE ACE",
       "callSign": "C6XN6",
       "country": "バハマ国",
@@ -3200,7 +2486,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-160-飛鳥Ⅱ",
+      "id": "yokohama-118-飛鳥Ⅱ",
       "name": "飛鳥Ⅱ",
       "callSign": "7JBI",
       "country": "日本国",
@@ -3217,7 +2503,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-161-MITSUI OCEAN SAK",
+      "id": "yokohama-119-MITSUI OCEAN SAK",
       "name": "MITSUI OCEAN SAK",
       "callSign": "7KVW",
       "country": "日本国",
@@ -4011,29 +3297,6 @@
       "category": "commercial"
     },
     {
-      "id": "jcg-uraga-09/03-22:15-MARI-KOKAKO-北航",
-      "name": "MARI KOKAKO",
-      "callSign": "",
-      "country": "NOR",
-      "vesselClass": "油タンカー",
-      "status": "北航",
-      "berth": "横浜沖",
-      "arrival": "2026/09/03 22:15",
-      "departure": "",
-      "agent": "",
-      "length": "183",
-      "tonnage": "29987",
-      "draft": "",
-      "pilot": "有",
-      "sizeType": "",
-      "nakanose": "経由",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
       "id": "jcg-uraga-09/04-02:30-とよふじ丸-北航",
       "name": "とよふじ丸",
       "callSign": "",
@@ -4080,14 +3343,14 @@
       "category": "commercial"
     },
     {
-      "id": "jcg-uraga-09/04-03:10-フェリーりつりん-北航",
+      "id": "jcg-uraga-09/04-03:20-フェリーりつりん-北航",
       "name": "フェリーりつりん",
       "callSign": "",
       "country": "JPN",
       "vesselClass": "客船・フェリー",
       "status": "北航",
       "berth": "東京（東京東航路）",
-      "arrival": "2026/09/04 03:10",
+      "arrival": "2026/09/04 03:20",
       "departure": "",
       "agent": "",
       "length": "190",
@@ -4103,14 +3366,14 @@
       "category": "cruise"
     },
     {
-      "id": "jcg-uraga-09/04-03:20-ひまわりとうきょう-北航",
+      "id": "jcg-uraga-09/04-03:40-ひまわりとうきょう-北航",
       "name": "ひまわりとうきょう",
       "callSign": "",
       "country": "JPN",
       "vesselClass": "自動車運搬船",
       "status": "北航",
       "berth": "東京（東京東航路）",
-      "arrival": "2026/09/04 03:20",
+      "arrival": "2026/09/04 03:40",
       "departure": "",
       "agent": "",
       "length": "166",
@@ -4701,29 +3964,6 @@
       "category": "commercial"
     },
     {
-      "id": "jcg-uraga-09/04-15:35-天王丸-北航",
-      "name": "天王丸",
-      "callSign": "",
-      "country": "JPN",
-      "vesselClass": "自動車運搬船",
-      "status": "北航",
-      "berth": "東京（東京西航路）",
-      "arrival": "2026/09/04 15:35",
-      "departure": "",
-      "agent": "",
-      "length": "190",
-      "tonnage": "13624",
-      "draft": "",
-      "pilot": "×",
-      "sizeType": "",
-      "nakanose": "経由",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
       "id": "jcg-uraga-09/04-15:45-AVIOS-北航",
       "name": "AVIOS",
       "callSign": "",
@@ -4862,6 +4102,29 @@
       "category": "commercial"
     },
     {
+      "id": "jcg-uraga-09/04-19:00-天王丸-北航",
+      "name": "天王丸",
+      "callSign": "",
+      "country": "JPN",
+      "vesselClass": "自動車運搬船",
+      "status": "北航",
+      "berth": "東京（東京西航路）",
+      "arrival": "2026/09/04 19:00",
+      "departure": "",
+      "agent": "",
+      "length": "190",
+      "tonnage": "13624",
+      "draft": "",
+      "pilot": "×",
+      "sizeType": "",
+      "nakanose": "経由",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
       "id": "jcg-uraga-09/04-19:35-はまゆう-北航",
       "name": "はまゆう",
       "callSign": "",
@@ -4908,91 +4171,22 @@
       "category": "commercial"
     },
     {
-      "id": "jcg-uraga-09/03-21:00-STEPHANIA-K-南航",
-      "name": "STEPHANIA K",
+      "id": "jcg-uraga-09/04-23:45-SEA-LA-LUNA-北航",
+      "name": "SEA LA LUNA",
       "callSign": "",
       "country": "LBR",
-      "vesselClass": "コンテナ船",
-      "status": "南航",
-      "berth": "横浜（横浜航路）",
-      "arrival": "2026/09/03 21:00",
+      "vesselClass": "油タンカー",
+      "status": "北航",
+      "berth": "市原（市原航路）",
+      "arrival": "2026/09/04 23:45",
       "departure": "",
       "agent": "",
-      "length": "172",
-      "tonnage": "17801",
-      "draft": "",
-      "pilot": "有",
-      "sizeType": "",
-      "nakanose": "",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
-      "id": "jcg-uraga-09/03-21:15-MISSOURI-EXPRESS-南航",
-      "name": "MISSOURI EXPRESS",
-      "callSign": "",
-      "country": "USA",
-      "vesselClass": "コンテナ船",
-      "status": "南航",
-      "berth": "南本牧",
-      "arrival": "2026/09/03 21:15",
-      "departure": "",
-      "agent": "",
-      "length": "306",
-      "tonnage": "75579",
+      "length": "228",
+      "tonnage": "42446",
       "draft": "",
       "pilot": "有",
       "sizeType": "巨",
-      "nakanose": "",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
-      "id": "jcg-uraga-09/03-23:55-神王丸-南航",
-      "name": "神王丸",
-      "callSign": "",
-      "country": "JPN",
-      "vesselClass": "自動車運搬船",
-      "status": "南航",
-      "berth": "東京（東京西航路）",
-      "arrival": "2026/09/03 23:55",
-      "departure": "",
-      "agent": "",
-      "length": "190",
-      "tonnage": "13620",
-      "draft": "",
-      "pilot": "×",
-      "sizeType": "",
-      "nakanose": "",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
-      "id": "jcg-uraga-09/04-00:15-それいゆ-南航",
-      "name": "それいゆ",
-      "callSign": "",
-      "country": "JPN",
-      "vesselClass": "自動車運搬船",
-      "status": "南航",
-      "berth": "横須賀",
-      "arrival": "2026/09/04 00:15",
-      "departure": "",
-      "agent": "",
-      "length": "222",
-      "tonnage": "15515",
-      "draft": "",
-      "pilot": "×",
-      "sizeType": "巨",
-      "nakanose": "",
+      "nakanose": "経由",
       "port": "浦賀水道・中ノ瀬航路",
       "area": "東京湾",
       "sourceGroup": "海上保安庁 東京湾海上交通センター",
@@ -5748,6 +4942,236 @@
       "agent": "",
       "length": "168",
       "tonnage": "10185",
+      "draft": "",
+      "pilot": "×",
+      "sizeType": "",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-09/04-20:45-INVICTA-南航",
+      "name": "INVICTA",
+      "callSign": "",
+      "country": "MHL",
+      "vesselClass": "コンテナ船",
+      "status": "南航",
+      "berth": "東京（東京西航路）",
+      "arrival": "2026/09/04 20:45",
+      "departure": "",
+      "agent": "",
+      "length": "172",
+      "tonnage": "19035",
+      "draft": "",
+      "pilot": "有",
+      "sizeType": "",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-09/04-20:50-SWAN-RIVER-BRIDGE-南航",
+      "name": "SWAN RIVER BRIDGE",
+      "callSign": "",
+      "country": "SGP",
+      "vesselClass": "コンテナ船",
+      "status": "南航",
+      "berth": "東京（東京西航路）",
+      "arrival": "2026/09/04 20:50",
+      "departure": "",
+      "agent": "",
+      "length": "171",
+      "tonnage": "17237",
+      "draft": "",
+      "pilot": "有",
+      "sizeType": "",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-09/04-22:00-ひまわりとうきょう-南航",
+      "name": "ひまわりとうきょう",
+      "callSign": "",
+      "country": "JPN",
+      "vesselClass": "自動車運搬船",
+      "status": "南航",
+      "berth": "東京（東京東航路）",
+      "arrival": "2026/09/04 22:00",
+      "departure": "",
+      "agent": "",
+      "length": "166",
+      "tonnage": "10503",
+      "draft": "",
+      "pilot": "×",
+      "sizeType": "",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-09/04-22:10-PACIFIC-JULIA-南航",
+      "name": "PACIFIC JULIA",
+      "callSign": "",
+      "country": "MHL",
+      "vesselClass": "油タンカー",
+      "status": "南航",
+      "berth": "川崎沖",
+      "arrival": "2026/09/04 22:10",
+      "departure": "",
+      "agent": "",
+      "length": "219",
+      "tonnage": "42968",
+      "draft": "",
+      "pilot": "有",
+      "sizeType": "巨",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-09/04-23:00-神泉丸-南航",
+      "name": "神泉丸",
+      "callSign": "",
+      "country": "JPN",
+      "vesselClass": "自動車運搬船",
+      "status": "南航",
+      "berth": "東京（東京西航路）",
+      "arrival": "2026/09/04 23:00",
+      "departure": "",
+      "agent": "",
+      "length": "174",
+      "tonnage": "14054",
+      "draft": "",
+      "pilot": "×",
+      "sizeType": "",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-09/05-00:15-はまゆう-南航",
+      "name": "はまゆう",
+      "callSign": "",
+      "country": "JPN",
+      "vesselClass": "客船・フェリー",
+      "status": "南航",
+      "berth": "横須賀",
+      "arrival": "2026/09/05 00:15",
+      "departure": "",
+      "agent": "",
+      "length": "222",
+      "tonnage": "15515",
+      "draft": "",
+      "pilot": "×",
+      "sizeType": "巨",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "cruise"
+    },
+    {
+      "id": "jcg-uraga-09/05-00:30-あおい丸-南航",
+      "name": "あおい丸",
+      "callSign": "",
+      "country": "JPN",
+      "vesselClass": "油タンカー",
+      "status": "南航",
+      "berth": "川崎",
+      "arrival": "2026/09/05 00:30",
+      "departure": "",
+      "agent": "",
+      "length": "182",
+      "tonnage": "29391",
+      "draft": "",
+      "pilot": "有",
+      "sizeType": "",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-09/05-00:50-RIO-KOBE-南航",
+      "name": "RIO KOBE",
+      "callSign": "",
+      "country": "LBR",
+      "vesselClass": "コンテナ船",
+      "status": "南航",
+      "berth": "南本牧",
+      "arrival": "2026/09/05 00:50",
+      "departure": "",
+      "agent": "",
+      "length": "231",
+      "tonnage": "35998",
+      "draft": "",
+      "pilot": "有",
+      "sizeType": "巨",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-09/05-00:55-FUJITRANS-WORLD-南航",
+      "name": "FUJITRANS WORLD",
+      "callSign": "",
+      "country": "LBR",
+      "vesselClass": "自動車運搬船",
+      "status": "南航",
+      "berth": "鶴見（鶴見航路）",
+      "arrival": "2026/09/05 00:55",
+      "departure": "",
+      "agent": "",
+      "length": "171",
+      "tonnage": "15724",
+      "draft": "",
+      "pilot": "有",
+      "sizeType": "",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-09/05-01:00-天王丸-南航",
+      "name": "天王丸",
+      "callSign": "",
+      "country": "JPN",
+      "vesselClass": "自動車運搬船",
+      "status": "南航",
+      "berth": "東京（東京西航路）",
+      "arrival": "2026/09/05 01:00",
+      "departure": "",
+      "agent": "",
+      "length": "190",
+      "tonnage": "13624",
       "draft": "",
       "pilot": "×",
       "sizeType": "",
