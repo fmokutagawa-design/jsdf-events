@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T23:17:53.839Z",
+  "updatedAt": "2026-09-18T23:34:59.339Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -452,7 +452,7 @@
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/YOKOHAMA/schedule_1.html",
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html"
   ],
-  "portVesselCheckedAt": "2026-09-18T23:17:53.839Z",
+  "portVesselCheckedAt": "2026-09-18T23:34:59.347Z",
   "portVesselCount": 194,
   "portVessels": [
     {
@@ -733,7 +733,7 @@
       "callSign": "JD2805",
       "country": "日本国",
       "vesselClass": "一般貨物船",
-      "status": "係留中",
+      "status": "離岸済",
       "berth": "DM0DC  出田町ふ頭Ｄ号岸壁",
       "arrival": "09/17 11:10",
       "departure": "09/19 07:00",
@@ -1073,7 +1073,7 @@
       "callSign": "JD5199",
       "country": "日本国",
       "vesselClass": "一般貨物船",
-      "status": "決定",
+      "status": "係留中",
       "berth": "MZ01C  瑞穂ふ頭岸壁",
       "arrival": "09/19 07:00",
       "departure": "09/19 12:00",
@@ -1209,7 +1209,7 @@
       "callSign": "D5FY2",
       "country": "リベリア共和国",
       "vesselClass": "フルコンテナ船",
-      "status": "決定",
+      "status": "係留中",
       "berth": "HBC1C  本牧ふ頭ＢＣ突堤間１号岸壁",
       "arrival": "09/19 08:29",
       "departure": "09/19 22:00",
@@ -1238,24 +1238,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-46-SOUTHERN ANGEL",
-      "name": "SOUTHERN ANGEL",
-      "callSign": "H8TU",
-      "country": "パナマ共和国",
-      "vesselClass": "一般貨物船",
-      "status": "決定",
-      "berth": "HA05C  ＨＡ５",
-      "arrival": "09/19 11:55",
-      "departure": "",
-      "agent": "山九",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-47-橙星",
+      "id": "yokohama-46-橙星",
       "name": "橙星",
       "callSign": "JD5199",
       "country": "日本国",
@@ -1265,6 +1248,23 @@
       "arrival": "09/19 12:55",
       "departure": "09/19 16:00",
       "agent": "東京国際埠頭横浜支店",
+      "port": "横浜港（横浜市港湾局）",
+      "area": "神奈川",
+      "sourceGroup": "横浜市港湾局",
+      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
+      "category": "commercial"
+    },
+    {
+      "id": "yokohama-47-SOUTHERN ANGEL",
+      "name": "SOUTHERN ANGEL",
+      "callSign": "H8TU",
+      "country": "パナマ共和国",
+      "vesselClass": "一般貨物船",
+      "status": "決定",
+      "berth": "HA05C  ＨＡ５",
+      "arrival": "09/19 11:55",
+      "departure": "",
+      "agent": "山九",
       "port": "横浜港（横浜市港湾局）",
       "area": "神奈川",
       "sourceGroup": "横浜市港湾局",
