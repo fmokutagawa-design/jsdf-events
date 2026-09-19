@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-19T23:02:42.781Z",
+  "updatedAt": "2026-09-19T23:34:18.436Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -440,7 +440,7 @@
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/YOKOHAMA/schedule_1.html",
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html"
   ],
-  "portVesselCheckedAt": "2026-09-19T23:02:42.781Z",
+  "portVesselCheckedAt": "2026-09-19T23:34:18.437Z",
   "portVesselCount": 136,
   "portVessels": [
     {
@@ -636,7 +636,7 @@
       "callSign": "A8BY8",
       "country": "リベリア共和国",
       "vesselClass": "一般貨物船",
-      "status": "係留中",
+      "status": "離岸済",
       "berth": "KF0AC  国際埠頭Ａ，Ｂバース",
       "arrival": "09/17 08:00",
       "departure": "09/20 06:00",
@@ -925,7 +925,7 @@
       "callSign": "JD4386",
       "country": "日本国",
       "vesselClass": "セメント船",
-      "status": "決定",
+      "status": "調整",
       "berth": "HSK2C  本牧ふ頭新建材２号岸壁",
       "arrival": "09/20 07:55",
       "departure": "09/20 15:00",
