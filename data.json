@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-26T23:37:16.990Z",
+  "updatedAt": "2026-09-26T23:55:21.466Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -380,8 +380,8 @@
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/YOKOHAMA/schedule_1.html",
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html"
   ],
-  "portVesselCheckedAt": "2026-09-26T23:37:16.995Z",
-  "portVesselCount": 176,
+  "portVesselCheckedAt": "2026-09-26T23:55:21.467Z",
+  "portVesselCount": 178,
   "portVessels": [
     {
       "id": "yokohama-0-TONG MAO 2",
@@ -3108,6 +3108,29 @@
       "category": "commercial"
     },
     {
+      "id": "jcg-uraga-09/28-08:50-日清丸-北航",
+      "name": "日清丸",
+      "callSign": "",
+      "country": "JPN",
+      "vesselClass": "自動車運搬船",
+      "status": "北航",
+      "berth": "横須賀",
+      "arrival": "2026/09/28 08:50",
+      "departure": "",
+      "agent": "",
+      "length": "169",
+      "tonnage": "11483",
+      "draft": "",
+      "pilot": "×",
+      "sizeType": "",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
       "id": "jcg-uraga-09/27-11:00-あかつき丸-南航",
       "name": "あかつき丸",
       "callSign": "",
@@ -3741,6 +3764,29 @@
       "agent": "",
       "length": "339",
       "tonnage": "162614",
+      "draft": "",
+      "pilot": "有",
+      "sizeType": "巨",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-09/28-08:45-PHAIDRA-南航",
+      "name": "PHAIDRA",
+      "callSign": "",
+      "country": "MHL",
+      "vesselClass": "貨物船",
+      "status": "南航",
+      "berth": "木更津（木更津航路）",
+      "arrival": "2026/09/28 08:45",
+      "departure": "",
+      "agent": "",
+      "length": "229",
+      "tonnage": "48090",
       "draft": "",
       "pilot": "有",
       "sizeType": "巨",
