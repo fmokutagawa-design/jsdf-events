@@ -803,12 +803,14 @@ function parseUnitEventCandidates(markdown, unit) {
   const out = [];
   const lines = markdown.normalize('NFKC').split('\n');
   const eventWords = /一般公開|一般開放|基地(?:一般)?開放|基地祭|フリート(?:ウィーク|フェスタ)|オータムフェスタ|サマーフェスタ|スウェルフェスタ|体験航海|艦艇見学/;
+  const publicSignals = /どなたでも|一般(?:の方|来場者|参加)|入場|来場|見学|体験|展示|演奏|コンサート|ふれあい|祭|フェスタ|イベント|開催|会場|申込|予約|駐車場/;
   const rejectWords = /出店|売店|業者|募集要領|過去のイベント|活動の様子|終了しました|開催中止|中止となりました/;
   for (let i = 0; i < lines.length; i++) {
+    const isHeading = /^#{1,6}\s/.test(lines[i].trim());
     const heading = clean(lines[i]).replace(/^#+\s*/, '');
-    if (!eventWords.test(heading) || rejectWords.test(heading) || heading.length < 5 || heading.length > 90) continue;
+    if ((!isHeading && !eventWords.test(heading)) || rejectWords.test(heading) || heading.length < 5 || heading.length > 90) continue;
     const nearby = lines.slice(Math.max(0, i - 3), Math.min(lines.length, i + 7)).join(' ');
-    if (rejectWords.test(nearby)) continue;
+    if (rejectWords.test(nearby) || (!eventWords.test(heading) && !publicSignals.test(`${heading} ${nearby}`))) continue;
     const eventDates = dates(nearby);
     if (!eventDates.length) continue;
     const title = heading.replace(/^.*?Image:\s*/, '').replace(/^イベント情報\s*/, '').trim();
