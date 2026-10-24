@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T23:52:16.836Z",
+  "updatedAt": "2026-10-24T00:02:59.312Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -356,8 +356,8 @@
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/YOKOHAMA/schedule_1.html",
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html"
   ],
-  "portVesselCheckedAt": "2026-10-23T23:52:16.836Z",
-  "portVesselCount": 227,
+  "portVesselCheckedAt": "2026-10-24T00:02:59.313Z",
+  "portVesselCount": 226,
   "portVessels": [
     {
       "id": "yokohama-0-TONG MAO 2",
@@ -790,7 +790,7 @@
       "callSign": "JD4390",
       "country": "日本国",
       "vesselClass": "フルコンテナ船",
-      "status": "係留中",
+      "status": "離岸済",
       "berth": "MC03C  南本牧ふ頭３号岸壁",
       "arrival": "10/23 19:16",
       "departure": "10/24 09:00",
@@ -1669,24 +1669,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-77-HAMBURG HIGHWAY",
-      "name": "HAMBURG HIGHWAY",
-      "callSign": "7JUW",
-      "country": "日本国",
-      "vesselClass": "自動車専用船",
-      "status": "決定",
-      "berth": "DKC4C  ＤＣ４",
-      "arrival": "10/26 06:55",
-      "departure": "",
-      "agent": "ﾀﾞｲﾄｰｺｰﾎﾟ京浜船舶",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-78-SITC TONGHE",
+      "id": "yokohama-77-SITC TONGHE",
       "name": "SITC TONGHE",
       "callSign": "VRVF7",
       "country": "香港（中華人民共和国）",
@@ -1703,7 +1686,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-79-PEGASUS GLORY",
+      "id": "yokohama-78-PEGASUS GLORY",
       "name": "PEGASUS GLORY",
       "callSign": "5LNE3",
       "country": "リベリア共和国",
@@ -1720,7 +1703,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-80-TS SURABAYA",
+      "id": "yokohama-79-TS SURABAYA",
       "name": "TS SURABAYA",
       "callSign": "V7A6349",
       "country": "マーシャル諸島共和国",
@@ -1737,7 +1720,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-81-SITC RUIDE",
+      "id": "yokohama-80-SITC RUIDE",
       "name": "SITC RUIDE",
       "callSign": "VRWA6",
       "country": "香港（中華人民共和国）",
@@ -1754,7 +1737,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-82-TSINGTAO EXPRESS",
+      "id": "yokohama-81-TSINGTAO EXPRESS",
       "name": "TSINGTAO EXPRESS",
       "callSign": "5LLI8",
       "country": "リベリア共和国",
@@ -1771,7 +1754,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-83-MARTI STAR Ⅱ",
+      "id": "yokohama-82-MARTI STAR Ⅱ",
       "name": "MARTI STAR Ⅱ",
       "callSign": "5LUF2",
       "country": "リベリア共和国",
@@ -1780,6 +1763,23 @@
       "berth": "MC01C  南本牧ふ頭１号岸壁",
       "arrival": "10/26 07:00",
       "departure": "10/24 23:59",
+      "agent": "ﾀﾞｲﾄｰｺｰﾎﾟ京浜船舶",
+      "port": "横浜港（横浜市港湾局）",
+      "area": "神奈川",
+      "sourceGroup": "横浜市港湾局",
+      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
+      "category": "commercial"
+    },
+    {
+      "id": "yokohama-83-HAMBURG HIGHWAY",
+      "name": "HAMBURG HIGHWAY",
+      "callSign": "7JUW",
+      "country": "日本国",
+      "vesselClass": "自動車専用船",
+      "status": "決定",
+      "berth": "DKC4C  ＤＣ４",
+      "arrival": "10/26 06:55",
+      "departure": "",
       "agent": "ﾀﾞｲﾄｰｺｰﾎﾟ京浜船舶",
       "port": "横浜港（横浜市港湾局）",
       "area": "神奈川",
@@ -3158,29 +3158,6 @@
       "area": "千葉",
       "sourceGroup": "海上保安庁 東京湾海上交通センター",
       "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/ICHIHARA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
-      "id": "jcg-uraga-10/24-08:50-ひまわり８-北航",
-      "name": "ひまわり８",
-      "callSign": "",
-      "country": "JPN",
-      "vesselClass": "自動車運搬船",
-      "status": "北航",
-      "berth": "東京（東京西航路）",
-      "arrival": "2026/10/24 08:50",
-      "departure": "",
-      "agent": "",
-      "length": "166",
-      "tonnage": "10626",
-      "draft": "",
-      "pilot": "×",
-      "sizeType": "",
-      "nakanose": "経由",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
       "category": "commercial"
     },
     {
@@ -4680,7 +4657,7 @@
     }
   ],
   "shipWatchPolicy": "公式発表された行動予定・寄港・一般公開と直近45日程度の外国艦活動のみ掲載。現在位置、目撃情報、未確認情報は扱わない。",
-  "shipWatchCount": 3,
+  "shipWatchCount": 2,
   "shipWatches": [
     {
       "date": "2026-10-25",
@@ -4715,25 +4692,6 @@
       "id": "event-2026-11-22-呉在泊艦艇・地方総監部 一般公開-呉基地係船堀地区・呉地方総監部（広島県呉市）",
       "imageUrl": "./assets/event-sea.jpg",
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%91%89%E5%9F%BA%E5%9C%B0%E4%BF%82%E8%88%B9%E5%A0%80%E5%9C%B0%E5%8C%BA%E3%83%BB%E5%91%89%E5%9C%B0%E6%96%B9%E7%B7%8F%E7%9B%A3%E9%83%A8%EF%BC%88%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%91%89%E5%B8%82%EF%BC%89"
-    },
-    {
-      "date": "2026-05-16",
-      "endDate": "2026-10-24",
-      "region": "海外",
-      "vessel": "練習艦「かしま」「やまぎり」",
-      "vesselType": "練習艦",
-      "location": "太平洋・大西洋・カリブ海・ベーリング海方面",
-      "watchCategory": "遠洋練習航海",
-      "status": "遠洋練習航海中（10月24日まで）",
-      "publicAccess": false,
-      "noMap": true,
-      "summary": "第70回遠洋練習航海。米国、カナダ、アイスランド、パナマ、メキシコなどへの寄港と親善訓練を予定しています。",
-      "officialUrl": "https://www.mod.go.jp/msdf/operation/training/enyo/2026/",
-      "source": "海上自衛隊",
-      "scope": "overseas",
-      "id": "2026-05-16-練習艦「かしま」「やまぎり」-太平洋・大西洋・カリブ海・ベーリング海方面",
-      "imageUrl": "./assets/event-sea.jpg",
-      "mapUrl": ""
     }
   ],
   "count": 64,
