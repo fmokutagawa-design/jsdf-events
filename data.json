@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T21:14:40.419Z",
+  "updatedAt": "2026-10-25T23:15:52.598Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -141,13 +141,13 @@
       "name": "呉地方隊",
       "url": "https://www.mod.go.jp/msdf/kure/announcement/",
       "fetched": true,
-      "checkedToday": true
+      "checkedToday": false
     },
     {
       "name": "佐世保地方隊",
       "url": "https://www.mod.go.jp/msdf/sasebo/2_pr_event/2_pr_event.html",
       "fetched": true,
-      "checkedToday": false
+      "checkedToday": true
     },
     {
       "name": "大湊地区隊",
@@ -165,13 +165,13 @@
       "name": "下関基地隊",
       "url": "https://www.mod.go.jp/msdf/shimoki/",
       "fetched": true,
-      "checkedToday": true
+      "checkedToday": false
     },
     {
       "name": "八戸航空基地",
       "url": "https://www.mod.go.jp/msdf/hatinohe/event/index.html",
       "fetched": true,
-      "checkedToday": false
+      "checkedToday": true
     },
     {
       "name": "館山航空基地",
@@ -189,13 +189,13 @@
       "name": "第22航空群・大村航空基地",
       "url": "https://www.mod.go.jp/msdf/22aw/event/kichisai/kitisai.html",
       "fetched": true,
-      "checkedToday": true
+      "checkedToday": false
     },
     {
       "name": "小月航空基地",
       "url": "https://www.mod.go.jp/msdf/oz-atg/",
       "fetched": true,
-      "checkedToday": false
+      "checkedToday": true
     },
     {
       "name": "徳島航空基地",
@@ -213,13 +213,13 @@
       "name": "第5航空群・那覇航空基地",
       "url": "https://www.mod.go.jp/msdf/naha/release.html",
       "fetched": true,
-      "checkedToday": true
+      "checkedToday": false
     },
     {
       "name": "第1術科学校・幹部候補生学校",
       "url": "https://www.mod.go.jp/msdf/onemss/",
       "fetched": true,
-      "checkedToday": false
+      "checkedToday": true
     }
   ],
   "musicDirectorySource": "https://ajda.jp/publics/index/64/",
@@ -356,8 +356,8 @@
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/YOKOHAMA/schedule_1.html",
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html"
   ],
-  "portVesselCheckedAt": "2026-10-25T21:14:40.420Z",
-  "portVesselCount": 186,
+  "portVesselCheckedAt": "2026-10-25T23:15:52.598Z",
+  "portVesselCount": 178,
   "portVessels": [
     {
       "id": "yokohama-0-TONG MAO 2",
@@ -501,7 +501,7 @@
       "callSign": "RP0308",
       "country": "日本国",
       "vesselClass": "その他の船舶",
-      "status": "係留中",
+      "status": "離岸済",
       "berth": "HA01C  本牧ふ頭Ａ突堤１号岸壁",
       "arrival": "10/22 16:00",
       "departure": "10/23 06:00",
@@ -518,7 +518,7 @@
       "callSign": "RP0307",
       "country": "日本国",
       "vesselClass": "その他の船舶",
-      "status": "係留中",
+      "status": "離岸済",
       "berth": "HA03C  本牧ふ頭Ａ突堤３号岸壁",
       "arrival": "10/22 18:25",
       "departure": "10/23 06:00",
@@ -637,7 +637,7 @@
       "callSign": "JD4071",
       "country": "日本国",
       "vesselClass": "一般貨物船",
-      "status": "係留中",
+      "status": "離岸済",
       "berth": "DM0BC  出田町ふ頭Ｂ号岸壁",
       "arrival": "10/25 08:10",
       "departure": "10/26 06:00",
@@ -824,7 +824,7 @@
       "callSign": "JK5384",
       "country": "日本国",
       "vesselClass": "砂利・砂・石材",
-      "status": "決定",
+      "status": "係留中",
       "berth": "V5071  港内",
       "arrival": "10/26 06:30",
       "departure": "10/26 09:00",
@@ -841,7 +841,7 @@
       "callSign": "5LUF2",
       "country": "リベリア共和国",
       "vesselClass": "フルコンテナ船",
-      "status": "決定",
+      "status": "係留中",
       "berth": "MC01C  南本牧ふ頭１号岸壁",
       "arrival": "10/26 06:45",
       "departure": "10/26 14:30",
@@ -858,7 +858,7 @@
       "callSign": "7JUW",
       "country": "日本国",
       "vesselClass": "自動車専用船",
-      "status": "決定",
+      "status": "係留中",
       "berth": "DKC4C  ＤＣ４",
       "arrival": "10/26 06:55",
       "departure": "",
@@ -870,7 +870,24 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-30-新希洋",
+      "id": "yokohama-30-GRAND SAPPHIRE",
+      "name": "GRAND SAPPHIRE",
+      "callSign": "V7B3583",
+      "country": "マーシャル諸島共和国",
+      "vesselClass": "自動車専用船",
+      "status": "係留中",
+      "berth": "DKT3C  大黒ふ頭Ｔ－３号岸壁",
+      "arrival": "10/26 07:10",
+      "departure": "10/26 15:00",
+      "agent": "ﾀﾞｲﾄｰｺｰﾎﾟ京浜船舶",
+      "port": "横浜港（横浜市港湾局）",
+      "area": "神奈川",
+      "sourceGroup": "横浜市港湾局",
+      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
+      "category": "commercial"
+    },
+    {
+      "id": "yokohama-31-新希洋",
       "name": "新希洋",
       "callSign": "JD5617",
       "country": "日本国",
@@ -880,23 +897,6 @@
       "arrival": "10/26 07:00",
       "departure": "10/26 13:00",
       "agent": "大倉",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-31-GRAND SAPPHIRE",
-      "name": "GRAND SAPPHIRE",
-      "callSign": "V7B3583",
-      "country": "マーシャル諸島共和国",
-      "vesselClass": "自動車専用船",
-      "status": "決定",
-      "berth": "DKT3C  大黒ふ頭Ｔ－３号岸壁",
-      "arrival": "10/26 07:10",
-      "departure": "10/26 15:00",
-      "agent": "ﾀﾞｲﾄｰｺｰﾎﾟ京浜船舶",
       "port": "横浜港（横浜市港湾局）",
       "area": "神奈川",
       "sourceGroup": "横浜市港湾局",
@@ -926,7 +926,7 @@
       "callSign": "3FLH2",
       "country": "パナマ共和国",
       "vesselClass": "自動車専用船",
-      "status": "決定",
+      "status": "係留中",
       "berth": "DKC2C  ＤＣ２",
       "arrival": "10/26 07:15",
       "departure": "",
@@ -943,7 +943,7 @@
       "callSign": "9V8738",
       "country": "シンガポール共和国",
       "vesselClass": "フルコンテナ船",
-      "status": "決定",
+      "status": "係留中",
       "berth": "MC02C  南本牧ふ頭２号岸壁",
       "arrival": "10/26 07:16",
       "departure": "10/26 18:15",
@@ -955,16 +955,16 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-35-HEUNG-A HAIPHONG",
-      "name": "HEUNG-A HAIPHONG",
-      "callSign": "D7NC",
-      "country": "大韓民国",
+      "id": "yokohama-35-MSC MAGNOLIA Ⅴ",
+      "name": "MSC MAGNOLIA Ⅴ",
+      "callSign": "5BZX6",
+      "country": "キプロス共和国",
       "vesselClass": "フルコンテナ船",
-      "status": "決定",
-      "berth": "HC06C  本牧ふ頭Ｃ突堤６号岸壁",
+      "status": "係留中",
+      "berth": "HD01C  本牧ふ頭Ｄ突堤１号岸壁",
       "arrival": "10/26 07:29",
-      "departure": "10/26 16:00",
-      "agent": "住友倉庫ＢＣＢＣ分",
+      "departure": "",
+      "agent": "上組海務課",
       "port": "横浜港（横浜市港湾局）",
       "area": "神奈川",
       "sourceGroup": "横浜市港湾局",
@@ -977,7 +977,7 @@
       "callSign": "5LNE3",
       "country": "リベリア共和国",
       "vesselClass": "フルコンテナ船",
-      "status": "決定",
+      "status": "係留中",
       "berth": "HC07C  本牧ふ頭Ｃ突堤７号岸壁",
       "arrival": "10/26 07:29",
       "departure": "10/26 17:00",
@@ -989,16 +989,16 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-37-MSC MAGNOLIA Ⅴ",
-      "name": "MSC MAGNOLIA Ⅴ",
-      "callSign": "5BZX6",
-      "country": "キプロス共和国",
+      "id": "yokohama-37-HEUNG-A HAIPHONG",
+      "name": "HEUNG-A HAIPHONG",
+      "callSign": "D7NC",
+      "country": "大韓民国",
       "vesselClass": "フルコンテナ船",
-      "status": "決定",
-      "berth": "HD01C  本牧ふ頭Ｄ突堤１号岸壁",
+      "status": "係留中",
+      "berth": "HC06C  本牧ふ頭Ｃ突堤６号岸壁",
       "arrival": "10/26 07:29",
-      "departure": "",
-      "agent": "上組海務課",
+      "departure": "10/26 16:00",
+      "agent": "住友倉庫ＢＣＢＣ分",
       "port": "横浜港（横浜市港湾局）",
       "area": "神奈川",
       "sourceGroup": "横浜市港湾局",
@@ -1011,7 +1011,7 @@
       "callSign": "VRWA6",
       "country": "香港（中華人民共和国）",
       "vesselClass": "フルコンテナ船",
-      "status": "決定",
+      "status": "係留中",
       "berth": "MC01C  南本牧ふ頭１号岸壁",
       "arrival": "10/26 07:30",
       "departure": "10/26 16:15",
@@ -1028,7 +1028,7 @@
       "callSign": "VRTU9",
       "country": "香港（中華人民共和国）",
       "vesselClass": "フルコンテナ船",
-      "status": "決定",
+      "status": "係留中",
       "berth": "MC03C  南本牧ふ頭３号岸壁",
       "arrival": "10/26 07:31",
       "departure": "10/26 23:59",
@@ -1040,29 +1040,12 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-40-第二十令和丸&NK-",
-      "name": "第二十令和丸&NK-",
-      "callSign": "RP1270",
-      "country": "日本国",
-      "vesselClass": "その他の船舶",
-      "status": "決定",
-      "berth": "V5071  港内",
-      "arrival": "10/26 07:59",
-      "departure": "10/26 11:00",
-      "agent": "東洋建設横浜支店",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-41-みゆき",
+      "id": "yokohama-40-みゆき",
       "name": "みゆき",
       "callSign": "JD4039",
       "country": "日本国",
       "vesselClass": "フルコンテナ船",
-      "status": "決定",
+      "status": "実績",
       "berth": "MC03C  南本牧ふ頭３号岸壁",
       "arrival": "10/26 08:16",
       "departure": "10/26 14:00",
@@ -1074,12 +1057,12 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-42-太田川",
+      "id": "yokohama-41-太田川",
       "name": "太田川",
       "callSign": "JD3046",
       "country": "日本国",
       "vesselClass": "一般貨物船",
-      "status": "決定",
+      "status": "実績",
       "berth": "HC08C  本牧ふ頭Ｃ突堤８号岸壁",
       "arrival": "10/26 08:29",
       "departure": "10/26 11:00",
@@ -1091,12 +1074,12 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-43-TAI HOMAGE",
+      "id": "yokohama-42-TAI HOMAGE",
       "name": "TAI HOMAGE",
       "callSign": "5LPD2",
       "country": "リベリア共和国",
       "vesselClass": "一般貨物船",
-      "status": "決定",
+      "status": "実績",
       "berth": "NKSCC  ＪＦＥスチール（株）東日本製鉄所 扇島出荷岸壁Ｃ",
       "arrival": "10/26 08:30",
       "departure": "",
@@ -1108,24 +1091,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-44-第一紅陽＆紅-130",
-      "name": "第一紅陽＆紅-130",
-      "callSign": "RP1268",
-      "country": "日本国",
-      "vesselClass": "その他の船舶",
-      "status": "決定",
-      "berth": "V5071  港内",
-      "arrival": "10/26 09:59",
-      "departure": "10/26 12:00",
-      "agent": "東洋建設横浜支店",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-45-鶴栄",
+      "id": "yokohama-43-鶴栄",
       "name": "鶴栄",
       "callSign": "JD5567",
       "country": "日本国",
@@ -1142,7 +1108,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-46-CFT-5",
+      "id": "yokohama-44-CFT-5",
       "name": "CFT-5",
       "callSign": "RP0308",
       "country": "日本国",
@@ -1159,7 +1125,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-47-和丸",
+      "id": "yokohama-45-和丸",
       "name": "和丸",
       "callSign": "JK5384",
       "country": "日本国",
@@ -1176,41 +1142,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-48-第二十令和丸&NK-",
-      "name": "第二十令和丸&NK-",
-      "callSign": "RP1270",
-      "country": "日本国",
-      "vesselClass": "その他の船舶",
-      "status": "決定",
-      "berth": "V5071  港内",
-      "arrival": "10/26 12:59",
-      "departure": "10/26 15:00",
-      "agent": "東洋建設横浜支店",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-49-きたふじ＆紅-120",
-      "name": "きたふじ＆紅-120",
-      "callSign": "RP1269",
-      "country": "日本国",
-      "vesselClass": "その他の船舶",
-      "status": "決定",
-      "berth": "V5071  港内",
-      "arrival": "10/26 12:59",
-      "departure": "10/26 16:00",
-      "agent": "東洋建設横浜支店",
-      "port": "横浜港（横浜市港湾局）",
-      "area": "神奈川",
-      "sourceGroup": "横浜市港湾局",
-      "sourceUrl": "https://www.port.city.yokohama.lg.jp/APP/Pves0040InPlanC?cbo_cberth=&cbo_status=&hid_gamenid=Jyoho04&hid_sessionid=&hid_userid=&txt_callsign=&txt_cetad=&txt_cetam=&txt_cetay=",
-      "category": "commercial"
-    },
-    {
-      "id": "yokohama-50-CFT-2",
+      "id": "yokohama-46-CFT-2",
       "name": "CFT-2",
       "callSign": "RP0306",
       "country": "日本国",
@@ -1227,7 +1159,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-51-PRESIDENT JQ ADA",
+      "id": "yokohama-47-PRESIDENT JQ ADA",
       "name": "PRESIDENT JQ ADA",
       "callSign": "KPJQ",
       "country": "アメリカ合衆国",
@@ -1244,7 +1176,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-52-CFT-3",
+      "id": "yokohama-48-CFT-3",
       "name": "CFT-3",
       "callSign": "RP0307",
       "country": "日本国",
@@ -1261,7 +1193,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-53-ASIAN INFINITY",
+      "id": "yokohama-49-ASIAN INFINITY",
       "name": "ASIAN INFINITY",
       "callSign": "V7B3178",
       "country": "マーシャル諸島共和国",
@@ -1278,7 +1210,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-54-きぬうら丸",
+      "id": "yokohama-50-きぬうら丸",
       "name": "きぬうら丸",
       "callSign": "JD2329",
       "country": "日本国",
@@ -1295,7 +1227,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-55-EPONYMA",
+      "id": "yokohama-51-EPONYMA",
       "name": "EPONYMA",
       "callSign": "C6DN4",
       "country": "バハマ国",
@@ -1312,7 +1244,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-56-ふたば",
+      "id": "yokohama-52-ふたば",
       "name": "ふたば",
       "callSign": "JD3795",
       "country": "日本国",
@@ -1329,7 +1261,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-57-MONOCEROS LEADER",
+      "id": "yokohama-53-MONOCEROS LEADER",
       "name": "MONOCEROS LEADER",
       "callSign": "7KJC",
       "country": "日本国",
@@ -1346,7 +1278,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-58-ESTIMA",
+      "id": "yokohama-54-ESTIMA",
       "name": "ESTIMA",
       "callSign": "C6DT7",
       "country": "バハマ国",
@@ -1363,7 +1295,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-59-CFT-5",
+      "id": "yokohama-55-CFT-5",
       "name": "CFT-5",
       "callSign": "RP0308",
       "country": "日本国",
@@ -1380,7 +1312,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-60-CONSERO",
+      "id": "yokohama-56-CONSERO",
       "name": "CONSERO",
       "callSign": "V7A4536",
       "country": "マーシャル諸島共和国",
@@ -1397,7 +1329,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-61-STAR VOYAGER",
+      "id": "yokohama-57-STAR VOYAGER",
       "name": "STAR VOYAGER",
       "callSign": "D7FU",
       "country": "大韓民国",
@@ -1414,7 +1346,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-62-SITC KEELUNG",
+      "id": "yokohama-58-SITC KEELUNG",
       "name": "SITC KEELUNG",
       "callSign": "VROH6",
       "country": "香港（中華人民共和国）",
@@ -1431,7 +1363,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-63-HAMBURG HIGHWAY",
+      "id": "yokohama-59-HAMBURG HIGHWAY",
       "name": "HAMBURG HIGHWAY",
       "callSign": "7JUW",
       "country": "日本国",
@@ -1448,7 +1380,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-64-LORETTA",
+      "id": "yokohama-60-LORETTA",
       "name": "LORETTA",
       "callSign": "3EDV8",
       "country": "パナマ共和国",
@@ -1465,7 +1397,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-65-DIONE LEADER",
+      "id": "yokohama-61-DIONE LEADER",
       "name": "DIONE LEADER",
       "callSign": "7KPJ",
       "country": "日本国",
@@ -1482,7 +1414,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-66-GREEN ITALIA",
+      "id": "yokohama-62-GREEN ITALIA",
       "name": "GREEN ITALIA",
       "callSign": "C6WH9",
       "country": "バハマ国",
@@ -1499,7 +1431,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-67-GENIUS HIGHWAY",
+      "id": "yokohama-63-GENIUS HIGHWAY",
       "name": "GENIUS HIGHWAY",
       "callSign": "C6AO3",
       "country": "バハマ国",
@@ -1516,7 +1448,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-68-DIAMOND PRINCESS",
+      "id": "yokohama-64-DIAMOND PRINCESS",
       "name": "DIAMOND PRINCESS",
       "callSign": "ZCHI3",
       "country": "バーミューダ（イギリス）",
@@ -1533,7 +1465,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-69-MISHIMA",
+      "id": "yokohama-65-MISHIMA",
       "name": "MISHIMA",
       "callSign": "3FXF9",
       "country": "パナマ共和国",
@@ -1550,7 +1482,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-70-GRANDE MANILA",
+      "id": "yokohama-66-GRANDE MANILA",
       "name": "GRANDE MANILA",
       "callSign": "IBJL",
       "country": "イタリア共和国",
@@ -1567,7 +1499,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-71-KYOWA FALCON",
+      "id": "yokohama-67-KYOWA FALCON",
       "name": "KYOWA FALCON",
       "callSign": "V7TR3",
       "country": "マーシャル諸島共和国",
@@ -1584,7 +1516,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-72-PAVO LEADER",
+      "id": "yokohama-68-PAVO LEADER",
       "name": "PAVO LEADER",
       "callSign": "5LTN8",
       "country": "リベリア共和国",
@@ -1601,7 +1533,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-73-MALAYSIA PASSION",
+      "id": "yokohama-69-MALAYSIA PASSION",
       "name": "MALAYSIA PASSION",
       "callSign": "9WUQ7",
       "country": "マレーシア",
@@ -1618,7 +1550,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-74-SALOME",
+      "id": "yokohama-70-SALOME",
       "name": "SALOME",
       "callSign": "LATM8",
       "country": "ノルウェー王国",
@@ -1635,7 +1567,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-75-CRYSTAL ACE",
+      "id": "yokohama-71-CRYSTAL ACE",
       "name": "CRYSTAL ACE",
       "callSign": "V7YB2",
       "country": "マーシャル諸島共和国",
@@ -1652,7 +1584,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-76-PACIFIC BIRD",
+      "id": "yokohama-72-PACIFIC BIRD",
       "name": "PACIFIC BIRD",
       "callSign": "3E9004",
       "country": "パナマ共和国",
@@ -1669,7 +1601,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-77-CELEBRITY MILLEN",
+      "id": "yokohama-73-CELEBRITY MILLEN",
       "name": "CELEBRITY MILLEN",
       "callSign": "9HJF9",
       "country": "マルタ共和国",
@@ -1686,7 +1618,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-78-SHINLINE 10",
+      "id": "yokohama-74-SHINLINE 10",
       "name": "SHINLINE 10",
       "callSign": "9WFE4",
       "country": "マレーシア",
@@ -1703,7 +1635,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-79-OCEAN LEADER",
+      "id": "yokohama-75-OCEAN LEADER",
       "name": "OCEAN LEADER",
       "callSign": "D7MR",
       "country": "大韓民国",
@@ -1720,7 +1652,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-80-ORCHID ACE",
+      "id": "yokohama-76-ORCHID ACE",
       "name": "ORCHID ACE",
       "callSign": "7JDE",
       "country": "日本国",
@@ -1737,7 +1669,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-81-WISDOM ACE",
+      "id": "yokohama-77-WISDOM ACE",
       "name": "WISDOM ACE",
       "callSign": "3FGZ8",
       "country": "パナマ共和国",
@@ -1754,7 +1686,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-82-飛鳥Ⅱ",
+      "id": "yokohama-78-飛鳥Ⅱ",
       "name": "飛鳥Ⅱ",
       "callSign": "7JBI",
       "country": "日本国",
@@ -1771,7 +1703,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-83-KYOWA EAGLE",
+      "id": "yokohama-79-KYOWA EAGLE",
       "name": "KYOWA EAGLE",
       "callSign": "V7A5912",
       "country": "マーシャル諸島共和国",
@@ -1788,7 +1720,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-84-ISTRA ACE",
+      "id": "yokohama-80-ISTRA ACE",
       "name": "ISTRA ACE",
       "callSign": "C6WE7",
       "country": "バハマ国",
@@ -1805,7 +1737,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-85-MERCURY ACE",
+      "id": "yokohama-81-MERCURY ACE",
       "name": "MERCURY ACE",
       "callSign": "3FNS7",
       "country": "パナマ共和国",
@@ -1822,7 +1754,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-86-DONGJIN ENDURANC",
+      "id": "yokohama-82-DONGJIN ENDURANC",
       "name": "DONGJIN ENDURANC",
       "callSign": "D7ZY",
       "country": "大韓民国",
@@ -1839,7 +1771,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-87-THEMISA",
+      "id": "yokohama-83-THEMISA",
       "name": "THEMISA",
       "callSign": "A8YS6",
       "country": "リベリア共和国",
@@ -1856,7 +1788,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-88-MITSUI OCEAN FUJ",
+      "id": "yokohama-84-MITSUI OCEAN FUJ",
       "name": "MITSUI OCEAN FUJ",
       "callSign": "C6XC6",
       "country": "バハマ国",
@@ -1873,7 +1805,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-89-さるびあ丸",
+      "id": "yokohama-85-さるびあ丸",
       "name": "さるびあ丸",
       "callSign": "7KGA",
       "country": "日本国",
@@ -1890,7 +1822,7 @@
       "category": "cruise"
     },
     {
-      "id": "yokohama-90-BERGAMOT ACE",
+      "id": "yokohama-86-BERGAMOT ACE",
       "name": "BERGAMOT ACE",
       "callSign": "5LKR5",
       "country": "リベリア共和国",
@@ -1907,7 +1839,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-91-MALAYSIA GRACE",
+      "id": "yokohama-87-MALAYSIA GRACE",
       "name": "MALAYSIA GRACE",
       "callSign": "9WUX3",
       "country": "マレーシア",
@@ -1924,7 +1856,7 @@
       "category": "commercial"
     },
     {
-      "id": "yokohama-92-ADRIA ACE",
+      "id": "yokohama-88-ADRIA ACE",
       "name": "ADRIA ACE",
       "callSign": "C6XA8",
       "country": "バハマ国",
@@ -1941,48 +1873,6 @@
       "category": "commercial"
     },
     {
-      "id": "jcg-chiba-10/26-06:00-第１５霧島丸-出航",
-      "name": "第１５霧島丸",
-      "callSign": "",
-      "country": "JPN",
-      "vesselClass": "船種未公表",
-      "status": "出航",
-      "berth": "出洲Ａ",
-      "arrival": "",
-      "departure": "2026/10/26 06:00",
-      "agent": "千葉コスモ港運（株）千葉出張所",
-      "length": "104",
-      "tonnage": "3987",
-      "draft": "",
-      "pilot": "Ｘ",
-      "port": "千葉航路",
-      "area": "千葉",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/CHIBA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
-      "id": "jcg-chiba-10/26-06:00-新太陽丸-出航",
-      "name": "新太陽丸",
-      "callSign": "",
-      "country": "JPN",
-      "vesselClass": "船種未公表",
-      "status": "出航",
-      "berth": "出洲Ｆ",
-      "arrival": "",
-      "departure": "2026/10/26 06:00",
-      "agent": "千葉マリン(株)",
-      "length": "72",
-      "tonnage": "749",
-      "draft": "",
-      "pilot": "Ｘ",
-      "port": "千葉航路",
-      "area": "千葉",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/CHIBA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
       "id": "jcg-chiba-10/26-07:15-PU-REN-入航",
       "name": "PU REN",
       "callSign": "",
@@ -1996,27 +1886,6 @@
       "length": "73",
       "tonnage": "1482",
       "draft": "5",
-      "pilot": "Ｘ",
-      "port": "千葉航路",
-      "area": "千葉",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/CHIBA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
-      "id": "jcg-chiba-10/26-07:30-新進丸-入航",
-      "name": "新進丸",
-      "callSign": "",
-      "country": "JPN",
-      "vesselClass": "船種未公表",
-      "status": "入航",
-      "berth": "JFE-E",
-      "arrival": "2026/10/26 07:30",
-      "departure": "",
-      "agent": "アサガミ㈱千葉支店（内航船取扱）",
-      "length": "74",
-      "tonnage": "749",
-      "draft": "6",
       "pilot": "Ｘ",
       "port": "千葉航路",
       "area": "千葉",
@@ -2256,27 +2125,6 @@
       "category": "commercial"
     },
     {
-      "id": "jcg-chiba-10/26-15:30-新進丸-出航",
-      "name": "新進丸",
-      "callSign": "",
-      "country": "JPN",
-      "vesselClass": "船種未公表",
-      "status": "出航",
-      "berth": "JFE-E",
-      "arrival": "",
-      "departure": "2026/10/26 15:30",
-      "agent": "アサガミ㈱千葉支店（内航船取扱）",
-      "length": "74",
-      "tonnage": "749",
-      "draft": "6",
-      "pilot": "Ｘ",
-      "port": "千葉航路",
-      "area": "千葉",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/CHIBA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
       "id": "jcg-chiba-10/26-16:00-PU-REN-出航",
       "name": "PU REN",
       "callSign": "",
@@ -2508,129 +2356,14 @@
       "category": "commercial"
     },
     {
-      "id": "jcg-uraga-10/26-06:20-TAI-HOMAGE-北航",
-      "name": "TAI HOMAGE",
-      "callSign": "",
-      "country": "LBR",
-      "vesselClass": "貨物船",
-      "status": "北航",
-      "berth": "鶴見（鶴見航路）",
-      "arrival": "2026/10/26 06:20",
-      "departure": "",
-      "agent": "",
-      "length": "182",
-      "tonnage": "24458",
-      "draft": "",
-      "pilot": "有",
-      "sizeType": "",
-      "nakanose": "経由",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
-      "id": "jcg-uraga-10/26-06:45-PINZA-北航",
-      "name": "PINZA",
-      "callSign": "",
-      "country": "SGP",
-      "vesselClass": "ガスタンカー",
-      "status": "北航",
-      "berth": "千葉沖",
-      "arrival": "2026/10/26 06:45",
-      "departure": "",
-      "agent": "",
-      "length": "230",
-      "tonnage": "46213",
-      "draft": "",
-      "pilot": "有",
-      "sizeType": "巨",
-      "nakanose": "経由",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
-      "id": "jcg-uraga-10/26-07:00-CLEAROCEAN-MARAUDER-北航",
-      "name": "CLEAROCEAN MARAUDER",
-      "callSign": "",
-      "country": "SGP",
-      "vesselClass": "油タンカー",
-      "status": "北航",
-      "berth": "横浜沖",
-      "arrival": "2026/10/26 07:00",
-      "departure": "",
-      "agent": "",
-      "length": "183",
-      "tonnage": "30087",
-      "draft": "",
-      "pilot": "有",
-      "sizeType": "",
-      "nakanose": "",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
-      "id": "jcg-uraga-10/26-07:15-TAGA-北航",
-      "name": "TAGA",
-      "callSign": "",
-      "country": "LBR",
-      "vesselClass": "油タンカー",
-      "status": "北航",
-      "berth": "扇島シーバース",
-      "arrival": "2026/10/26 07:15",
-      "departure": "",
-      "agent": "",
-      "length": "338",
-      "tonnage": "160453",
-      "draft": "",
-      "pilot": "有",
-      "sizeType": "巨",
-      "nakanose": "経由",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
-      "id": "jcg-uraga-10/26-07:30-USS-MAKIN-ISLAND-北航",
-      "name": "USS MAKIN ISLAND",
-      "callSign": "",
-      "country": "USA",
-      "vesselClass": "官船",
-      "status": "北航",
-      "berth": "横須賀",
-      "arrival": "2026/10/26 07:30",
-      "departure": "",
-      "agent": "",
-      "length": "225",
-      "tonnage": "41000",
-      "draft": "",
-      "pilot": "×",
-      "sizeType": "巨",
-      "nakanose": "",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "category": "naval"
-    },
-    {
-      "id": "jcg-uraga-10/26-08:15-ADDISON-北航",
+      "id": "jcg-uraga-10/26-08:10-ADDISON-北航",
       "name": "ADDISON",
       "callSign": "",
       "country": "LBR",
       "vesselClass": "コンテナ船",
       "status": "北航",
       "berth": "東京（東京西航路）",
-      "arrival": "2026/10/26 08:15",
+      "arrival": "2026/10/26 08:10",
       "departure": "",
       "agent": "",
       "length": "222",
@@ -2736,6 +2469,29 @@
       "sourceGroup": "海上保安庁 東京湾海上交通センター",
       "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
       "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-10/26-10:00-USS-ANCHORAGE-北航",
+      "name": "USS ANCHORAGE",
+      "callSign": "",
+      "country": "USA",
+      "vesselClass": "官船",
+      "status": "北航",
+      "berth": "横須賀",
+      "arrival": "2026/10/26 10:00",
+      "departure": "",
+      "agent": "",
+      "length": "208",
+      "tonnage": "36030",
+      "draft": "",
+      "pilot": "×",
+      "sizeType": "巨",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "naval"
     },
     {
       "id": "jcg-uraga-10/26-10:25-NSU-ZENITH-北航",
@@ -2899,29 +2655,6 @@
       "category": "commercial"
     },
     {
-      "id": "jcg-uraga-10/26-12:25-USS-ANCHORAGE-北航",
-      "name": "USS ANCHORAGE",
-      "callSign": "",
-      "country": "USA",
-      "vesselClass": "官船",
-      "status": "北航",
-      "berth": "横須賀",
-      "arrival": "2026/10/26 12:25",
-      "departure": "",
-      "agent": "",
-      "length": "208",
-      "tonnage": "36030",
-      "draft": "",
-      "pilot": "×",
-      "sizeType": "巨",
-      "nakanose": "",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "category": "naval"
-    },
-    {
       "id": "jcg-uraga-10/26-13:15-GLOBAL-JOURNEY-北航",
       "name": "GLOBAL JOURNEY",
       "callSign": "",
@@ -2934,6 +2667,29 @@
       "agent": "",
       "length": "189",
       "tonnage": "31872",
+      "draft": "",
+      "pilot": "有",
+      "sizeType": "",
+      "nakanose": "経由",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-10/26-15:00-MONOCEROS-LEADER-北航",
+      "name": "MONOCEROS LEADER",
+      "callSign": "",
+      "country": "JPN",
+      "vesselClass": "自動車運搬船",
+      "status": "北航",
+      "berth": "鶴見（鶴見航路）",
+      "arrival": "2026/10/26 15:00",
+      "departure": "",
+      "agent": "",
+      "length": "199",
+      "tonnage": "44830",
       "draft": "",
       "pilot": "有",
       "sizeType": "",
@@ -3129,29 +2885,6 @@
       "category": "commercial"
     },
     {
-      "id": "jcg-uraga-10/27-04:30-神珠丸-北航",
-      "name": "神珠丸",
-      "callSign": "",
-      "country": "JPN",
-      "vesselClass": "自動車運搬船",
-      "status": "北航",
-      "berth": "船橋（船橋航路）",
-      "arrival": "2026/10/27 04:30",
-      "departure": "",
-      "agent": "",
-      "length": "174",
-      "tonnage": "14052",
-      "draft": "",
-      "pilot": "×",
-      "sizeType": "",
-      "nakanose": "経由",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
       "id": "jcg-uraga-10/27-04:50-豊福丸-北航",
       "name": "豊福丸",
       "callSign": "",
@@ -3168,6 +2901,29 @@
       "pilot": "×",
       "sizeType": "",
       "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-10/27-04:55-神珠丸-北航",
+      "name": "神珠丸",
+      "callSign": "",
+      "country": "JPN",
+      "vesselClass": "自動車運搬船",
+      "status": "北航",
+      "berth": "船橋（船橋航路）",
+      "arrival": "2026/10/27 04:55",
+      "departure": "",
+      "agent": "",
+      "length": "174",
+      "tonnage": "14052",
+      "draft": "",
+      "pilot": "×",
+      "sizeType": "",
+      "nakanose": "経由",
       "port": "浦賀水道・中ノ瀬航路",
       "area": "東京湾",
       "sourceGroup": "海上保安庁 東京湾海上交通センター",
@@ -3210,29 +2966,6 @@
       "agent": "",
       "length": "172",
       "tonnage": "17785",
-      "draft": "",
-      "pilot": "有",
-      "sizeType": "",
-      "nakanose": "経由",
-      "port": "浦賀水道・中ノ瀬航路",
-      "area": "東京湾",
-      "sourceGroup": "海上保安庁 東京湾海上交通センター",
-      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "category": "commercial"
-    },
-    {
-      "id": "jcg-uraga-10/27-05:15-MONOCEROS-LEADER-北航",
-      "name": "MONOCEROS LEADER",
-      "callSign": "",
-      "country": "JPN",
-      "vesselClass": "自動車運搬船",
-      "status": "北航",
-      "berth": "鶴見（鶴見航路）",
-      "arrival": "2026/10/27 05:15",
-      "departure": "",
-      "agent": "",
-      "length": "199",
-      "tonnage": "44830",
       "draft": "",
       "pilot": "有",
       "sizeType": "",
@@ -3359,6 +3092,75 @@
       "category": "commercial"
     },
     {
+      "id": "jcg-uraga-10/27-07:15-OCEAN-AMITIE-北航",
+      "name": "OCEAN AMITIE",
+      "callSign": "",
+      "country": "PAN",
+      "vesselClass": "貨物船",
+      "status": "北航",
+      "berth": "千葉沖",
+      "arrival": "2026/10/27 07:15",
+      "departure": "",
+      "agent": "",
+      "length": "179",
+      "tonnage": "23570",
+      "draft": "",
+      "pilot": "有",
+      "sizeType": "",
+      "nakanose": "経由",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-10/27-07:30-SC-SAPPHIRE-北航",
+      "name": "SC SAPPHIRE",
+      "callSign": "",
+      "country": "MHL",
+      "vesselClass": "油タンカー",
+      "status": "北航",
+      "berth": "川崎",
+      "arrival": "2026/10/27 07:30",
+      "departure": "",
+      "agent": "",
+      "length": "184",
+      "tonnage": "29593",
+      "draft": "",
+      "pilot": "有",
+      "sizeType": "",
+      "nakanose": "経由",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-10/27-07:45-PARTHENON-LNG-北航",
+      "name": "PARTHENON LNG",
+      "callSign": "",
+      "country": "MHL",
+      "vesselClass": "ガスタンカー",
+      "status": "北航",
+      "berth": "扇島",
+      "arrival": "2026/10/27 07:45",
+      "departure": "",
+      "agent": "",
+      "length": "289",
+      "tonnage": "110307",
+      "draft": "",
+      "pilot": "有",
+      "sizeType": "巨",
+      "nakanose": "経由",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
       "id": "jcg-uraga-10/26-11:15-HELLAS-PALIROS-南航",
       "name": "HELLAS PALIROS",
       "callSign": "",
@@ -3463,6 +3265,29 @@
       "agent": "",
       "length": "179",
       "tonnage": "12404",
+      "draft": "",
+      "pilot": "×",
+      "sizeType": "",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-10/26-13:45-君鉄丸-南航",
+      "name": "君鉄丸",
+      "callSign": "",
+      "country": "JPN",
+      "vesselClass": "貨物船",
+      "status": "南航",
+      "berth": "木更津（木更津航路）",
+      "arrival": "2026/10/26 13:45",
+      "departure": "",
+      "agent": "",
+      "length": "163",
+      "tonnage": "17477",
       "draft": "",
       "pilot": "×",
       "sizeType": "",
@@ -4024,15 +3849,38 @@
       "sourceGroup": "海上保安庁 東京湾海上交通センター",
       "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
       "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-10/27-06:45-ADDISON-南航",
+      "name": "ADDISON",
+      "callSign": "",
+      "country": "LBR",
+      "vesselClass": "コンテナ船",
+      "status": "南航",
+      "berth": "東京（東京西航路）",
+      "arrival": "2026/10/27 06:45",
+      "departure": "",
+      "agent": "",
+      "length": "222",
+      "tonnage": "27779",
+      "draft": "",
+      "pilot": "有",
+      "sizeType": "巨",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
     }
   ],
   "shipWatchPolicy": "公式発表された行動予定・寄港・一般公開と直近45日程度の外国艦活動のみ掲載。現在位置、目撃情報、未確認情報は扱わない。",
-  "shipWatchCount": 4,
+  "shipWatchCount": 3,
   "shipWatches": [
     {
       "date": "2026-10-26",
       "region": "東京湾",
-      "vessel": "USS MAKIN ISLAND",
+      "vessel": "USS ANCHORAGE",
       "vesselType": "官船",
       "location": "浦賀水道・中ノ瀬航路・横須賀",
       "watchCategory": "港湾公式表で検出",
@@ -4042,7 +3890,7 @@
       "summary": "港湾・航路の公式予定表で軍艦または海軍艦艇として検出しました。一般公開情報ではありません。時刻や行動は変更される場合があります。",
       "officialUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
       "source": "海上保安庁 東京湾海上交通センター",
-      "id": "port-jcg-uraga-10/26-07:30-USS-MAKIN-ISLAND-北航",
+      "id": "port-jcg-uraga-10/26-10:00-USS-ANCHORAGE-北航",
       "imageUrl": "./assets/event-sea.jpg",
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B5%A6%E8%B3%80%E6%B0%B4%E9%81%93%E3%83%BB%E4%B8%AD%E3%83%8E%E7%80%AC%E8%88%AA%E8%B7%AF%20%E6%A8%AA%E9%A0%88%E8%B3%80"
     },
@@ -4064,23 +3912,6 @@
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B5%A6%E8%B3%80%E6%B0%B4%E9%81%93%E3%83%BB%E4%B8%AD%E3%83%8E%E7%80%AC%E8%88%AA%E8%B7%AF%20%E6%A8%AA%E9%A0%88%E8%B3%80"
     },
     {
-      "date": "2026-10-26",
-      "region": "東京湾",
-      "vessel": "USS ANCHORAGE",
-      "vesselType": "官船",
-      "location": "浦賀水道・中ノ瀬航路・横須賀",
-      "watchCategory": "港湾公式表で検出",
-      "status": "北航",
-      "publicAccess": false,
-      "scope": "domestic",
-      "summary": "港湾・航路の公式予定表で軍艦または海軍艦艇として検出しました。一般公開情報ではありません。時刻や行動は変更される場合があります。",
-      "officialUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
-      "source": "海上保安庁 東京湾海上交通センター",
-      "id": "port-jcg-uraga-10/26-12:25-USS-ANCHORAGE-北航",
-      "imageUrl": "./assets/event-sea.jpg",
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B5%A6%E8%B3%80%E6%B0%B4%E9%81%93%E3%83%BB%E4%B8%AD%E3%83%8E%E7%80%AC%E8%88%AA%E8%B7%AF%20%E6%A8%AA%E9%A0%88%E8%B3%80"
-    },
-    {
       "date": "2026-11-22",
       "region": "広島",
       "vessel": "呉在泊艦艇・地方総監部 一般公開",
@@ -4098,52 +3929,8 @@
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%91%89%E5%9F%BA%E5%9C%B0%E4%BF%82%E8%88%B9%E5%A0%80%E5%9C%B0%E5%8C%BA%E3%83%BB%E5%91%89%E5%9C%B0%E6%96%B9%E7%B7%8F%E7%9B%A3%E9%83%A8%EF%BC%88%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%91%89%E5%B8%82%EF%BC%89"
     }
   ],
-  "count": 62,
+  "count": 60,
   "events": [
-    {
-      "id": "2026-10-25-静岡-エアフェスタ浜松2026",
-      "date": "2026-10-25",
-      "region": "静岡",
-      "branch": "空自",
-      "title": "エアフェスタ浜松2026",
-      "location": "浜松基地",
-      "category": "航空祭",
-      "application": false,
-      "applicationNote": "",
-      "ageRestriction": false,
-      "price": "原則無料（公式情報を確認）",
-      "accessRank": "○",
-      "accessNote": "鉄道＋路線バス等を要確認",
-      "officialUrl": "https://www.mod.go.jp/asdf/event/list.html",
-      "imageUrl": "./assets/event-air.jpg",
-      "imageIsIllustration": true,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B5%9C%E6%9D%BE%E5%9F%BA%E5%9C%B0",
-      "source": "航空自衛隊 イベント一覧",
-      "sourceType": "自衛隊公式",
-      "openType": ""
-    },
-    {
-      "id": "2026-10-25-神奈川-第26回湘南台ファンタジア",
-      "date": "2026-10-25",
-      "region": "神奈川",
-      "branch": "警察",
-      "title": "第26回湘南台ファンタジア",
-      "location": "湘南台公園",
-      "category": "警察音楽隊",
-      "application": false,
-      "applicationNote": "",
-      "ageRestriction": false,
-      "price": "原則無料（公式情報を確認）",
-      "accessRank": "○",
-      "accessNote": "公共交通で日帰り圏",
-      "officialUrl": "https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html",
-      "imageUrl": "./assets/event-police.svg",
-      "imageIsIllustration": true,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%B9%98%E5%8D%97%E5%8F%B0%E5%85%AC%E5%9C%92",
-      "source": "神奈川県警察 音楽隊",
-      "sourceType": "警察公式",
-      "openType": ""
-    },
     {
       "id": "2026-10-27-千葉-犯罪被害者等支援条例制定記念コンサート",
       "date": "2026-10-27",
@@ -5261,7 +5048,7 @@
       "price": "原則無料（公式情報を確認）",
       "accessRank": "○",
       "accessNote": "公共交通で日帰り圏",
-      "officialUrl": "https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html?checked=2026-10-24#odawara",
+      "officialUrl": "https://www.police.pref.kanagawa.jp/about_kpp/kakubu/mesa8050.html?checked=2026-10-25#odawara",
       "imageUrl": "./assets/event-police.svg",
       "imageIsIllustration": true,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%B0%8F%E7%94%B0%E5%8E%9F%E4%B8%89%E3%81%AE%E4%B8%B8%E3%83%9B%E3%83%BC%E3%83%AB%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB",
