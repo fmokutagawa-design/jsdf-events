@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T03:32:47.991Z",
+  "updatedAt": "2026-11-26T03:46:07.634Z",
   "sourceUrl": "https://www.mod.go.jp/j/press/events/",
   "seaSourceUrl": "https://www.mod.go.jp/msdf/event/index.html",
   "seaSources": [
@@ -356,8 +356,8 @@
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/YOKOHAMA/schedule_1.html",
     "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html"
   ],
-  "portVesselCheckedAt": "2026-11-26T03:32:47.991Z",
-  "portVesselCount": 234,
+  "portVesselCheckedAt": "2026-11-26T03:46:07.635Z",
+  "portVesselCount": 235,
   "portVessels": [
     {
       "id": "yokohama-0-TONG MAO 2",
@@ -4819,6 +4819,29 @@
       "agent": "",
       "length": "299",
       "tonnage": "107598",
+      "draft": "",
+      "pilot": "有",
+      "sizeType": "巨",
+      "nakanose": "",
+      "port": "浦賀水道・中ノ瀬航路",
+      "area": "東京湾",
+      "sourceGroup": "海上保安庁 東京湾海上交通センター",
+      "sourceUrl": "https://www6.kaiho.mlit.go.jp/tokyowan/schedule/URAGA/schedule_1.html",
+      "category": "commercial"
+    },
+    {
+      "id": "jcg-uraga-11/27-12:45-ENERGY-HORIZON-南航",
+      "name": "ENERGY HORIZON",
+      "callSign": "",
+      "country": "JPN",
+      "vesselClass": "ガスタンカー",
+      "status": "南航",
+      "berth": "扇島",
+      "arrival": "2026/11/27 12:45",
+      "departure": "",
+      "agent": "",
+      "length": "300",
+      "tonnage": "141136",
       "draft": "",
       "pilot": "有",
       "sizeType": "巨",
